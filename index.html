@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SWYR | سوير — نسمة من الفخامة النقية</title>
+  <meta name="description" content="سوير — عطور مركّزة بثبات يدوم. اطلبي عطرك أونلاين واستلميه في أي محافظة في مصر.">
+  <meta name="theme-color" content="#FBD3C6">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:title" content="SWYR | سوير — نسمة من الفخامة النقية">
+  <meta property="og:description" content="عطور مركّزة بثبات يدوم. اطلبي أونلاين والدفع عند الاستلام.">
+  <meta property="og:image" content="/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#collection" data-i18n="skip">انتقلي للعطور</a>
+
+  <div class="announce" id="announce"></div>
+
+  <header class="header" id="header">
+    <div class="wrap header__in">
+      <a href="#top" class="brand" aria-label="SWYR">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__word" aria-hidden="true"></span>
+      </a>
+      <nav class="nav" aria-label="main">
+        <a href="#collection" data-i18n="nav.shop">العطور</a>
+        <a href="#offers" data-i18n="nav.offers">العروض</a>
+        <a href="#gifts" data-i18n="nav.gifts">هدايا وطلبات خاصة</a>
+        <a href="#faq" data-i18n="nav.faq">أسئلة شائعة</a>
+      </nav>
+      <div class="header__actions">
+        <button class="lang" id="langBtn" type="button">English</button>
+        <button class="cartbtn" id="cartBtn" type="button" aria-haspopup="dialog">
+          <span data-i18n="cart.title">السلة</span>
+          <span class="cartbtn__count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__text">
+          <p class="eyebrow">A Breath of Pure Luxury</p>
+          <h1 data-i18n-html="hero.title">نسمة من<br>الفخامة النقية</h1>
+          <p class="hero__lead" data-i18n="hero.lead">عطور مركّزة بثبات يدوم، بتتعبّى بإيدينا بعناية — من ١٠ مل للتجربة لحد ١٠٠ مل للي لقت عطرها.</p>
+          <div class="hero__cta">
+            <a href="#collection" class="btn btn--dark" data-i18n="hero.shop">تسوّقي العطور</a>
+            <a href="#finder" class="btn btn--line" data-i18n="hero.finder">اكتشفي عطرك</a>
+          </div>
+          <ul class="promises">
+            <li data-i18n="promise.cod">الدفع عند الاستلام</li>
+            <li data-i18n="promise.ship">شحن لكل المحافظات</li>
+            <li data-i18n="promise.last">ثبات من ٨ لـ ١٢ ساعة</li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__disc" aria-hidden="true"></div>
+          <figure class="hero__arch">
+            <img src="/img/amber.webp" alt="SWYR perfume" width="902" height="1100" fetchpriority="high">
+          </figure>
+          <figure class="hero__small">
+            <img src="/img/silk.webp" alt="" width="963" height="1100" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="offers" id="offers" aria-labelledby="offersTitle">
+      <div class="wrap">
+        <div class="sechead">
+          <p class="eyebrow">Offers</p>
+          <h2 id="offersTitle" data-i18n="offers.title">العروض الحالية</h2>
+        </div>
+        <div class="offers__grid" id="offersGrid"></div>
+      </div>
+    </section>
+
+    <!-- COLLECTION + FINDER -->
+    <section class="collection" id="collection" aria-labelledby="colTitle">
+      <div class="wrap">
+        <div class="sechead">
+          <p class="eyebrow">The Collection</p>
+          <h2 id="colTitle" data-i18n="col.title">عطور سوير</h2>
+        </div>
+
+        <div class="finder" id="finder">
+          <div class="finder__head">
+            <h3 data-i18n="finder.title">اكتشفي عطرك</h3>
+            <p data-i18n="finder.text">اختاري النوتات اللي بتحبيها، وهنرتّب لك العطور حسب قربها من ذوقك.</p>
+          </div>
+          <div class="chips" id="finderChips" role="group"></div>
+          <button type="button" class="linkbtn" id="finderReset" hidden data-i18n="finder.reset">مسح الاختيارات</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="tabs" id="tabs" role="tablist"></div>
+          <label class="search"><span class="sr">Search</span><input id="search" type="search" autocomplete="off" enterkeyhint="search"></label>
+        </div>
+        <p class="resultcount" id="resultCount" aria-live="polite"></p>
+        <div class="grid" id="grid"></div>
+        <div class="more" id="more"></div>
+      </div>
+    </section>
+
+    <!-- SIZES -->
+    <section class="sizes" aria-labelledby="sizesTitle">
+      <div class="wrap sizes__in">
+        <figure class="sizes__img"><img src="/img/sizes.webp" alt="" width="573" height="436" loading="lazy"></figure>
+        <div>
+          <p class="eyebrow">Sizes</p>
+          <h2 id="sizesTitle" data-i18n="sizes.title">كل حجم وله وقته</h2>
+          <dl class="sizes__list">
+            <div><dt>10 ml</dt><dd data-i18n="sizes.10">للشنطة وللتجربة الأولى</dd></div>
+            <div><dt>30 ml</dt><dd data-i18n="sizes.30">للسفر وللاستخدام الخفيف</dd></div>
+            <div><dt>50 ml</dt><dd data-i18n="sizes.50">الحجم المثالي للاستخدام اليومي</dd></div>
+            <div><dt>100 ml</dt><dd data-i18n="sizes.100">لعطرك المفضل — أوفر في السعر</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFTS / SPECIAL REQUESTS -->
+    <section class="gifts" id="gifts" aria-labelledby="giftsTitle">
+      <div class="wrap gifts__in">
+        <div class="gifts__intro">
+          <p class="eyebrow">Gifts &amp; Special Orders</p>
+          <h2 id="giftsTitle" data-i18n="gifts.title">هدايا وطلبات خاصة</h2>
+          <p data-i18n="gifts.text">توزيعات أفراح وخطوبة، هدايا شركات، بوكسات باسم صاحبة الهدية، أو كميات بالجملة. ابعتي تفاصيل طلبك وهنرد عليكي بعرض سعر خلال يوم.</p>
+          <figure class="gifts__img"><img src="/img/gift-display.webp" alt="" width="872" height="656" loading="lazy"></figure>
+        </div>
+        <form class="card form" id="requestForm" novalidate>
+          <div class="field">
+            <label for="rq_type" data-i18n="rq.type">نوع الطلب</label>
+            <select id="rq_type" name="type" required></select>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="rq_name" data-i18n="f.name">الاسم</label>
+              <input id="rq_name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="rq_phone" data-i18n="f.phone">رقم الموبايل</label>
+              <input id="rq_phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="01xxxxxxxxx" required>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="rq_qty" data-i18n="rq.qty">الكمية التقريبية</label>
+              <input id="rq_qty" name="qty" type="number" min="1" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="rq_date" data-i18n="rq.date">محتاجاه إمتى؟</label>
+              <input id="rq_date" name="date" type="date">
+            </div>
+          </div>
+          <div class="field">
+            <label for="rq_budget" data-i18n="rq.budget">الميزانية للقطعة (اختياري)</label>
+            <input id="rq_budget" name="budget" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="rq_details" data-i18n="rq.details">التفاصيل</label>
+            <textarea id="rq_details" name="details" rows="3" data-i18n-ph="rq.detailsPh" placeholder="مثلًا: ٥٠ زجاجة ١٠ مل بكارت عليه اسم العروسة"></textarea>
+          </div>
+          <p class="form__err" id="rqErr" role="alert"></p>
+          <button class="btn btn--dark btn--block" type="submit" data-i18n="rq.send">ابعتي الطلب</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faqTitle">
+      <div class="wrap faq__in">
+        <div class="sechead sechead--start">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faqTitle" data-i18n="faq.title">أسئلة شائعة</h2>
+        </div>
+        <div class="faq__list" id="faqList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div class="footer__brand">
+        <span class="brand__mark brand__mark--lg" aria-hidden="true"></span>
+        <span class="brand__word brand__word--lg" aria-hidden="true"></span>
+        <p class="footer__tag">A Breath of Pure Luxury · نسمة من الفخامة النقية</p>
+      </div>
+      <div class="footer__links" id="footerLinks"></div>
+    </div>
+    <div class="wrap footer__copy"><p class="disclaimer" id="disclaimer"></p><span>© <span id="year"></span> SWYR</span></div>
+  </footer>
+
+  <!-- Sticky mobile bar -->
+  <div class="stickybar" id="stickybar" hidden>
+    <div class="stickybar__info"><span id="stickyCount"></span><strong id="stickyTotal"></strong></div>
+    <button class="btn btn--dark" id="stickyBtn" type="button" data-i18n="cart.checkout">إتمام الطلب</button>
+  </div>
+
+  <!-- Product dialog -->
+  <dialog class="pdialog" id="pdialog" aria-labelledby="pdName">
+    <div class="pdialog__in" id="pdBody"></div>
+  </dialog>
+
+  <!-- Cart drawer -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 id="drawerTitle"></h2>
+      <button class="x" type="button" id="drawerClose" aria-label="close">×</button>
+    </div>
+    <div class="steps" id="steps" aria-hidden="true">
+      <span data-step="cart" data-i18n="step.cart">السلة</span>
+      <span data-step="checkout" data-i18n="step.details">البيانات</span>
+      <span data-step="done" data-i18n="step.done">تأكيد</span>
+    </div>
+    <div class="drawer__body" id="drawerBody"></div>
+    <div class="drawer__foot" id="drawerFoot"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "swyr-store",
+  "private": true,
+  "description": "SWYR perfumes storefront — static site + Vercel functions for Paymob",
+  "engines": { "node": ">=18" }
+}

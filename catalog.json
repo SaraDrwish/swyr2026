@@ -1,0 +1,1676 @@
+{
+  "_README": "ده الملف الوحيد اللي محتاجة تعدّلي فيه: الأسعار، المنتجات، العروض، رقم الواتساب، الشحن. أي حاجة مكتوب جنبها _todo لازم تتغيّر قبل الإطلاق.",
+  "settings": {
+    "instagramDM": "swyrbeauty",
+    "messenger": "61563925810810",
+    "_todo_channels": "الطلبات بتوصل على دي إم إنستجرام (اسم الحساب من غير @) وعلى ماسنجر (اسم صفحة الفيسبوك زي ما هو في لينك الصفحة facebook.com/اسم-الصفحة). لو عايزة واتساب كمان حطي الرقم بالصيغة الدولية زي 201012345678، ولو لأ سيبيه فاضي.",
+    "whatsapp": "",
+    "currency": {
+      "ar": "ج.م",
+      "en": "EGP"
+    },
+    "freeShippingOver": 1000,
+    "instapay": "swyr@instapay",
+    "wallet": "01000000000",
+    "_todo_payments": "حطي عنوان إنستاباي ورقم المحفظة بتوعك. لو مش عايزة اختيار التحويل امسحي القيمتين وسيبيهم \"\"",
+    "email": "swyrperfumes@gmail.com",
+    "instagram": "https://www.instagram.com/swyrbeauty/",
+    "tiktok": "https://www.tiktok.com/@swyrperfumes",
+    "facebook": "https://www.facebook.com/people/SWYR/61563925810810/",
+    "announcement": {
+      "ar": "شحن مجاني على أي طلب فوق ١٠٠٠ ج.م — وخصم ١٠٪ على أول طلب بكود SWYR10",
+      "en": "Free shipping on orders over 1,000 EGP — and 10% off your first order with code SWYR10"
+    }
+  },
+  "coupons": {
+    "SWYR10": {
+      "type": "percent",
+      "value": 10
+    },
+    "_example_fixed": {
+      "type": "fixed",
+      "value": 100
+    }
+  },
+  "shippingZones": {
+    "cairo": 120,
+    "delta": 120,
+    "canal": 120,
+    "upper": 120,
+    "remote": 120
+  },
+  "governorates": [
+    {
+      "id": "cairo",
+      "zone": "cairo",
+      "ar": "القاهرة",
+      "en": "Cairo"
+    },
+    {
+      "id": "giza",
+      "zone": "cairo",
+      "ar": "الجيزة",
+      "en": "Giza"
+    },
+    {
+      "id": "qalyubia",
+      "zone": "cairo",
+      "ar": "القليوبية",
+      "en": "Qalyubia"
+    },
+    {
+      "id": "alex",
+      "zone": "delta",
+      "ar": "الإسكندرية",
+      "en": "Alexandria"
+    },
+    {
+      "id": "beheira",
+      "zone": "delta",
+      "ar": "البحيرة",
+      "en": "Beheira"
+    },
+    {
+      "id": "dakahlia",
+      "zone": "delta",
+      "ar": "الدقهلية",
+      "en": "Dakahlia"
+    },
+    {
+      "id": "gharbia",
+      "zone": "delta",
+      "ar": "الغربية",
+      "en": "Gharbia"
+    },
+    {
+      "id": "menoufia",
+      "zone": "delta",
+      "ar": "المنوفية",
+      "en": "Menoufia"
+    },
+    {
+      "id": "sharqia",
+      "zone": "delta",
+      "ar": "الشرقية",
+      "en": "Sharqia"
+    },
+    {
+      "id": "kafr",
+      "zone": "delta",
+      "ar": "كفر الشيخ",
+      "en": "Kafr El Sheikh"
+    },
+    {
+      "id": "damietta",
+      "zone": "delta",
+      "ar": "دمياط",
+      "en": "Damietta"
+    },
+    {
+      "id": "portsaid",
+      "zone": "canal",
+      "ar": "بورسعيد",
+      "en": "Port Said"
+    },
+    {
+      "id": "ismailia",
+      "zone": "canal",
+      "ar": "الإسماعيلية",
+      "en": "Ismailia"
+    },
+    {
+      "id": "suez",
+      "zone": "canal",
+      "ar": "السويس",
+      "en": "Suez"
+    },
+    {
+      "id": "fayoum",
+      "zone": "upper",
+      "ar": "الفيوم",
+      "en": "Fayoum"
+    },
+    {
+      "id": "benisuef",
+      "zone": "upper",
+      "ar": "بني سويف",
+      "en": "Beni Suef"
+    },
+    {
+      "id": "minya",
+      "zone": "upper",
+      "ar": "المنيا",
+      "en": "Minya"
+    },
+    {
+      "id": "assiut",
+      "zone": "upper",
+      "ar": "أسيوط",
+      "en": "Assiut"
+    },
+    {
+      "id": "sohag",
+      "zone": "upper",
+      "ar": "سوهاج",
+      "en": "Sohag"
+    },
+    {
+      "id": "qena",
+      "zone": "upper",
+      "ar": "قنا",
+      "en": "Qena"
+    },
+    {
+      "id": "luxor",
+      "zone": "upper",
+      "ar": "الأقصر",
+      "en": "Luxor"
+    },
+    {
+      "id": "aswan",
+      "zone": "upper",
+      "ar": "أسوان",
+      "en": "Aswan"
+    },
+    {
+      "id": "redsea",
+      "zone": "remote",
+      "ar": "البحر الأحمر",
+      "en": "Red Sea"
+    },
+    {
+      "id": "matrouh",
+      "zone": "remote",
+      "ar": "مطروح",
+      "en": "Matrouh"
+    },
+    {
+      "id": "newvalley",
+      "zone": "remote",
+      "ar": "الوادي الجديد",
+      "en": "New Valley"
+    },
+    {
+      "id": "nsinai",
+      "zone": "remote",
+      "ar": "شمال سيناء",
+      "en": "North Sinai"
+    },
+    {
+      "id": "ssinai",
+      "zone": "remote",
+      "ar": "جنوب سيناء",
+      "en": "South Sinai"
+    }
+  ],
+  "notes": {
+    "sweet": {
+      "ar": "حلو",
+      "en": "Sweet",
+      "color": "#E9545A"
+    },
+    "vanilla": {
+      "ar": "فانيلا",
+      "en": "Vanilla",
+      "color": "#F8EBAE"
+    },
+    "fruity": {
+      "ar": "فاكهي",
+      "en": "Fruity",
+      "color": "#F2805F"
+    },
+    "patchouli": {
+      "ar": "باتشولي",
+      "en": "Patchouli",
+      "color": "#93A07A"
+    },
+    "woody": {
+      "ar": "خشبي",
+      "en": "Woody",
+      "color": "#A2805F"
+    },
+    "white_flowers": {
+      "ar": "زهور بيضاء",
+      "en": "White flowers",
+      "color": "#EEF0F5"
+    },
+    "soft": {
+      "ar": "ناعم",
+      "en": "Powdery",
+      "color": "#EFE5DB"
+    },
+    "iris": {
+      "ar": "سوسن",
+      "en": "Iris",
+      "color": "#CBBBE2"
+    },
+    "earthy": {
+      "ar": "ترابي",
+      "en": "Earthy",
+      "color": "#A09A90"
+    },
+    "warm_spicy": {
+      "ar": "تابلي دافئ",
+      "en": "Warm spicy",
+      "color": "#E98A63"
+    },
+    "rose": {
+      "ar": "ورد",
+      "en": "Rose",
+      "color": "#F0699A"
+    },
+    "soft_spicy": {
+      "ar": "توابل ناعمة",
+      "en": "Soft spicy",
+      "color": "#EBAE98"
+    },
+    "floral": {
+      "ar": "زهري",
+      "en": "Floral",
+      "color": "#F6ADCB"
+    },
+    "fresh": {
+      "ar": "منعش",
+      "en": "Fresh",
+      "color": "#AEDDE8"
+    },
+    "citrus": {
+      "ar": "حمضيات",
+      "en": "Citrus",
+      "color": "#F5E07F"
+    },
+    "musk": {
+      "ar": "مسك",
+      "en": "Musk",
+      "color": "#E7DFEF"
+    },
+    "oud": {
+      "ar": "عود",
+      "en": "Oud",
+      "color": "#7A5644"
+    },
+    "amber": {
+      "ar": "عنبر",
+      "en": "Amber",
+      "color": "#E2A552"
+    },
+    "coffee": {
+      "ar": "قهوة",
+      "en": "Coffee",
+      "color": "#6F4E3D"
+    },
+    "lavender": {
+      "ar": "لافندر",
+      "en": "Lavender",
+      "color": "#B9A6D9"
+    },
+    "leather": {
+      "ar": "جلد",
+      "en": "Leather",
+      "color": "#8A5A44"
+    },
+    "aromatic": {
+      "ar": "أروماتيك",
+      "en": "Aromatic",
+      "color": "#9FBF9A"
+    },
+    "aquatic": {
+      "ar": "مائي",
+      "en": "Aquatic",
+      "color": "#9CCFE6"
+    },
+    "oriental": {
+      "ar": "شرقي",
+      "en": "Oriental",
+      "color": "#D9944A"
+    },
+    "jasmine": {
+      "ar": "ياسمين",
+      "en": "Jasmine",
+      "color": "#F6F1DC"
+    }
+  },
+  "finderNotes": [
+    "sweet",
+    "vanilla",
+    "floral",
+    "rose",
+    "fruity",
+    "fresh",
+    "citrus",
+    "woody",
+    "musk",
+    "oud",
+    "amber",
+    "warm_spicy",
+    "coffee"
+  ],
+  "categories": [
+    {
+      "id": "women",
+      "ar": "نسائي",
+      "en": "Women"
+    },
+    {
+      "id": "men",
+      "ar": "رجالي",
+      "en": "Men"
+    },
+    {
+      "id": "unisex",
+      "ar": "للجنسين",
+      "en": "Unisex"
+    },
+    {
+      "id": "hair",
+      "ar": "عطور شعر",
+      "en": "Hair mists"
+    },
+    {
+      "id": "gifts",
+      "ar": "بوكسات هدايا",
+      "en": "Gift sets"
+    }
+  ],
+  "_todo_products": "المنتجات متحوّلة من شيت العطور. لإضافة عطر: انسخي أي منتج والصقيه وغيّري id و code والاسم. ممكن تضيفي \"image\": \"img/اسم-الصورة.webp\" لأي عطر عشان تظهر صورته بدل الليبل، و \"badge\": {\"ar\": \"الأكثر طلبًا\", \"en\": \"Best seller\"} لأي عطر عايزة تميّزيه.",
+  "products": [
+    {
+      "id": "swyr-01",
+      "code": "SWYR-01",
+      "category": "women",
+      "name": {
+        "ar": "بربري هير",
+        "en": "Burberry Her"
+      },
+      "inspiredBy": "Burberry",
+      "family": "فاكهي، زهري",
+      "pyramid": {
+        "top": "الفراولة، التوت الأحمر، البلاكبيري",
+        "heart": "الياسمين، البنفسج",
+        "base": "المسك، العنبر، الفانيليا"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 92,
+        "jasmine": 62,
+        "musk": 50,
+        "amber": 44,
+        "vanilla": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-02",
+      "code": "SWYR-02",
+      "category": "women",
+      "name": {
+        "ar": "بلاك أوبيوم",
+        "en": "Black Opium"
+      },
+      "inspiredBy": "Yves Saint Laurent",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "الكمثرى، الفلفل الوردي",
+        "heart": "القهوة، الياسمين",
+        "base": "الفانيليا، الباتشولي، خشب الأرز"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "fruity": 80,
+        "warm_spicy": 74,
+        "coffee": 68,
+        "jasmine": 62,
+        "vanilla": 56,
+        "patchouli": 50,
+        "woody": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-03",
+      "code": "SWYR-03",
+      "category": "women",
+      "name": {
+        "ar": "فيري سكسي ناو",
+        "en": "Very Sexy Now"
+      },
+      "inspiredBy": "Victoria's Secret",
+      "family": "فاكهي، زهري",
+      "pyramid": {
+        "top": "ماء جوز الهند، البرغموت",
+        "heart": "الفاوانيا، الياسمين",
+        "base": "المسك، الأخشاب الناعمة"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 92,
+        "aquatic": 80,
+        "citrus": 74,
+        "jasmine": 62,
+        "musk": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-04",
+      "code": "SWYR-04",
+      "category": "women",
+      "name": {
+        "ar": "سي باسيوني",
+        "en": "Sì Passione"
+      },
+      "inspiredBy": "Giorgio Armani",
+      "family": "فاكهي، زهري",
+      "pyramid": {
+        "top": "الكمثرى، الكشمش الأسود، الفلفل الوردي",
+        "heart": "الورد، الياسمين",
+        "base": "الفانيليا، خشب الأرز"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 92,
+        "warm_spicy": 68,
+        "rose": 62,
+        "jasmine": 56,
+        "vanilla": 50,
+        "woody": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-05",
+      "code": "SWYR-05",
+      "category": "women",
+      "name": {
+        "ar": "كريستال نوار",
+        "en": "Crystal Noir"
+      },
+      "inspiredBy": "Versace",
+      "family": "زهري، شرقي عنبري",
+      "pyramid": {
+        "top": "الفلفل، الهيل",
+        "heart": "الجاردينيا، جوز الهند، زهر البرتقال",
+        "base": "العنبر، المسك، خشب الصندل"
+      },
+      "notes": {
+        "floral": 100,
+        "amber": 92,
+        "warm_spicy": 80,
+        "fruity": 62,
+        "musk": 44,
+        "woody": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-06",
+      "code": "SWYR-06",
+      "category": "women",
+      "name": {
+        "ar": "ليدي مليون",
+        "en": "Lady Million"
+      },
+      "inspiredBy": "Rabanne (Paco Rabanne)",
+      "family": "زهري، شرقي عنبري",
+      "pyramid": {
+        "top": "النيرولي، التوت، الليمون",
+        "heart": "العسل، الياسمين، زهر البرتقال",
+        "base": "الباتشولي، العنبر"
+      },
+      "notes": {
+        "floral": 100,
+        "amber": 92,
+        "citrus": 80,
+        "fruity": 74,
+        "sweet": 62,
+        "jasmine": 56,
+        "patchouli": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-07",
+      "code": "SWYR-07",
+      "category": "women",
+      "name": {
+        "ar": "٢١٢ سكسي",
+        "en": "212 Sexy"
+      },
+      "inspiredBy": "Carolina Herrera",
+      "family": "زهري، حلو (جورماند)",
+      "pyramid": {
+        "top": "الفلفل الوردي، اليوسفي",
+        "heart": "الجاردينيا، الورد",
+        "base": "الفانيليا، المسك، السكر"
+      },
+      "notes": {
+        "floral": 100,
+        "sweet": 92,
+        "warm_spicy": 80,
+        "citrus": 74,
+        "rose": 62,
+        "vanilla": 56,
+        "musk": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-08",
+      "code": "SWYR-08",
+      "category": "women",
+      "name": {
+        "ar": "إيدول",
+        "en": "Idôle"
+      },
+      "inspiredBy": "Lancôme",
+      "family": "زهري",
+      "pyramid": {
+        "top": "الكمثرى، البرغموت",
+        "heart": "الورد، الياسمين",
+        "base": "المسك الأبيض، الفانيليا، الباتشولي"
+      },
+      "notes": {
+        "floral": 100,
+        "fruity": 80,
+        "citrus": 74,
+        "rose": 68,
+        "jasmine": 62,
+        "musk": 56,
+        "vanilla": 50,
+        "patchouli": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-09",
+      "code": "SWYR-09",
+      "category": "women",
+      "name": {
+        "ar": "كوكونت باشن",
+        "en": "Coconut Passion"
+      },
+      "inspiredBy": "Victoria's Secret",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "جوز الهند",
+        "heart": "زنبق الوادي",
+        "base": "الفانيليا"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "fruity": 80,
+        "vanilla": 68
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-10",
+      "code": "SWYR-10",
+      "category": "women",
+      "name": {
+        "ar": "سكاندال باي نايت",
+        "en": "Scandal by Night"
+      },
+      "inspiredBy": "Jean Paul Gaultier",
+      "family": "شرقي عنبري، حلو (جورماند)",
+      "pyramid": {
+        "top": "البرتقال الدموي",
+        "heart": "مسك الروم، العسل",
+        "base": "الباتشولي، التونكا، الفانيليا"
+      },
+      "notes": {
+        "amber": 100,
+        "sweet": 92,
+        "citrus": 80,
+        "patchouli": 68,
+        "vanilla": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-11",
+      "code": "SWYR-11",
+      "category": "women",
+      "name": {
+        "ar": "جادور",
+        "en": "J'adore"
+      },
+      "inspiredBy": "Dior",
+      "family": "زهري، فاكهي",
+      "pyramid": {
+        "top": "الكمثرى، البطيخ، اليوسفي",
+        "heart": "الياسمين، الورد، مسك الروم",
+        "base": "المسك، الفانيليا، خشب الأرز"
+      },
+      "notes": {
+        "floral": 100,
+        "fruity": 92,
+        "citrus": 68,
+        "jasmine": 62,
+        "rose": 56,
+        "musk": 50,
+        "vanilla": 44,
+        "woody": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-12",
+      "code": "SWYR-12",
+      "category": "women",
+      "name": {
+        "ar": "يوفوريا",
+        "en": "Euphoria"
+      },
+      "inspiredBy": "Calvin Klein",
+      "family": "شرقي عنبري، فاكهي",
+      "pyramid": {
+        "top": "الرمان، الكاكي",
+        "heart": "الأوركيد الأسود، اللوتس",
+        "base": "العنبر، الماهوجني، المسك"
+      },
+      "notes": {
+        "amber": 100,
+        "fruity": 92,
+        "floral": 68,
+        "woody": 50,
+        "musk": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-13",
+      "code": "SWYR-13",
+      "category": "women",
+      "name": {
+        "ar": "لا في إي بيل",
+        "en": "La Vie est Belle"
+      },
+      "inspiredBy": "Lancôme",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "الكشمش الأسود، الكمثرى",
+        "heart": "السوسن، الياسمين",
+        "base": "البرالين، الفانيليا، الباتشولي"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "fruity": 80,
+        "iris": 68,
+        "jasmine": 62,
+        "vanilla": 50,
+        "patchouli": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-14",
+      "code": "SWYR-14",
+      "category": "women",
+      "name": {
+        "ar": "مس ديور بلومينج بوكيه",
+        "en": "Miss Dior Blooming Bouquet"
+      },
+      "inspiredBy": "Dior",
+      "family": "زهري",
+      "pyramid": {
+        "top": "اليوسفي، البرغموت",
+        "heart": "الفاوانيا، الورد",
+        "base": "المسك الأبيض"
+      },
+      "notes": {
+        "floral": 100,
+        "citrus": 80,
+        "rose": 62,
+        "musk": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-15",
+      "code": "SWYR-15",
+      "category": "women",
+      "name": {
+        "ar": "كوكو مادموزيل",
+        "en": "Coco Mademoiselle"
+      },
+      "inspiredBy": "Chanel",
+      "family": "زهري، خشبي",
+      "pyramid": {
+        "top": "البرتقال، البرغموت",
+        "heart": "الورد، الياسمين",
+        "base": "الباتشولي، نجيل الهند، الفانيليا"
+      },
+      "notes": {
+        "floral": 100,
+        "woody": 92,
+        "citrus": 80,
+        "rose": 68,
+        "jasmine": 62,
+        "patchouli": 56,
+        "vanilla": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-16",
+      "code": "SWYR-16",
+      "category": "women",
+      "name": {
+        "ar": "ليبر",
+        "en": "Libre"
+      },
+      "inspiredBy": "Yves Saint Laurent",
+      "family": "أروماتيك، زهري",
+      "pyramid": {
+        "top": "اللافندر، اليوسفي",
+        "heart": "زهر البرتقال، الياسمين",
+        "base": "الفانيليا، المسك، العنبر"
+      },
+      "notes": {
+        "aromatic": 100,
+        "floral": 92,
+        "lavender": 80,
+        "citrus": 74,
+        "jasmine": 62,
+        "vanilla": 56,
+        "musk": 50,
+        "amber": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-17",
+      "code": "SWYR-17",
+      "category": "unisex",
+      "name": {
+        "ar": "إمبريال فالي",
+        "en": "Imperial Valley"
+      },
+      "inspiredBy": "Gissah",
+      "family": "عود، خشبي",
+      "pyramid": {
+        "top": "الفلفل الوردي، الدافانا، البرغموت",
+        "heart": "العود، العنبر الأبيض",
+        "base": "الجلد، نجيل الهند، المسك"
+      },
+      "notes": {
+        "oud": 100,
+        "woody": 92,
+        "warm_spicy": 80,
+        "floral": 74,
+        "citrus": 68,
+        "amber": 56,
+        "leather": 50,
+        "musk": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-18",
+      "code": "SWYR-18",
+      "category": "women",
+      "name": {
+        "ar": "فلورا",
+        "en": "Flora"
+      },
+      "inspiredBy": "Gucci",
+      "family": "زهري، حمضي",
+      "pyramid": {
+        "top": "اليوسفي، الفلفل الوردي",
+        "heart": "الورد، الفاوانيا",
+        "base": "الباتشولي، خشب الصندل"
+      },
+      "notes": {
+        "floral": 100,
+        "citrus": 92,
+        "warm_spicy": 74,
+        "rose": 68,
+        "patchouli": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-19",
+      "code": "SWYR-19",
+      "category": "women",
+      "name": {
+        "ar": "بويزن جيرل",
+        "en": "Poison Girl"
+      },
+      "inspiredBy": "Dior",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "البرتقال المر، الليمون",
+        "heart": "الورد، اللوز",
+        "base": "التونكا، الفانيليا"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "citrus": 80,
+        "rose": 68,
+        "vanilla": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-20",
+      "code": "SWYR-20",
+      "category": "women",
+      "name": {
+        "ar": "ماي واي",
+        "en": "My Way"
+      },
+      "inspiredBy": "Giorgio Armani",
+      "family": "زهري",
+      "pyramid": {
+        "top": "البرغموت، زهر البرتقال",
+        "heart": "مسك الروم، الياسمين",
+        "base": "الفانيليا، الأرز، المسك"
+      },
+      "notes": {
+        "floral": 100,
+        "citrus": 80,
+        "jasmine": 68,
+        "vanilla": 62,
+        "woody": 56,
+        "musk": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-21",
+      "code": "SWYR-21",
+      "category": "women",
+      "name": {
+        "ar": "بورن إن روما",
+        "en": "Born in Roma"
+      },
+      "inspiredBy": "Valentino",
+      "family": "زهري، حلو (جورماند)",
+      "pyramid": {
+        "top": "الكشمش الأسود، البرغموت",
+        "heart": "الياسمين",
+        "base": "فانيليا البوربون، الأخشاب"
+      },
+      "notes": {
+        "floral": 100,
+        "sweet": 92,
+        "fruity": 80,
+        "citrus": 74,
+        "jasmine": 68,
+        "vanilla": 62,
+        "woody": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-22",
+      "code": "SWYR-22",
+      "category": "unisex",
+      "name": {
+        "ar": "خمرة",
+        "en": "Khamrah"
+      },
+      "inspiredBy": "Lattafa",
+      "family": "حلو (جورماند)، شرقي عنبري",
+      "pyramid": {
+        "top": "القرفة، جوزة الطيب، البرغموت",
+        "heart": "التمر، البرالين، التوبيروز",
+        "base": "الفانيليا، التونكا، العنبر"
+      },
+      "notes": {
+        "sweet": 100,
+        "amber": 92,
+        "warm_spicy": 80,
+        "citrus": 68,
+        "fruity": 62,
+        "floral": 50,
+        "vanilla": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-23",
+      "code": "SWYR-23",
+      "category": "women",
+      "name": {
+        "ar": "سكاندال",
+        "en": "Scandal"
+      },
+      "inspiredBy": "Jean Paul Gaultier",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "البرتقال الدموي، اليوسفي",
+        "heart": "العسل، الجاردينيا",
+        "base": "الباتشولي، شمع العسل"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "citrus": 80,
+        "patchouli": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-24",
+      "code": "SWYR-24",
+      "category": "men",
+      "name": {
+        "ar": "إيروس",
+        "en": "Eros"
+      },
+      "inspiredBy": "Versace",
+      "family": "أروماتيك، حلو (جورماند)",
+      "pyramid": {
+        "top": "النعناع، التفاح الأخضر، الليمون",
+        "heart": "التونكا",
+        "base": "الفانيليا، خشب الأرز"
+      },
+      "notes": {
+        "aromatic": 100,
+        "sweet": 92,
+        "fresh": 80,
+        "fruity": 74,
+        "citrus": 68,
+        "vanilla": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-25",
+      "code": "SWYR-25",
+      "category": "men",
+      "name": {
+        "ar": "لاكوست بلاك",
+        "en": "Lacoste L.12.12 Noir"
+      },
+      "inspiredBy": "Lacoste",
+      "family": "أروماتيك، حلو (جورماند)",
+      "pyramid": {
+        "top": "البطيخ، الريحان",
+        "heart": "اللافندر، الفربينا",
+        "base": "الباتشولي، الكشميران، الكومارين، الشوكولاتة"
+      },
+      "notes": {
+        "aromatic": 100,
+        "sweet": 92,
+        "fruity": 80,
+        "lavender": 68,
+        "patchouli": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-26",
+      "code": "SWYR-26",
+      "category": "men",
+      "name": {
+        "ar": "لاكوست وايت",
+        "en": "Lacoste L.12.12 Blanc"
+      },
+      "inspiredBy": "Lacoste",
+      "family": "منعش ومائي، خشبي",
+      "pyramid": {
+        "top": "الجريب فروت، إكليل الجبل، الهيل",
+        "heart": "التوبيروز، اليلانج يلانج، خشب الأرز",
+        "base": "نجيل الهند، الجلد، الشامواه"
+      },
+      "notes": {
+        "fresh": 100,
+        "woody": 92,
+        "citrus": 80,
+        "aromatic": 74,
+        "warm_spicy": 68,
+        "floral": 62,
+        "leather": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-27",
+      "code": "SWYR-27",
+      "category": "men",
+      "name": {
+        "ar": "وان مليون",
+        "en": "1 Million"
+      },
+      "inspiredBy": "Rabanne (Paco Rabanne)",
+      "family": "شرقي عنبري، حلو (جورماند)",
+      "pyramid": {
+        "top": "اليوسفي الدموي، النعناع",
+        "heart": "القرفة، الورد",
+        "base": "الجلد، العنبر، الأخشاب"
+      },
+      "notes": {
+        "amber": 100,
+        "sweet": 92,
+        "citrus": 80,
+        "fresh": 74,
+        "warm_spicy": 68,
+        "rose": 62,
+        "leather": 56,
+        "woody": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-28",
+      "code": "SWYR-28",
+      "category": "men",
+      "name": {
+        "ar": "سترونجر ويذ يو",
+        "en": "Stronger With You"
+      },
+      "inspiredBy": "Emporio Armani",
+      "family": "حلو (جورماند)، شرقي عنبري",
+      "pyramid": {
+        "top": "الهيل، الفلفل الوردي",
+        "heart": "المريمية",
+        "base": "الكستناء، الفانيليا"
+      },
+      "notes": {
+        "sweet": 100,
+        "amber": 92,
+        "warm_spicy": 80,
+        "aromatic": 68,
+        "vanilla": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-29",
+      "code": "SWYR-29",
+      "category": "men",
+      "name": {
+        "ar": "سوفاج",
+        "en": "Sauvage"
+      },
+      "inspiredBy": "Dior",
+      "family": "أروماتيك، منعش ومائي",
+      "pyramid": {
+        "top": "البرغموت، الفلفل",
+        "heart": "اللافندر، الجيرانيوم",
+        "base": "الأمبروكسان، خشب الأرز"
+      },
+      "notes": {
+        "aromatic": 100,
+        "fresh": 92,
+        "citrus": 80,
+        "warm_spicy": 74,
+        "lavender": 68,
+        "floral": 62,
+        "amber": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-30",
+      "code": "SWYR-30",
+      "category": "men",
+      "name": {
+        "ar": "أكوا دي جيو",
+        "en": "Acqua di Giò"
+      },
+      "inspiredBy": "Giorgio Armani",
+      "family": "منعش ومائي، حمضي",
+      "pyramid": {
+        "top": "البرغموت، الليمون، النوتات البحرية",
+        "heart": "إكليل الجبل، الياسمين",
+        "base": "المسك الأبيض، الباتشولي"
+      },
+      "notes": {
+        "fresh": 100,
+        "citrus": 92,
+        "aquatic": 68,
+        "aromatic": 62,
+        "jasmine": 56,
+        "musk": 50,
+        "patchouli": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-31",
+      "code": "SWYR-31",
+      "category": "men",
+      "name": {
+        "ar": "إنفيكتوس فيكتوري",
+        "en": "Invictus Victory"
+      },
+      "inspiredBy": "Rabanne (Paco Rabanne)",
+      "family": "شرقي عنبري، أروماتيك",
+      "pyramid": {
+        "top": "الليمون، الفلفل الوردي",
+        "heart": "اللافندر",
+        "base": "الفانيليا، العنبر، التونكا"
+      },
+      "notes": {
+        "amber": 100,
+        "aromatic": 92,
+        "citrus": 80,
+        "warm_spicy": 74,
+        "lavender": 68,
+        "vanilla": 62,
+        "sweet": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-32",
+      "code": "SWYR-32",
+      "category": "women",
+      "name": {
+        "ar": "جود جيرل",
+        "en": "Good Girl"
+      },
+      "inspiredBy": "Carolina Herrera",
+      "family": "زهري، حلو (جورماند)",
+      "pyramid": {
+        "top": "اللوز، القهوة",
+        "heart": "مسك الروم، الياسمين",
+        "base": "الكاكاو، التونكا، الفانيليا"
+      },
+      "notes": {
+        "floral": 100,
+        "sweet": 92,
+        "coffee": 74,
+        "jasmine": 68,
+        "vanilla": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-33",
+      "code": "SWYR-33",
+      "category": "women",
+      "name": {
+        "ar": "باريس هيلتون",
+        "en": "Paris Hilton"
+      },
+      "inspiredBy": "Paris Hilton",
+      "family": "فاكهي، زهري",
+      "pyramid": {
+        "top": "الخوخ، التفاح، الشمام",
+        "heart": "الفريزيا، الياسمين",
+        "base": "المسك، خشب الصندل"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 92,
+        "jasmine": 56,
+        "musk": 50,
+        "woody": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-34",
+      "code": "SWYR-34",
+      "category": "women",
+      "name": {
+        "ar": "أنايس أنايس",
+        "en": "Anaïs Anaïs"
+      },
+      "inspiredBy": "Cacharel",
+      "family": "زهري",
+      "pyramid": {
+        "top": "زهر البرتقال، البرغموت",
+        "heart": "الزنبق، الياسمين",
+        "base": "المسك، خشب الصندل"
+      },
+      "notes": {
+        "floral": 100,
+        "citrus": 74,
+        "jasmine": 62,
+        "musk": 56,
+        "woody": 50
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-35",
+      "code": "SWYR-35",
+      "category": "men",
+      "name": {
+        "ar": "بي إم دبليو",
+        "en": "BMW"
+      },
+      "inspiredBy": "",
+      "family": "خشبي، منعش ومائي",
+      "pyramid": {
+        "top": "الحمضيات، النعناع",
+        "heart": "اللافندر، التوابل",
+        "base": "الأخشاب، المسك"
+      },
+      "notes": {
+        "woody": 100,
+        "fresh": 92,
+        "lavender": 74,
+        "warm_spicy": 68,
+        "musk": 56
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-36",
+      "code": "SWYR-36",
+      "category": "unisex",
+      "name": {
+        "ar": "عود شيخة",
+        "en": "Oud Sheikha"
+      },
+      "inspiredBy": "",
+      "family": "عود، شرقي عنبري",
+      "pyramid": {
+        "top": "الزعفران، الهيل، القرنفل",
+        "heart": "الورد الطائفي، العود",
+        "base": "العنبر، الجلد، المسك"
+      },
+      "notes": {
+        "oud": 100,
+        "amber": 92,
+        "warm_spicy": 80,
+        "rose": 62,
+        "leather": 44,
+        "musk": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-37",
+      "code": "SWYR-37",
+      "category": "unisex",
+      "name": {
+        "ar": "كيركي",
+        "en": "Kirke"
+      },
+      "inspiredBy": "Tiziana Terenzi",
+      "family": "فاكهي",
+      "pyramid": {
+        "top": "الباشن فروت، الخوخ، التوت",
+        "heart": "زنبق الوادي",
+        "base": "المسك، الهليوتروب، خشب الصندل، الفانيليا، الباتشولي"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 62,
+        "musk": 56,
+        "woody": 44,
+        "vanilla": 38,
+        "patchouli": 36
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-38",
+      "code": "SWYR-38",
+      "category": "unisex",
+      "name": {
+        "ar": "إربا بورا",
+        "en": "Erba Pura"
+      },
+      "inspiredBy": "Xerjoff",
+      "family": "فاكهي، حمضي",
+      "pyramid": {
+        "top": "البرتقال الصقلي، البرغموت، الليمون الصقلي",
+        "heart": "الفواكه",
+        "base": "المسك الأبيض، فانيليا مدغشقر، العنبر"
+      },
+      "notes": {
+        "fruity": 100,
+        "citrus": 92,
+        "musk": 56,
+        "vanilla": 50,
+        "amber": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-39",
+      "code": "SWYR-39",
+      "category": "unisex",
+      "name": {
+        "ar": "صقر الجزيرة",
+        "en": "Saqr Al Jazeera"
+      },
+      "inspiredBy": "",
+      "family": "زهري، شرقي عنبري",
+      "pyramid": {
+        "top": "البرغموت، الفلفل الوردي",
+        "heart": "الورد، الياسمين، زهر البرتقال",
+        "base": "المسك، العنبر، خشب الصندل"
+      },
+      "notes": {
+        "floral": 100,
+        "amber": 92,
+        "citrus": 80,
+        "warm_spicy": 74,
+        "rose": 68,
+        "jasmine": 62,
+        "musk": 50,
+        "woody": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-40",
+      "code": "SWYR-40",
+      "category": "women",
+      "name": {
+        "ar": "روبرتو كافالي",
+        "en": "Roberto Cavalli"
+      },
+      "inspiredBy": "Roberto Cavalli",
+      "family": "شرقي عنبري، زهري",
+      "pyramid": {
+        "top": "الفلفل الوردي",
+        "heart": "زهر البرتقال",
+        "base": "البنزوين، الفانيليا، التونكا"
+      },
+      "notes": {
+        "amber": 100,
+        "floral": 92,
+        "warm_spicy": 80,
+        "sweet": 68,
+        "vanilla": 62
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-41",
+      "code": "SWYR-41",
+      "category": "women",
+      "name": {
+        "ar": "ديلينا",
+        "en": "Delina"
+      },
+      "inspiredBy": "Parfums de Marly",
+      "family": "زهري، فاكهي",
+      "pyramid": {
+        "top": "الليتشي، الراوند، البرغموت، جوزة الطيب",
+        "heart": "الورد التركي، الفاوانيا",
+        "base": "الفانيليا، الكشميران، المسك، البخور"
+      },
+      "notes": {
+        "floral": 100,
+        "fruity": 92,
+        "citrus": 74,
+        "warm_spicy": 68,
+        "rose": 62,
+        "vanilla": 50,
+        "woody": 44,
+        "musk": 38,
+        "oriental": 36
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-42",
+      "code": "SWYR-42",
+      "category": "women",
+      "name": {
+        "ar": "شانس أو تندر",
+        "en": "Chance Eau Tendre"
+      },
+      "inspiredBy": "Chanel",
+      "family": "زهري، منعش ومائي",
+      "pyramid": {
+        "top": "السفرجل، الجريب فروت",
+        "heart": "الياسنت، الياسمين",
+        "base": "المسك الأبيض، السوسن، خشب الأرز، العنبر"
+      },
+      "notes": {
+        "floral": 100,
+        "fresh": 92,
+        "fruity": 80,
+        "citrus": 74,
+        "jasmine": 62,
+        "musk": 56,
+        "iris": 50,
+        "woody": 44,
+        "amber": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-43",
+      "code": "SWYR-43",
+      "category": "women",
+      "name": {
+        "ar": "يارا",
+        "en": "Yara"
+      },
+      "inspiredBy": "Lattafa",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "الأوركيد، الهليوتروب، اليوسفي",
+        "heart": "نوتات حلوة، فواكه استوائية",
+        "base": "الفانيليا، المسك، خشب الصندل"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "citrus": 68,
+        "fruity": 56,
+        "vanilla": 50,
+        "musk": 44,
+        "woody": 38
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-44",
+      "code": "SWYR-44",
+      "category": "men",
+      "name": {
+        "ar": "ألترا ميل",
+        "en": "Ultra Male"
+      },
+      "inspiredBy": "Jean Paul Gaultier",
+      "family": "حلو (جورماند)، أروماتيك",
+      "pyramid": {
+        "top": "الكمثرى، اللافندر، النعناع، البرغموت",
+        "heart": "القرفة، المريمية، الكراوية",
+        "base": "الفانيليا السوداء، العنبر، الباتشولي، خشب الأرز"
+      },
+      "notes": {
+        "sweet": 100,
+        "aromatic": 92,
+        "fruity": 80,
+        "lavender": 74,
+        "fresh": 68,
+        "citrus": 62,
+        "warm_spicy": 56,
+        "vanilla": 38,
+        "amber": 36
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-45",
+      "code": "SWYR-45",
+      "category": "men",
+      "name": {
+        "ar": "سيلفر سنت",
+        "en": "Silver Scent"
+      },
+      "inspiredBy": "Jacques Bogart",
+      "family": "أروماتيك، خشبي",
+      "pyramid": {
+        "top": "زهر البرتقال، الليمون",
+        "heart": "اللافندر، الهيل، جوزة الطيب، إكليل الجبل",
+        "base": "التونكا، خشب الساج، نجيل الهند"
+      },
+      "notes": {
+        "aromatic": 100,
+        "woody": 92,
+        "floral": 80,
+        "citrus": 74,
+        "lavender": 68,
+        "warm_spicy": 62,
+        "sweet": 44
+      },
+      "sizes": "perfume"
+    },
+    {
+      "id": "swyr-46",
+      "code": "SWYR-46",
+      "category": "hair",
+      "name": {
+        "ar": "عطر شعر بلاك أوبيوم",
+        "en": "Black Opium Hair Mist"
+      },
+      "inspiredBy": "Yves Saint Laurent",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "الكمثرى، الفلفل الوردي",
+        "heart": "القهوة، الياسمين",
+        "base": "الفانيليا، المسك"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "fruity": 80,
+        "warm_spicy": 74,
+        "coffee": 68,
+        "jasmine": 62,
+        "vanilla": 56,
+        "musk": 50
+      },
+      "sizes": "hairMist"
+    },
+    {
+      "id": "swyr-47",
+      "code": "SWYR-47",
+      "category": "hair",
+      "name": {
+        "ar": "عطر شعر بربري هير",
+        "en": "Burberry Her Hair Mist"
+      },
+      "inspiredBy": "Burberry",
+      "family": "فاكهي، زهري",
+      "pyramid": {
+        "top": "الفراولة، التوت",
+        "heart": "الياسمين، البنفسج",
+        "base": "المسك، الفانيليا"
+      },
+      "notes": {
+        "fruity": 100,
+        "floral": 92,
+        "jasmine": 68,
+        "musk": 56,
+        "vanilla": 50
+      },
+      "sizes": "hairMist"
+    },
+    {
+      "id": "swyr-48",
+      "code": "SWYR-48",
+      "category": "gifts",
+      "name": {
+        "ar": "بوكس هدايا بلاك أوبيوم",
+        "en": "Black Opium Gift Set"
+      },
+      "inspiredBy": "Yves Saint Laurent",
+      "family": "حلو (جورماند)، زهري",
+      "pyramid": {
+        "top": "الكمثرى، الفلفل الوردي",
+        "heart": "القهوة، الياسمين",
+        "base": "الفانيليا، الباتشولي"
+      },
+      "notes": {
+        "sweet": 100,
+        "floral": 92,
+        "fruity": 80,
+        "warm_spicy": 74,
+        "coffee": 68,
+        "jasmine": 62,
+        "vanilla": 56,
+        "patchouli": 50
+      },
+      "sizes": "giftSet"
+    }
+  ],
+  "offers": [
+    {
+      "title": {
+        "ar": "شحن مجاني",
+        "en": "Free shipping"
+      },
+      "text": {
+        "ar": "على أي طلب فوق ١٠٠٠ ج.م لكل المحافظات.",
+        "en": "On every order over 1,000 EGP, nationwide."
+      }
+    },
+    {
+      "title": {
+        "ar": "خصم ١٠٪ على أول طلب",
+        "en": "10% off your first order"
+      },
+      "text": {
+        "ar": "اكتبي الكود في صفحة الطلب.",
+        "en": "Enter the code at checkout."
+      },
+      "code": "SWYR10"
+    },
+    {
+      "title": {
+        "ar": "بوكس هدايا بلاك أوبيوم",
+        "en": "Black Opium gift set"
+      },
+      "text": {
+        "ar": "عطر + عطر شعر في بوكس جاهز للإهداء.",
+        "en": "Perfume + hair mist in a ready-to-gift box."
+      },
+      "product": "swyr-48"
+    }
+  ],
+  "priceList": {
+    "_todo": "الأسعار هنا تجريبية — اكتبي أسعارك الحقيقية. كل العطور بتاخد أسعار perfume، وعطر الشعر سعره زي الـ 30 مل.",
+    "perfume": [
+      {
+        "ml": 10,
+        "price": 150
+      },
+      {
+        "ml": 30,
+        "price": 300
+      },
+      {
+        "ml": 50,
+        "price": 450
+      },
+      {
+        "ml": 100,
+        "price": 700
+      }
+    ],
+    "hairMist": [
+      {
+        "ml": 100,
+        "price": 300
+      }
+    ],
+    "giftSet": [
+      {
+        "ml": 0,
+        "price": 750,
+        "label": {
+          "ar": "عطر + عطر شعر",
+          "en": "Perfume + hair mist"
+        }
+      }
+    ]
+  }
+}
