@@ -215,7 +215,7 @@ input[type=tel],input[dir=ltr]{text-align:left}
 /* footer */
 .footer{background:var(--grad-soft);border-top:1px solid var(--line);padding:56px 0 28px;margin-top:20px}
 .footer__in{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
-.footer__brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.footer__brand{display:flex;flex-direction:column;align-items:center;gap:10px}
 .footer__tag{margin:6px 0 0;color:var(--muted);font-size:.88rem}
 .footer__links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:.95rem}
 .footer__links a{text-decoration:none;border-bottom:1px solid rgba(106,80,78,.3);padding-bottom:2px}
@@ -436,3 +436,46 @@ input[type=tel],input[dir=ltr]{text-align:left}
 .pd__buy .btn{min-width:0;white-space:normal;line-height:1.2}
 @media (max-width:900px){.pdialog__in{grid-template-columns:1fr}.pd__media{aspect-ratio:auto;height:34vh;max-height:none}}
 @media (min-width:901px){.pd__media{aspect-ratio:auto;min-height:440px;height:100%}.pd__media .art{position:absolute;inset:0}}
+
+
+
+/* ***** */
+
+
+::selection {
+background-color: #6a504e;
+color: #FFF9F5;
+}
+
+::-moz-selection {
+background-color: #6a504e;
+color: #FFF9F5;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #FFF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+background: #6a504e;
+border-radius: 5px;
+border: 2px solid #FFF9F5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #6a504e;
+}
+
+html {
+scrollbar-color: #6a504e #FFF9F5;
+scrollbar-width: thin !important;
+}
+
+
+/* ****** */
+
