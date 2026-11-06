@@ -1,5 +1,6 @@
 {
-  "buildCommand": "node scripts/check.js",
+  "buildCommand": "node scripts/check.js && node scripts/build.js",
+  "outputDirectory": "public",
   "headers": [
     {
       "source": "/img/(.*)",

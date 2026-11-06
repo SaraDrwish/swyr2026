@@ -6,67 +6,70 @@
   /* ---------------- text ---------------- */
   const T = {
     ar: {
-      skip: "انتقلي للعطور",
-      "nav.shop": "العطور", "nav.offers": "العروض", "nav.gifts": "هدايا وطلبات خاصة", "nav.faq": "أسئلة شائعة",
+      skip: "انتقل إلى العطور",
+      "nav.shop": "العطور", "nav.offers": "العروض", "nav.gifts": "الهدايا والطلبات الخاصة", "nav.faq": "الأسئلة الشائعة",
       "hero.title": "نسمة من<br>الفخامة النقية",
-      "hero.lead": "عطور مركّزة بثبات يدوم، بتتعبّى بإيدينا بعناية — من ١٠ مل للتجربة لحد ١٠٠ مل للي لقت عطرها.",
-      "hero.shop": "تسوّقي العطور", "hero.finder": "اكتشفي عطرك",
-      "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لكل المحافظات", "promise.last": "ثبات من ٨ لـ ١٢ ساعة",
-      "offers.title": "العروض الحالية", "offer.copy": "انسخي الكود", "offer.copied": "اتنسخ الكود", "offer.shop": "اطلبيه",
+      "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من ١٠ مل للتجربة حتى ١٠٠ مل لمن وجد عطره.",
+      "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك",
+      "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من ٨ إلى ١٢ ساعة",
+      "offers.title": "العروض الحالية", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
       "col.title": "عطور سوير",
-      "finder.title": "اكتشفي عطرك", "finder.text": "اختاري النوتات اللي بتحبيها، وهنرتّب لك العطور حسب قربها من ذوقك.", "finder.reset": "مسح الاختيارات",
-      "finder.match": "يناسب ذوقك {n}٪",
+      "finder.title": "اكتشف عطرك", "finder.text": "اختر النوتات التي تفضّلها، وسنرتّب لك العطور حسب قربها من ذوقك.", "finder.reset": "مسح الاختيارات",
+      "finder.match": "يناسب ذوقك بنسبة {n}٪",
       "tab.all": "الكل",
-      "search": "دوّري على عطر… مثلًا: بلاك أوبيوم، فانيلا، Dior", "more": "عرض المزيد ({n})", "results": "{n} عطر",
+      "search": "ابحث عن عطر… مثلًا: بلاك أوبيوم، فانيلا، Dior", "more": "عرض المزيد ({n})", "results": "{n} عطر",
       "pyr.top": "الافتتاحية", "pyr.heart": "القلب", "pyr.base": "القاعدة",
-      "disclaimer": "عطور سوير تركيبات خاصة مستوحاة من روائح عالمية. أسماء الماركات المذكورة ملك لأصحابها، ومذكورة للتعريف بطابع الريحة بس، وسوير مش تابعة لأي منها.",
-      "card.add": "أضيفي للسلة", "card.added": "اتضافت", "card.details": "التفاصيل",
-      "empty": "مفيش منتجات بالاختيار ده.",
-      "sizes.title": "كل حجم وله وقته",
-      "sizes.10": "للشنطة وللتجربة الأولى", "sizes.30": "للسفر وللاستخدام الخفيف", "sizes.50": "الحجم المثالي للاستخدام اليومي", "sizes.100": "لعطرك المفضل — أوفر في السعر",
-      "gifts.title": "هدايا وطلبات خاصة",
-      "gifts.text": "توزيعات أفراح وخطوبة، هدايا شركات، بوكسات باسم صاحبة الهدية، أو كميات بالجملة. ابعتي تفاصيل طلبك وهنرد عليكي بعرض سعر خلال يوم.",
-      "rq.type": "نوع الطلب", "rq.qty": "الكمية التقريبية", "rq.date": "محتاجاه إمتى؟", "rq.budget": "الميزانية للقطعة (اختياري)",
-      "rq.details": "التفاصيل", "rq.detailsPh": "مثلًا: ٥٠ زجاجة ١٠ مل بكارت عليه اسم العروسة", "rq.send": "ابعتي الطلب",
-      "rq.types": ["هدية لحد مميز", "توزيعات فرح أو خطوبة", "هدايا شركات", "جملة / إعادة بيع", "طلب تاني"],
-      "faq.title": "أسئلة شائعة",
+      "disclaimer": "عطور سوير تركيبات خاصة مستوحاة من روائح عالمية. أسماء العلامات التجارية المذكورة مملوكة لأصحابها، وتُذكر للتعريف بطابع الرائحة فقط، ولا تتبع سوير أيًّا منها.",
+      "card.add": "أضف إلى السلة", "card.added": "تمت الإضافة", "card.details": "التفاصيل",
+      "empty": "لا توجد منتجات تطابق اختيارك.",
+      "sizes.title": "لكل حجم وقته",
+      "sizes.10": "للحقيبة وللتجربة الأولى", "sizes.30": "للسفر وللاستخدام الخفيف", "sizes.50": "الحجم المثالي للاستخدام اليومي", "sizes.100": "لعطرك المفضّل — الأوفر سعرًا",
+      "gifts.title": "الهدايا والطلبات الخاصة",
+      "gifts.text": "توزيعات الأفراح والخطوبة، وهدايا الشركات، وبوكسات باسم صاحب الهدية، والكميات بالجملة. أرسل تفاصيل طلبك وسنرد عليك بعرض سعر خلال يوم.",
+      "rq.type": "نوع الطلب", "rq.qty": "الكمية التقريبية", "rq.date": "الموعد المطلوب", "rq.budget": "الميزانية للقطعة (اختياري)",
+      "rq.details": "التفاصيل", "rq.detailsPh": "مثلًا: ٥٠ زجاجة ١٠ مل مع بطاقة تحمل اسم العروسين", "rq.send": "أرسل الطلب",
+      "rq.types": ["هدية لشخص مميز", "توزيعات فرح أو خطوبة", "هدايا شركات", "جملة / إعادة بيع", "طلب آخر"],
+      "faq.title": "الأسئلة الشائعة",
       faq: [
-        ["الطلب بيوصل إمتى؟", "القاهرة والجيزة من يوم لـ ٣ أيام، وباقي المحافظات من ٣ لـ ٥ أيام عمل. هنبعتلك رسالة أول ما الطلب يخرج."],
-        ["إزاي أدفع؟", "عند الاستلام كاش، أو تحويل إنستاباي أو محفظة إلكترونية قبل الشحن، أو بالفيزا أونلاين لو الاختيار متاح في صفحة الطلب."],
-        ["العطر ثباته قد إيه؟", "عطورنا مركّزة، وثباتها من ٨ لـ ١٢ ساعة على البشرة وأكتر على الهدوم — وده بيختلف شوية حسب طبيعة البشرة."],
-        ["مش متأكدة أختار إيه؟", "ابدئي بمجموعة الاكتشاف أو بحجم ١٠ مل، أو استخدمي «اكتشفي عطرك» فوق. وممكن تبعتيلنا على الإنستجرام ونساعدك."],
-        ["ينفع أستبدل؟", "لو المنتج وصل فيه أي مشكلة بنستبدله فورًا. وعشان العطور منتج شخصي، الاستبدال بيكون على الزجاجات المقفولة خلال ٣ أيام من الاستلام."]
+        ["متى يصل الطلب؟", "القاهرة والجيزة خلال يوم إلى ٣ أيام، وباقي المحافظات خلال ٣ إلى ٥ أيام عمل. سنتواصل معك فور خروج الطلب للشحن."],
+        ["كيف أدفع؟", "نقدًا عند الاستلام، أو بتحويل إنستاباي أو محفظة إلكترونية قبل الشحن، أو بالبطاقة أونلاين إذا كان الخيار متاحًا في صفحة الطلب."],
+        ["ما مدة ثبات العطر؟", "عطورنا مركّزة، ويدوم ثباتها من ٨ إلى ١٢ ساعة على البشرة وأكثر على الملابس، ويختلف ذلك قليلًا حسب طبيعة البشرة."],
+        ["لست متأكدًا مما أختار؟", "ابدأ بحجم ١٠ مل، أو استخدم «اكتشف عطرك» في الأعلى، أو راسلنا على إنستجرام وسنساعدك في الاختيار."],
+        ["هل يمكنني الاستبدال؟", "إذا وصل المنتج وبه أي مشكلة نستبدله فورًا. ولأن العطور منتج شخصي، يكون الاستبدال على الزجاجات المغلقة خلال ٣ أيام من الاستلام."]
       ],
-      "cart.title": "السلة", "cart.checkout": "إتمام الطلب", "cart.continue": "كمّلي تسوّق",
-      "cart.empty": "السلة لسه فاضية.", "cart.browse": "تصفّحي العطور", "cart.remove": "إزالة",
-      "cart.items": "{n} منتجات", "cart.item1": "منتج واحد", "cart.item2": "منتجين",
-      "ship.free": "مبروك! الشحن عليكي مجانًا.", "ship.left": "فاضل {x} وتاخدي شحن مجاني.",
-      "step.cart": "السلة", "step.details": "البيانات", "step.done": "تأكيد",
-      "t.saved": "وفّرتي", "t.sub": "المجموع", "t.dis": "خصم", "t.ship": "الشحن", "t.shipPick": "حسب المحافظة", "t.free": "مجاني", "t.total": "الإجمالي",
-      "co.title": "بيانات التوصيل", "co.edit": "تعديل", "co.back": "رجوع للسلة",
-      "f.name": "الاسم", "f.phone": "رقم الموبايل", "f.phone2": "رقم تاني (اختياري)", "f.gov": "المحافظة", "f.govPick": "اختاري المحافظة",
+      "cart.title": "السلة", "cart.checkout": "إتمام الطلب", "cart.continue": "متابعة التسوّق",
+      "cart.empty": "السلة فارغة.", "cart.browse": "تصفّح العطور", "cart.remove": "إزالة",
+      "cart.items": "{n} منتجات", "cart.item1": "منتج واحد", "cart.item2": "منتجان",
+      "ship.free": "رائع! الشحن مجاني لطلبك.", "ship.left": "أضف {x} لتحصل على شحن مجاني.",
+      "step.cart": "السلة", "step.details": "البيانات", "step.done": "التأكيد",
+      "t.saved": "وفّرت", "t.sub": "المجموع", "t.dis": "خصم", "t.ship": "الشحن", "t.shipPick": "حسب المحافظة", "t.free": "مجاني", "t.total": "الإجمالي",
+      "co.title": "بيانات التوصيل", "co.edit": "تعديل", "co.back": "العودة إلى السلة",
+      "f.name": "الاسم", "f.phone": "رقم الموبايل", "f.phone2": "رقم آخر (اختياري)", "f.gov": "المحافظة", "f.govPick": "اختر المحافظة",
       "f.area": "المنطقة / المدينة", "f.address": "العنوان بالتفصيل", "f.addressPh": "الشارع، رقم العمارة، الدور، علامة مميزة",
-      "f.notes": "ملاحظات (اختياري)", "f.notesPh": "مثلًا: أسماء العينات في مجموعة الاكتشاف، أو مواعيد مناسبة للتوصيل",
-      "f.email": "الإيميل (لإيصال الدفع)", "f.coupon": "كود خصم", "f.apply": "تطبيق",
-      "f.remember": "احفظي بياناتي للمرة الجاية",
+      "f.notes": "ملاحظات (اختياري)", "f.notesPh": "مثلًا: موعد مناسب للتوصيل",
+      "f.email": "البريد الإلكتروني (لإيصال الدفع)", "f.coupon": "كود الخصم", "f.apply": "تطبيق",
+      "f.remember": "احفظ بياناتي للمرة القادمة",
       "pay.title": "طريقة الدفع",
-      "pay.cod": "الدفع عند الاستلام", "pay.codNote": "كاش للمندوب وقت الاستلام.",
-      "pay.transfer": "إنستاباي أو محفظة", "pay.transferNote": "حوّلي الإجمالي وابعتي صورة التحويل في نفس المحادثة مع رسالة الطلب.",
-      "pay.card": "فيزا / ماستركارد أونلاين", "pay.cardNote": "دفع آمن من خلال Paymob. هتتحولي لصفحة الدفع وترجعي هنا.",
-      "co.send": "تأكيد الطلب", "co.pay": "ادفعي {x} بأمان", "co.paying": "جاري تحويلك لصفحة الدفع…",
-      "err.name": "اكتبي الاسم", "err.phone": "اكتبي رقم موبايل مصري صحيح (١١ رقم يبدأ بـ 01)", "err.gov": "اختاري المحافظة",
-      "err.address": "اكتبي العنوان بالتفصيل", "err.area": "اكتبي المنطقة", "err.email": "اكتبي إيميل صحيح",
-      "err.coupon": "الكود ده مش صحيح", "ok.coupon": "تم تطبيق الكود", "err.pay": "معرفناش نفتح صفحة الدفع دلوقتي. جرّبي تاني أو اختاري الدفع عند الاستلام.",
-      "err.form": "راجعي البيانات اللي باللون الأحمر.", "err.rq": "اكتبي الاسم ورقم موبايل صحيح.",
-      "done.title": "خطوة أخيرة: ابعتيلنا طلبك", "done.text": "نسخنا رسالة طلبك. اختاري إنستجرام أو ماسنجر، وفي خانة الكتابة اضغطي مطوّلًا واختاري «لصق»، وبعدين ابعتيها. الطلب بيتأكد أول ما الرسالة توصلنا.",
-      "done.close": "رجوع للموقع", "done.num": "رقم الطلب",
-      "done.paidTitle": "تم الدفع بنجاح", "done.paidText": "شكرًا! فاضل خطوة واحدة: ابعتيلنا رسالة الطلب (اتنسخت خلاص) على إنستجرام أو ماسنجر عشان نبدأ التجهيز.",
-      "send.ig": "ابعتيها على إنستجرام", "send.ms": "ابعتيها على ماسنجر", "send.wa": "ابعتيها على واتساب",
-      "send.copy": "انسخي الرسالة تاني", "send.copied": "اتنسخت — الصقيها في الشات", "send.show": "عرض الرسالة",
-      "rq.title": "خطوة أخيرة: ابعتيلنا طلبك", "rq.text": "نسخنا تفاصيل طلبك. افتحي الشات، والصقي الرسالة وابعتيها، وهنرد عليكي بعرض سعر.",
-      "done.failTitle": "الدفع ما اكتملش", "done.failText": "متقلقيش، مفيش أي مبلغ اتخصم. تقدري تجرّبي تاني أو تختاري الدفع عند الاستلام.", "done.retry": "رجوع للطلب",
-      "toast.added": "اتضاف «{n}» للسلة",
-      "pd.notes": "مزاج العطر", "pd.size": "الحجم",
+      "pay.cod": "الدفع عند الاستلام", "pay.codNote": "نقدًا للمندوب عند الاستلام.",
+      "pay.transfer": "إنستاباي أو محفظة إلكترونية", "pay.transferNote": "حوّل الإجمالي، وسنتواصل معك لاستلام صورة التحويل.",
+      "pay.card": "فيزا / ماستركارد أونلاين", "pay.cardNote": "دفع آمن عبر Paymob. ستنتقل إلى صفحة الدفع ثم تعود إلى هنا.",
+      "co.send": "تأكيد الطلب", "co.sending": "جارٍ إرسال الطلب…", "co.pay": "ادفع {x} بأمان", "co.paying": "جارٍ تحويلك إلى صفحة الدفع…",
+      "err.name": "اكتب الاسم", "err.phone": "اكتب رقم موبايل مصريًا صحيحًا (١١ رقمًا يبدأ بـ 01)", "err.gov": "اختر المحافظة",
+      "err.address": "اكتب العنوان بالتفصيل", "err.area": "اكتب المنطقة", "err.email": "اكتب بريدًا إلكترونيًا صحيحًا",
+      "err.coupon": "هذا الكود غير صحيح", "ok.coupon": "تم تطبيق الكود", "err.pay": "تعذّر فتح صفحة الدفع الآن. حاول مرة أخرى أو اختر الدفع عند الاستلام.",
+      "err.form": "راجع البيانات المظلّلة باللون الأحمر.", "err.rq": "اكتب الاسم ورقم موبايل صحيحًا.",
+      "ok.title": "تم استلام طلبك", "ok.text": "شكرًا لك! وصلنا طلبك، وسنتواصل معك على رقم الموبايل لتأكيده قبل الشحن.",
+      "ok.dm": "لتأكيد أسرع، يمكنك مراسلتنا أيضًا:",
+      "ok.rqTitle": "تم استلام طلبك الخاص", "ok.rqText": "شكرًا لك! سنتواصل معك خلال يوم بعرض سعر.",
+      "done.title": "خطوة أخيرة: أرسل لنا طلبك", "done.text": "نسخنا رسالة طلبك. اختر إنستجرام أو ماسنجر، ثم اضغط مطوّلًا في خانة الكتابة واختر «لصق» وأرسلها. يُؤكَّد الطلب فور وصول الرسالة إلينا.",
+      "done.close": "العودة إلى الموقع", "done.num": "رقم الطلب",
+      "done.paidTitle": "تم الدفع بنجاح", "done.paidText": "شكرًا لك! وصلنا طلبك ودفعتك، وسنتواصل معك لتأكيد موعد التوصيل.",
+      "send.ig": "راسلنا على إنستجرام", "send.ms": "راسلنا على ماسنجر", "send.wa": "راسلنا على واتساب",
+      "send.copy": "انسخ الرسالة مرة أخرى", "send.copied": "تم النسخ — الصقها في المحادثة", "send.show": "عرض الرسالة",
+      "rq.title": "خطوة أخيرة: أرسل لنا طلبك", "rq.text": "نسخنا تفاصيل طلبك. افتح المحادثة، والصق الرسالة وأرسلها، وسنرد عليك بعرض سعر.",
+      "done.failTitle": "لم تكتمل عملية الدفع", "done.failText": "لا تقلق، لم يُخصم أي مبلغ. يمكنك المحاولة مرة أخرى أو اختيار الدفع عند الاستلام.", "done.retry": "العودة إلى الطلب",
+      "toast.added": "تمت إضافة «{n}» إلى السلة",
+      "pd.notes": "طابع العطر", "pd.size": "الحجم",
       "ml": "مل"
     },
     en: {
@@ -98,7 +101,7 @@
         ["When will my order arrive?", "Cairo and Giza in 1–3 days, other governorates in 3–5 working days. We’ll message you once it ships."],
         ["How can I pay?", "Cash on delivery, InstaPay or mobile wallet transfer before shipping, or card online when it’s available at checkout."],
         ["How long does it last?", "Our perfumes are concentrated: 8–12 hours on skin and longer on clothes, depending on your skin."],
-        ["Not sure what to pick?", "Start with the Discovery Set or a 10 ml, use “Find your scent” above, or message us on Instagram."],
+        ["Not sure what to pick?", "Start with a 10 ml, use “Find your scent” above, or message us on Instagram."],
         ["Can I exchange?", "Anything that arrives damaged is replaced right away. Sealed bottles can be exchanged within 3 days of delivery."]
       ],
       "cart.title": "Bag", "cart.checkout": "Checkout", "cart.continue": "Keep shopping",
@@ -110,22 +113,25 @@
       "co.title": "Delivery details", "co.edit": "Edit", "co.back": "Back to bag",
       "f.name": "Full name", "f.phone": "Mobile number", "f.phone2": "Second number (optional)", "f.gov": "Governorate", "f.govPick": "Choose governorate",
       "f.area": "Area / city", "f.address": "Full address", "f.addressPh": "Street, building, floor, landmark",
-      "f.notes": "Notes (optional)", "f.notesPh": "e.g. your Discovery Set picks, or a good delivery time",
+      "f.notes": "Notes (optional)", "f.notesPh": "e.g. a good delivery time",
       "f.email": "Email (for your receipt)", "f.coupon": "Promo code", "f.apply": "Apply",
       "f.remember": "Remember my details",
       "pay.title": "Payment",
       "pay.cod": "Cash on delivery", "pay.codNote": "Pay the courier when it arrives.",
-      "pay.transfer": "InstaPay or wallet", "pay.transferNote": "Transfer the total and send the receipt in the same chat as your order.",
+      "pay.transfer": "InstaPay or wallet", "pay.transferNote": "Transfer the total and we’ll contact you to receive the transfer screenshot.",
       "pay.card": "Card online (Visa / Mastercard)", "pay.cardNote": "Secure payment via Paymob. You’ll come back here after paying.",
-      "co.send": "Confirm order", "co.pay": "Pay {x} securely", "co.paying": "Taking you to secure payment…",
+      "co.send": "Confirm order", "co.sending": "Sending your order…", "co.pay": "Pay {x} securely", "co.paying": "Taking you to secure payment…",
       "err.name": "Enter your name", "err.phone": "Enter a valid Egyptian mobile (11 digits, starts with 01)", "err.gov": "Choose a governorate",
       "err.address": "Enter your full address", "err.area": "Enter your area", "err.email": "Enter a valid email",
       "err.coupon": "That code isn’t valid", "ok.coupon": "Code applied", "err.pay": "We couldn’t open the payment page. Try again or choose cash on delivery.",
       "err.form": "Please check the fields in red.", "err.rq": "Enter your name and a valid mobile number.",
       "done.title": "Last step: send us your order", "done.text": "We copied your order message. Choose Instagram or Messenger, long-press the message box, tap Paste and send. Your order is confirmed once it reaches us.",
       "done.close": "Back to the shop", "done.num": "Order number",
-      "done.paidTitle": "Payment successful", "done.paidText": "Thank you! One last step: send us your order message (already copied) on Instagram or Messenger so we can start preparing it.",
-      "send.ig": "Send on Instagram", "send.ms": "Send on Messenger", "send.wa": "Send on WhatsApp",
+      "ok.title": "Order received", "ok.text": "Thank you! We’ve received your order and will call you on your mobile to confirm it before shipping.",
+      "ok.dm": "For a faster confirmation, you can also message us:",
+      "ok.rqTitle": "Request received", "ok.rqText": "Thank you! We’ll get back to you with a quote within a day.",
+      "done.paidTitle": "Payment successful", "done.paidText": "Thank you! We’ve received your order and payment, and will contact you to arrange delivery.",
+      "send.ig": "Message us on Instagram", "send.ms": "Message us on Messenger", "send.wa": "Message us on WhatsApp",
       "send.copy": "Copy the message again", "send.copied": "Copied — paste it in the chat", "send.show": "Show message",
       "rq.title": "Last step: send us your request", "rq.text": "We copied your request. Open the chat, paste the message and send it — we’ll reply with a quote.",
       "done.failTitle": "Payment not completed", "done.failText": "Don’t worry, nothing was charged. Try again or choose cash on delivery.", "done.retry": "Back to checkout",
@@ -161,6 +167,8 @@
   let form = store.get("swyr_customer", {});
   let view = "cart";
   let onlinePay = false;
+  let ordersOn = false;      // true when /api/order is connected to the Google Sheet
+  let configReady = null;    // promise for /api/config
   let lastOrder = null;
   const sel = {};                  // selected size per product
   const filt = { cat: "all", notes: new Set(), q: "" };
@@ -538,12 +546,12 @@
     dr.classList.remove("is-open"); dr.setAttribute("aria-hidden", "true");
     sc.classList.remove("is-on"); setTimeout(() => { sc.hidden = true; }, 250);
     document.body.style.overflow = "";
-    if (["done", "paid", "failed", "request"].includes(view)) view = "cart";
+    if (["done", "paid", "failed", "request", "received", "rqReceived"].includes(view)) view = "cart";
     lastFocus && lastFocus.focus && lastFocus.focus();
   }
  
   function renderSteps() {
-    const map = { cart: 0, checkout: 1, done: 2, paid: 2, failed: 1, request: 2 };
+    const map = { cart: 0, checkout: 1, done: 2, paid: 2, failed: 1, request: 2, received: 2, rqReceived: 2 };
     $$("#steps span").forEach((s, i) => s.classList.toggle("is-on", i <= map[view]));
   }
  
@@ -640,6 +648,20 @@
       return;
     }
  
+    if (view === "received" || view === "rqReceived") {
+      const rq = view === "rqReceived", m = lastOrder || { text: "" };
+      $("#drawerTitle").textContent = t("step.done");
+      $("#steps").style.display = rq ? "none" : "";
+      body.innerHTML = `<div class="done">
+        <div class="done__disc"><span class="brand__mark"></span></div>
+        <h3>${rq ? t("ok.rqTitle") : t("ok.title")}</h3>
+        <p>${rq ? t("ok.rqText") : t("ok.text")}</p>
+        ${m.id ? `<div><small>${t("done.num")}</small><br><span class="done__id">${esc(m.id)}</span></div>` : ""}
+        ${channelButtons() ? `<p class="done__dm">${t("ok.dm")}</p><div class="send send--soft">${channelButtons()}</div>` : ""}
+      </div>`;
+      foot.innerHTML = `<button class="btn btn--dark btn--block" type="button" data-closeall>${t("done.close")}</button>`;
+      return;
+    }
     if (view === "done" || view === "paid" || view === "request") {
       const paid = view === "paid", rq = view === "request";
       const m = lastOrder || { text: "" };
@@ -748,7 +770,7 @@
       line,
       `الاسم: ${f.name}`,
       `الموبايل: ${normPhone(f.phone)}`,
-      f.phone2 ? `رقم تاني: ${normPhone(f.phone2) || f.phone2}` : null,
+      f.phone2 ? `رقم آخر: ${normPhone(f.phone2) || f.phone2}` : null,
       `المحافظة: ${tt.gov ? tt.gov.ar : ""}`,
       `المنطقة: ${f.area}`,
       `العنوان: ${f.address}`,
@@ -792,11 +814,30 @@
  
     const text = orderMessage(id, tt, form);
     lastOrder = { id, text };
+    btn.disabled = true; btn.textContent = t("co.sending");
+    const saved = await postOrder(orderPayload(id));
     track("Purchase", { ids: tt.lines.map(l => l.p.id), value: tt.total, num: tt.count, eventId: id });
-    copyText(text);
+    if (!saved) copyText(text);   // no automatic delivery → the customer must send the message
     cart = []; coupon = ""; store.set("swyr_coupon", ""); saveCart();
-    view = "done"; renderDrawer();
+    view = saved ? "received" : "done"; renderDrawer();
   }
+ 
+  async function postOrder(payload) {
+    if (configReady) { try { await configReady; } catch {} }
+    if (!ordersOn) return false;
+    try {
+      const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 12000);
+      const r = await fetch("/api/order", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctrl.signal });
+      clearTimeout(tm);
+      const j = await r.json().catch(() => ({}));
+      return r.ok && j.ok;
+    } catch { return false; }
+  }
+  const orderPayload = (id, extra = {}) => ({
+    kind: "order", orderId: id, items: cart.map(i => ({ id: i.id, ml: i.ml, qty: i.qty })), coupon, gov: form.gov, pay: form.pay,
+    customer: { name: form.name, phone: normPhone(form.phone), phone2: normPhone(form.phone2), area: form.area, address: form.address, notes: form.notes },
+    source: source(), ...extra
+  });
  
   /* returning from Paymob */
   function handlePaymentReturn() {
@@ -813,6 +854,7 @@
       const text = orderMessage(order, tt, form, `حالة الدفع: مدفوع أونلاين${txn ? ` — رقم العملية ${txn}` : ""}`);
       lastOrder = { id: order, text };
       track("Purchase", { ids: tt.lines.map(l => l.p.id), value: tt.total, num: tt.count, eventId: order, paid: true });
+      postOrder(orderPayload(order, { paid: true, txn, pay: "card" })).then(ok => { if (!ok) copyText(text); });
       cart = []; coupon = ""; store.set("swyr_coupon", ""); saveCart(); store.del("swyr_pending");
       openDrawer("paid");
     } else {
@@ -894,7 +936,7 @@
   $("#langBtn").addEventListener("click", () => { lang = lang === "ar" ? "en" : "ar"; store.set("swyr_lang", lang); applyLang(); });
   window.addEventListener("scroll", () => $("#header").classList.toggle("is-scrolled", scrollY > 8), { passive: true });
  
-  $("#requestForm").addEventListener("submit", e => {
+  $("#requestForm").addEventListener("submit", async e => {
     e.preventDefault();
     const f = e.target, fd = new FormData(f);
     const name = (fd.get("name") || "").trim(), phone = normPhone(fd.get("phone"));
@@ -914,8 +956,14 @@
     ].filter(Boolean).join("\n");
     lastOrder = { id: "", text };
     track("Lead", { value: 0 });
-    copyText(text);
-    openDrawer("request");
+    const sb = f.querySelector('[type=submit]'); sb.disabled = true;
+    const saved = await postOrder({
+      kind: "request", source: source(), customer: { name, phone },
+      request: { type, qty: toLatinDigits(fd.get("qty") || ""), date: fd.get("date") || "", budget: toLatinDigits(fd.get("budget") || ""), details: String(fd.get("details") || "").trim() }
+    });
+    sb.disabled = false;
+    if (saved) { f.reset(); openDrawer("rqReceived"); }
+    else { copyText(text); openDrawer("request"); }
   });
  
   /* ---------------- boot ---------------- */
@@ -934,12 +982,12 @@
     if (!C.settings.instagramDM && !C.settings.messenger && !C.settings.whatsapp) console.warn("SWYR: add instagramDM / messenger in catalog.json → settings");
     applyLang();
     loadPixels();
+    configReady = fetch("/api/config", { cache: "no-store" })
+      .then(r => r.ok ? r.json() : {})
+      .then(j => { onlinePay = !!j.online; ordersOn = !!j.orders; if (view === "checkout") renderDrawer(); })
+      .catch(() => {});
+    await configReady;
     handlePaymentReturn();
-    try {
-      const r = await fetch("/api/config", { cache: "no-store" });
-      if (r.ok) { const j = await r.json(); onlinePay = !!j.online; if (view === "checkout") renderDrawer(); }
-    } catch {}
   }
   boot();
 })();
- 

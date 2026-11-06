@@ -84,7 +84,7 @@ try {
 } catch (e) { err("حساب الأسعار على السيرفر وقع: " + e.message); }
  
 // 7) JavaScript files have no syntax errors
-["app.js", "api/pay.js", "api/config.js", "api/_pricing.js"].forEach(f => {
+["app.js", "api/pay.js", "api/config.js", "api/_pricing.js", "api/order.js"].filter(f => fs.existsSync(path.join(root, f))).forEach(f => {
   try { execFileSync(process.execPath, ["--check", path.join(root, f)], { stdio: "pipe" }); }
   catch (e) { err(`الملف ${f} فيه غلطة في الكود:\n${String(e.stderr || e.message).split("\n").slice(0, 5).join("\n")}`); }
 });

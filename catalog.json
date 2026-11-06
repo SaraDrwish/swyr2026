@@ -18,7 +18,7 @@
     "tiktok": "https://www.tiktok.com/@swyrperfumes",
     "facebook": "https://www.facebook.com/people/SWYR/61563925810810/",
     "announcement": {
-      "ar": "خصم ٣٤٪ على كل العطور — وشحن مجاني على أي طلب فوق ١٠٠٠ ج.م",
+      "ar": "خصم ٣٤٪ على جميع العطور — وشحن مجاني لأي طلب يتجاوز ١٠٠٠ ج.م",
       "en": "34% off every perfume — and free shipping on orders over 1,000 EGP"
     },
     "pixels": {
@@ -1607,11 +1607,11 @@
   "offers": [
     {
       "title": {
-        "ar": "خصم ٣٤٪ على كل العطور",
+        "ar": "خصم ٣٤٪ على جميع العطور",
         "en": "34% off every perfume"
       },
       "text": {
-        "ar": "الـ ١٠ مل بـ ٧٠ ج.م، والـ ١٠٠ مل بـ ٥٥٠ ج.م بس.",
+        "ar": "الـ ١٠ مل بـ ٧٠ ج.م، والـ ١٠٠ مل بـ ٥٥٠ ج.م فقط.",
         "en": "10 ml for 70 EGP, 100 ml for just 550 EGP."
       }
     },
@@ -1621,7 +1621,7 @@
         "en": "Free shipping"
       },
       "text": {
-        "ar": "على أي طلب فوق ١٠٠٠ ج.م لكل المحافظات.",
+        "ar": "على أي طلب يتجاوز ١٠٠٠ ج.م لجميع المحافظات.",
         "en": "On every order over 1,000 EGP, nationwide."
       }
     },
@@ -1680,4 +1680,3 @@
     ]
   }
 }
-

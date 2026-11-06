@@ -504,3 +504,11 @@ scrollbar-width: thin !important;
 .price{display:inline-flex;align-items:baseline;flex-wrap:wrap}
 
 
+/* ====== SWYR update — صفحة «تم استلام طلبك» ====== */
+.done__dm{margin:22px 0 0;font-size:.88rem;color:var(--muted)}
+.send--soft{margin-top:10px}
+.send--soft .btn{min-height:44px}
+.send--soft .btn--dark{background:transparent;color:var(--taupe);border-color:var(--taupe)}
+ 
+
+
