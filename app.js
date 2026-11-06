@@ -42,7 +42,7 @@
       "cart.items": "{n} منتجات", "cart.item1": "منتج واحد", "cart.item2": "منتجين",
       "ship.free": "مبروك! الشحن عليكي مجانًا.", "ship.left": "فاضل {x} وتاخدي شحن مجاني.",
       "step.cart": "السلة", "step.details": "البيانات", "step.done": "تأكيد",
-      "t.sub": "المجموع", "t.dis": "خصم", "t.ship": "الشحن", "t.shipPick": "حسب المحافظة", "t.free": "مجاني", "t.total": "الإجمالي",
+      "t.saved": "وفّرتي", "t.sub": "المجموع", "t.dis": "خصم", "t.ship": "الشحن", "t.shipPick": "حسب المحافظة", "t.free": "مجاني", "t.total": "الإجمالي",
       "co.title": "بيانات التوصيل", "co.edit": "تعديل", "co.back": "رجوع للسلة",
       "f.name": "الاسم", "f.phone": "رقم الموبايل", "f.phone2": "رقم تاني (اختياري)", "f.gov": "المحافظة", "f.govPick": "اختاري المحافظة",
       "f.area": "المنطقة / المدينة", "f.address": "العنوان بالتفصيل", "f.addressPh": "الشارع، رقم العمارة، الدور، علامة مميزة",
@@ -106,7 +106,7 @@
       "cart.items": "{n} items", "cart.item1": "1 item", "cart.item2": "2 items",
       "ship.free": "You’ve unlocked free shipping.", "ship.left": "{x} more for free shipping.",
       "step.cart": "Bag", "step.details": "Details", "step.done": "Confirm",
-      "t.sub": "Subtotal", "t.dis": "Discount", "t.ship": "Shipping", "t.shipPick": "By governorate", "t.free": "Free", "t.total": "Total",
+      "t.saved": "You save", "t.sub": "Subtotal", "t.dis": "Discount", "t.ship": "Shipping", "t.shipPick": "By governorate", "t.free": "Free", "t.total": "Total",
       "co.title": "Delivery details", "co.edit": "Edit", "co.back": "Back to bag",
       "f.name": "Full name", "f.phone": "Mobile number", "f.phone2": "Second number (optional)", "f.gov": "Governorate", "f.govPick": "Choose governorate",
       "f.area": "Area / city", "f.address": "Full address", "f.addressPh": "Street, building, floor, landmark",
@@ -177,6 +177,8 @@
   const moneyAr = n => `${Math.round(n).toLocaleString("en-US")} ج.م`;
   const product = id => C.products.find(p => p.id === id);
   const sizeOf = (p, ml) => p.sizes.find(s => s.ml === ml) || p.sizes[0];
+  const pctOff = s => s && s.compare > s.price ? Math.round((1 - s.price / s.compare) * 100) : 0;
+  const hasCoupons = () => Object.keys(C.coupons || {}).some(k => !k.startsWith("_"));
   const sizeLabel = (s, lg = lang) => s.label ? (s.label[lg] ?? s.label.ar) : `${s.ml} ${lg === "ar" ? "مل" : "ml"}`;
  
   /* ---------------- tracking source (utm) ---------------- */
@@ -207,7 +209,8 @@
     const ship = !gov ? null : (free ? 0 : (C.shippingZones[gov.zone] ?? 0));
     const total = sub - dis + (ship || 0);
     const count = lines.reduce((a, l) => a + l.qty, 0);
-    return { lines, sub, dis, cd, ship, free, total, count, gov };
+    const saved = lines.reduce((a, l) => a + (l.s.compare > l.s.price ? (l.s.compare - l.s.price) * l.qty : 0), 0);
+    return { lines, sub, dis, cd, ship, free, total, count, gov, saved };
   }
  
   /* ---------------- language ---------------- */
@@ -299,6 +302,7 @@
       <button type="button" class="pcard__media" data-open="${p.id}" aria-label="${esc(L(p.name))} — ${t("card.details")}">
         ${artHTML(p)}
         ${p.badge ? `<span class="badge">${esc(L(p.badge))}</span>` : ""}
+        ${pctOff(s) ? `<span class="off">−${pctOff(s)}%</span>` : ""}
         ${score ? `<span class="match">${t("finder.match", { n: score })}</span>` : ""}
       </button>
       <div class="pcard__body">
@@ -308,7 +312,7 @@
         ${multi ? `<div class="sizesel" role="group" aria-label="${t("pd.size")}">${p.sizes.map(z =>
           `<button type="button" data-size="${z.ml}" aria-pressed="${z.ml === ml}" aria-label="${esc(sizeLabel(z))}">${z.label ? esc(sizeLabel(z)) : `${z.ml}<span class="u"> ${t("ml")}</span>`}</button>`).join("")}</div>` : ""}
         <div class="pcard__foot">
-          <span class="price">${Math.round(s.price).toLocaleString("en-US")}<small>${esc(L(C.settings.currency))}</small></span>
+          <span class="price">${Math.round(s.price).toLocaleString("en-US")}<small>${esc(L(C.settings.currency))}</small>${pctOff(s) ? `<s class="was">${Math.round(s.compare).toLocaleString("en-US")}</s>` : ""}</span>
           <button type="button" class="addbtn" data-add="${p.id}">${t("card.add")}</button>
         </div>
       </div>
@@ -413,6 +417,7 @@
           }).join("")}</div>` : ""}
           ${p.sizes.length > 1 ? `<p class="pd__label">${t("pd.size")}</p>
           <div class="sizesel" role="group">${p.sizes.map(z => `<button type="button" data-psize="${z.ml}" aria-pressed="${z.ml === s.ml}">${esc(sizeLabel(z))}</button>`).join("")}</div>` : ""}
+          <p class="pd__price"><b>${money(s.price)}</b>${pctOff(s) ? ` <s class="was">${money(s.compare)}</s> <span class="off off--inline">−${pctOff(s)}%</span>` : ""}</p>
           <div class="pd__buy">
             <div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><span>${qty}</span><button type="button" data-q="1" aria-label="+">+</button></div>
             <button class="btn btn--dark" type="button" data-padd>${t("card.add")} · ${money(s.price * qty)}</button>
@@ -544,6 +549,7 @@
  
   function totalsHTML(tt, showShip) {
     return `<div class="totals">
+      ${tt.saved ? `<div class="t-dis"><span>${t("t.saved")}</span><span>${money(tt.saved)}</span></div>` : ""}
       <div><span>${t("t.sub")}</span><span>${money(tt.sub)}</span></div>
       ${tt.dis ? `<div class="t-dis"><span>${t("t.dis")} (${esc(tt.cd.code)})</span><span>−${money(tt.dis)}</span></div>` : ""}
       ${showShip ? `<div><span>${t("t.ship")}${tt.gov ? ` · ${esc(L(tt.gov))}` : ""}</span><span>${tt.ship == null ? t("t.shipPick") : tt.ship === 0 ? t("t.free") : money(tt.ship)}</span></div>` : ""}
@@ -574,7 +580,7 @@
           <span class="citem__img">${artHTML(l.p, true)}</span>
           <div>
             <div class="citem__name">${esc(L(l.p.name))}</div>
-            <div class="citem__meta">${esc(sizeLabel(l.s))} · ${money(l.s.price)}</div>
+            <div class="citem__meta">${esc(sizeLabel(l.s))} · ${money(l.s.price)}${pctOff(l.s) ? ` <s class="was">${money(l.s.compare)}</s>` : ""}</div>
             <button class="citem__rm" type="button" data-rm="${idx}">${t("cart.remove")}</button>
           </div>
           <div class="citem__right">
@@ -582,7 +588,7 @@
             <div class="qty qty--sm"><button type="button" data-cq="${idx}" data-d="-1" aria-label="-">−</button><span>${l.qty}</span><button type="button" data-cq="${idx}" data-d="1" aria-label="+">+</button></div>
           </div>
         </div>`).join("")}
-        <div class="field" style="margin-top:18px">
+        <div class="field" style="margin-top:18px" ${hasCoupons() ? "" : "hidden"}>
           <label for="couponIn">${t("f.coupon")}</label>
           <div class="coupon"><input id="couponIn" dir="ltr" autocomplete="off" value="${esc(coupon)}" placeholder="SWYR10"><button type="button" data-coupon>${t("f.apply")}</button></div>
           <span class="ferr" id="couponMsg"></span>
@@ -936,3 +942,4 @@
   }
   boot();
 })();
+ 

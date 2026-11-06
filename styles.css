@@ -494,3 +494,13 @@ scrollbar-width: thin !important;
  
 /* ****** */
 
+/* ====== SWYR update — السعر قبل وبعد الخصم ====== */
+.was{color:var(--muted);font-weight:400;font-size:.82rem;margin-inline-start:8px;text-decoration-thickness:1px}
+.off{position:absolute;top:12px;inset-inline-end:12px;z-index:1;background:var(--ink);color:#fff;font-size:.78rem;font-weight:700;padding:4px 9px;border-radius:999px;direction:ltr}
+.off--inline{position:static;display:inline-block;margin-inline-start:6px;vertical-align:middle}
+.pcard__media .art__no{top:auto;bottom:5cqw}
+.pd__price{margin:4px 0 0;font-size:1.05rem}
+.pd__price b{font-size:1.35rem;color:var(--ink)}
+.price{display:inline-flex;align-items:baseline;flex-wrap:wrap}
+
+

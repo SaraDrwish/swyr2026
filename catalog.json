@@ -18,8 +18,8 @@
     "tiktok": "https://www.tiktok.com/@swyrperfumes",
     "facebook": "https://www.facebook.com/people/SWYR/61563925810810/",
     "announcement": {
-      "ar": "شحن مجاني على أي طلب فوق ١٠٠٠ ج.م — وخصم ١٠٪ على أول طلب بكود SWYR10",
-      "en": "Free shipping on orders over 1,000 EGP — and 10% off your first order with code SWYR10"
+      "ar": "خصم ٣٤٪ على كل العطور — وشحن مجاني على أي طلب فوق ١٠٠٠ ج.م",
+      "en": "34% off every perfume — and free shipping on orders over 1,000 EGP"
     },
     "pixels": {
       "meta": "",
@@ -29,13 +29,9 @@
     "_todo_pixels": "بيكسل الإعلانات: حطي الـ ID بس (مش الكود كله). meta = رقم من 15 أو 16 رقم من Events Manager. tiktok = كود زي C4ABCDEF12345678 من TikTok Events Manager. snap = كود طويل فيه شرط (-) من Snap Events Manager. اللي هتسيبيه فاضي مش هيشتغل."
   },
   "coupons": {
-    "SWYR10": {
+    "_example": {
       "type": "percent",
       "value": 10
-    },
-    "_example_fixed": {
-      "type": "fixed",
-      "value": 100
     }
   },
   "shippingZones": {
@@ -1611,6 +1607,16 @@
   "offers": [
     {
       "title": {
+        "ar": "خصم ٣٤٪ على كل العطور",
+        "en": "34% off every perfume"
+      },
+      "text": {
+        "ar": "الـ ١٠ مل بـ ٧٠ ج.م، والـ ١٠٠ مل بـ ٥٥٠ ج.م بس.",
+        "en": "10 ml for 70 EGP, 100 ml for just 550 EGP."
+      }
+    },
+    {
+      "title": {
         "ar": "شحن مجاني",
         "en": "Free shipping"
       },
@@ -1618,17 +1624,6 @@
         "ar": "على أي طلب فوق ١٠٠٠ ج.م لكل المحافظات.",
         "en": "On every order over 1,000 EGP, nationwide."
       }
-    },
-    {
-      "title": {
-        "ar": "خصم ١٠٪ على أول طلب",
-        "en": "10% off your first order"
-      },
-      "text": {
-        "ar": "اكتبي الكود في صفحة الطلب.",
-        "en": "Enter the code at checkout."
-      },
-      "code": "SWYR10"
     },
     {
       "title": {
@@ -1643,29 +1638,34 @@
     }
   ],
   "priceList": {
-    "_todo": "الأسعار هنا تجريبية — اكتبي أسعارك الحقيقية. كل العطور بتاخد أسعار perfume، وعطر الشعر سعره زي الـ 30 مل.",
+    "_todo": "price = السعر النهائي اللي العميلة بتدفعه. compare = السعر قبل الخصم (بيظهر متشطّب عليه). نسبة الخصم بتتحسب لوحدها. لو عايزة تشيلي الخصم امسحي compare.",
     "perfume": [
       {
         "ml": 10,
-        "price": 150
+        "price": 70,
+        "compare": 106
       },
       {
         "ml": 30,
-        "price": 300
+        "price": 190,
+        "compare": 288
       },
       {
         "ml": 50,
-        "price": 450
+        "price": 350,
+        "compare": 530
       },
       {
         "ml": 100,
-        "price": 700
+        "price": 550,
+        "compare": 833
       }
     ],
     "hairMist": [
       {
         "ml": 100,
-        "price": 300
+        "price": 190,
+        "compare": 288
       }
     ],
     "giftSet": [
