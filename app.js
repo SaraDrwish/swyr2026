@@ -351,6 +351,20 @@
     $("#resultCount").textContent = (filt.q || filt.notes.size || filt.cat !== "all") ? t("results", { n: list.length }) : "";
   }
  
+  // re-render a single product card in place (used when the size changes) — keeps the page still
+  function refreshCard(id, keepFocus) {
+    const el = document.querySelector(`.pcard[data-id="${CSS.escape(id)}"]`);
+    if (!el) return;
+    const p = product(id);
+    const score = filt.notes.size ? matchScore(p) : null;
+    const tmp = document.createElement("div");
+    tmp.innerHTML = cardHTML(p, score).trim();
+    const fresh = tmp.firstElementChild;
+    fresh.classList.add("pcard--still");
+    el.replaceWith(fresh);
+    if (keepFocus) { const btn = fresh.querySelector(`[data-size="${sel[id]}"]`); if (btn) btn.focus({ preventScroll: true }); }
+  }
+ 
   function renderFaq() {
     $("#faqList").innerHTML = t("faq").map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   }
@@ -433,11 +447,20 @@
         </div>`;
     };
     draw();
+    // size / quantity changes only touch the price area — no full redraw, so nothing jumps
+    const update = () => {
+      const s = sizeOf(p, sel[p.id] ?? ml);
+      $$("[data-psize]", body).forEach(x => x.setAttribute("aria-pressed", String(+x.dataset.psize === s.ml)));
+      const pr = $(".pd__price", body);
+      if (pr) pr.innerHTML = `<b>${money(s.price)}</b>${pctOff(s) ? ` <s class="was">${money(s.compare)}</s> <span class="off off--inline">−${pctOff(s)}%</span>` : ""}`;
+      const q = $(".pd__buy .qty span", body); if (q) q.textContent = qty;
+      const add = $("[data-padd]", body); if (add) add.textContent = `${t("card.add")} · ${money(s.price * qty)}`;
+    };
     body.onclick = e => {
       const b = e.target.closest("button"); if (!b) return;
       if (b.dataset.close !== undefined) return $("#pdialog").close();
-      if (b.dataset.psize) { sel[p.id] = +b.dataset.psize; draw(); renderGrid(); return; }
-      if (b.dataset.q) { qty = Math.max(1, Math.min(20, qty + +b.dataset.q)); draw(); return; }
+      if (b.dataset.psize) { sel[p.id] = +b.dataset.psize; update(); refreshCard(p.id); return; }
+      if (b.dataset.q) { qty = Math.max(1, Math.min(20, qty + +b.dataset.q)); update(); return; }
       if (b.dataset.padd !== undefined) { addToCart(p.id, sel[p.id] ?? ml, qty); $("#pdialog").close(); }
     };
     const d = $("#pdialog");
@@ -882,7 +905,7 @@
       setTimeout(() => { b.classList.remove("is-added"); b.textContent = t("card.add"); }, 1400);
       return;
     }
-    if (d.size) { const id = b.closest(".pcard").dataset.id; sel[id] = +d.size; renderGrid(); return; }
+    if (d.size) { const id = b.closest(".pcard").dataset.id; sel[id] = +d.size; refreshCard(id, true); return; }
     if (d.note) {
       filt.notes.has(d.note) ? filt.notes.delete(d.note) : filt.notes.add(d.note);
       limit = PAGE;

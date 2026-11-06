@@ -511,4 +511,13 @@ scrollbar-width: thin !important;
 .send--soft .btn--dark{background:transparent;color:var(--taupe);border-color:var(--taupe)}
  
 
+/* ====== SWYR update — تغيير الحجم من غير ما الصفحة تتهز ====== */
+.pcard--still{animation:none}
+.pcard--still .art__disc{transition:none}
+.sizesel button{transition:background-color .15s,color .15s,border-color .15s}
+.price{min-height:1.6em}
+ 
+
+
+
 
