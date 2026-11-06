@@ -479,3 +479,18 @@ scrollbar-width: thin !important;
 
 /* ****** */
 
+
+ 
+/* ====== SWYR update — Nov 2026 ====== */
+/* 1) اللوجو: الأيقونة جنب الاسم — يمين في العربي وشمال في الإنجليزي (فوق وتحت في الفوتر) */
+.brand{flex-direction:row}
+.brand__mark{flex:none}
+.brand--lg{gap:14px}
+.brand--lg .brand__mark--lg{width:30px;height:50px}
+/* 2) صورة الأحجام ما تتمطّش */
+.sizes__img img{height:auto}
+/* 3) على الموبايل: عنوان «هدايا وطلبات خاصة» يظهر قبل الفورم */
+@media (max-width:900px){.gifts__intro{order:-1}}
+ 
+/* ****** */
+

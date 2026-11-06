@@ -10,8 +10,8 @@
       "en": "EGP"
     },
     "freeShippingOver": 1000,
-    "instapay": "swyr@instapay",
-    "wallet": "01000000000",
+    "instapay": "",
+    "wallet": "",
     "_todo_payments": "حطي عنوان إنستاباي ورقم المحفظة بتوعك. لو مش عايزة اختيار التحويل امسحي القيمتين وسيبيهم \"\"",
     "email": "swyrperfumes@gmail.com",
     "instagram": "https://www.instagram.com/swyrbeauty/",
@@ -20,7 +20,13 @@
     "announcement": {
       "ar": "شحن مجاني على أي طلب فوق ١٠٠٠ ج.م — وخصم ١٠٪ على أول طلب بكود SWYR10",
       "en": "Free shipping on orders over 1,000 EGP — and 10% off your first order with code SWYR10"
-    }
+    },
+    "pixels": {
+      "meta": "",
+      "tiktok": "",
+      "snap": ""
+    },
+    "_todo_pixels": "بيكسل الإعلانات: حطي الـ ID بس (مش الكود كله). meta = رقم من 15 أو 16 رقم من Events Manager. tiktok = كود زي C4ABCDEF12345678 من TikTok Events Manager. snap = كود طويل فيه شرط (-) من Snap Events Manager. اللي هتسيبيه فاضي مش هيشتغل."
   },
   "coupons": {
     "SWYR10": {

@@ -2,7 +2,7 @@
    All business data lives in /catalog.json. */
 (() => {
   "use strict";
-
+ 
   /* ---------------- text ---------------- */
   const T = {
     ar: {
@@ -134,7 +134,7 @@
       "ml": "ml"
     }
   };
-
+ 
   /* ---------------- helpers ---------------- */
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -153,7 +153,7 @@
     return p;
   };
   const validPhone = p => /^01[0125]\d{8}$/.test(p);
-
+ 
   let C = null;                    // catalog
   let lang = store.get("swyr_lang", "ar");
   let cart = store.get("swyr_cart", []);          // [{id, ml, qty}]
@@ -166,7 +166,7 @@
   const filt = { cat: "all", notes: new Set(), q: "" };
   const PAGE = 12;
   let limit = PAGE;
-
+ 
   const t = (k, vars) => {
     let s = (T[lang] && T[lang][k]) ?? T.ar[k] ?? k;
     if (vars && typeof s === "string") for (const [a, b] of Object.entries(vars)) s = s.replace(`{${a}}`, b);
@@ -178,14 +178,14 @@
   const product = id => C.products.find(p => p.id === id);
   const sizeOf = (p, ml) => p.sizes.find(s => s.ml === ml) || p.sizes[0];
   const sizeLabel = (s, lg = lang) => s.label ? (s.label[lg] ?? s.label.ar) : `${s.ml} ${lg === "ar" ? "مل" : "ml"}`;
-
+ 
   /* ---------------- tracking source (utm) ---------------- */
   const params = new URLSearchParams(location.search);
   const utm = params.get("utm_source");
   if (utm) { try { sessionStorage.setItem("swyr_src", utm); } catch {} }
   const source = () => { try { return sessionStorage.getItem("swyr_src") || ""; } catch { return ""; } };
   if (params.get("lang") === "en" || params.get("lang") === "ar") lang = params.get("lang");
-
+ 
   /* ---------------- pricing (mirrors api/pay.js) ---------------- */
   function couponDef(code) {
     if (!code || code.startsWith("_")) return null;
@@ -209,7 +209,7 @@
     const count = lines.reduce((a, l) => a + l.qty, 0);
     return { lines, sub, dis, cd, ship, free, total, count, gov };
   }
-
+ 
   /* ---------------- language ---------------- */
   function applyLang() {
     document.documentElement.lang = lang;
@@ -222,13 +222,13 @@
     $("#langBtn").lang = lang === "ar" ? "en" : "ar";
     renderAll();
   }
-
+ 
   /* ---------------- renderers ---------------- */
   function renderAnnounce() {
     const a = L(C.settings.announcement);
     $("#announce").innerHTML = esc(a).replace(/\b([A-Z0-9]{4,})\b/g, "<b>$1</b>");
   }
-
+ 
   function renderOffers() {
     const g = $("#offersGrid");
     g.innerHTML = (C.offers || []).map(o => `
@@ -242,7 +242,7 @@
       </article>`).join("");
     $("#offers").hidden = !(C.offers || []).length;
   }
-
+ 
   function renderChips() {
     $("#finderChips").innerHTML = (C.finderNotes || []).map(k => {
       const n = C.notes[k]; if (!n) return "";
@@ -250,14 +250,14 @@
     }).join("");
     $("#finderReset").hidden = filt.notes.size === 0;
   }
-
+ 
   function renderTabs() {
     const cats = [{ id: "all", ar: T.ar["tab.all"], en: T.en["tab.all"] }, ...C.categories];
     const count = id => id === "all" ? C.products.length : C.products.filter(p => p.category === id).length;
     $("#tabs").innerHTML = cats.map(c =>
       `<button type="button" class="tab" role="tab" data-cat="${c.id}" aria-selected="${filt.cat === c.id}">${esc(L(c))} <small>${count(c.id)}</small></button>`).join("");
   }
-
+ 
   function matchScore(p) {
     if (!filt.notes.size) return null;
     const notes = p.notes || {};
@@ -265,12 +265,12 @@
     filt.notes.forEach(k => { if (notes[k]) s += notes[k]; });
     return Math.round(s / filt.notes.size);
   }
-
+ 
   function noteLine(p, max = 3) {
     return Object.entries(p.notes || {}).sort((a, b) => b[1] - a[1]).slice(0, max)
       .map(([k]) => C.notes[k] ? L(C.notes[k]) : "").filter(Boolean).join(" · ");
   }
-
+ 
   function artHTML(p, mini) {
     if (p.image) return `<img src="/${esc(p.image)}" alt="${esc(L(p.name))}" loading="lazy" width="400" height="500">`;
     const no = (p.code || "").replace(/\D/g, "");
@@ -288,7 +288,7 @@
   const inspiredText = p => p.inspiredBy
     ? (lang === "ar" ? `مستوحى من ${p.name.en.replace(/ (Hair Mist|Gift Set)$/i, "")} — ${p.inspiredBy}` : `Inspired by ${p.name.en.replace(/ (Hair Mist|Gift Set)$/i, "")} by ${p.inspiredBy}`)
     : "";
-
+ 
   function cardHTML(p, score) {
     const ml = sel[p.id] ?? (p.sizes.find(s => s.ml === 50) || p.sizes[0]).ml;
     sel[p.id] = ml;
@@ -314,7 +314,7 @@
       </div>
     </article>`;
   }
-
+ 
   const norm = x => String(x || "").toLowerCase().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي").replace(/[\u064B-\u0652]/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim();
   function filtered() {
     let list = C.products.filter(p => filt.cat === "all" || p.category === filt.cat);
@@ -338,11 +338,11 @@
     $("#more").innerHTML = rest > 0 ? `<button type="button" class="btn btn--line" data-more>${t("more", { n: rest })}</button>` : "";
     $("#resultCount").textContent = (filt.q || filt.notes.size || filt.cat !== "all") ? t("results", { n: list.length }) : "";
   }
-
+ 
   function renderFaq() {
     $("#faqList").innerHTML = t("faq").map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   }
-
+ 
   function renderFooter() {
     const s = C.settings;
     const links = [
@@ -357,13 +357,13 @@
     $("#year").textContent = new Date().getFullYear();
     $("#disclaimer").textContent = t("disclaimer");
   }
-
+ 
   function renderRequestTypes() {
     const v = $("#rq_type").value;
     $("#rq_type").innerHTML = t("rq.types").map((x, i) => `<option value="${i}">${esc(x)}</option>`).join("");
     if (v) $("#rq_type").value = v;
   }
-
+ 
   function renderBadge() {
     const tt = totals(form.gov);
     $("#cartCount").textContent = tt.count;
@@ -374,16 +374,17 @@
     $("#stickyTotal").textContent = money(tt.sub - tt.dis);
   }
   const countLabel = n => n === 1 ? t("cart.item1") : n === 2 ? t("cart.item2") : t("cart.items", { n });
-
+ 
   function renderAll() {
     renderAnnounce(); renderOffers(); renderChips(); renderTabs(); renderGrid();
     renderFaq(); renderFooter(); renderRequestTypes(); renderBadge();
     if ($("#drawer").classList.contains("is-open")) renderDrawer();
   }
-
+ 
   /* ---------------- product dialog ---------------- */
   function openProduct(id) {
     const p = product(id); if (!p) return;
+    track("ViewContent", { ids: [p.id], name: p.name.en, value: sizeOf(p, sel[p.id] ?? p.sizes[0].ml).price });
     const ml = sel[p.id] ?? p.sizes[0].ml;
     let qty = 1;
     const notes = Object.entries(p.notes || {}).sort((a, b) => b[1] - a[1]);
@@ -430,7 +431,68 @@
     if (typeof d.showModal === "function") d.showModal(); else d.setAttribute("open", "");
   }
   $("#pdialog").addEventListener("click", e => { if (e.target.id === "pdialog") e.target.close(); });
-
+ 
+  /* ---------------- ad pixels (Meta / TikTok / Snapchat) ---------------- */
+  // IDs live in catalog.json → settings.pixels. Empty = that pixel is off.
+  const px = { meta: false, tiktok: false, snap: false };
+  function loadPixels() {
+    const P = (C.settings && C.settings.pixels) || {};
+    const add = src => { const el = document.createElement("script"); el.async = true; el.src = src; document.head.appendChild(el); };
+    if (/^\d{10,20}$/.test(String(P.meta || "").trim())) {
+      const id = String(P.meta).trim();
+      const n = window.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!window._fbq) window._fbq = n;
+      n.push = n; n.loaded = true; n.version = "2.0"; n.queue = [];
+      add("https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", id); fbq("track", "PageView");
+      px.meta = true;
+    }
+    if (/^[A-Z0-9]{8,30}$/i.test(String(P.tiktok || "").trim())) {
+      const id = String(P.tiktok).trim();
+      const ttq = window.ttq = window.ttq || [];
+      ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+      ttq.setAndDefer = (o, m) => { o[m] = function () { o.push([m].concat([].slice.call(arguments, 0))); }; };
+      ttq.methods.forEach(m => ttq.setAndDefer(ttq, m));
+      ttq.instance = t => { const e = ttq._i[t] || []; ttq.methods.forEach(m => ttq.setAndDefer(e, m)); return e; };
+      ttq.load = (e, o) => {
+        const u = "https://analytics.tiktok.com/i18n/pixel/events.js";
+        ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = u; ttq._t = ttq._t || {}; ttq._t[e] = +new Date(); ttq._o = ttq._o || {}; ttq._o[e] = o || {};
+        add(`${u}?sdkid=${e}&lib=ttq`);
+      };
+      window.TiktokAnalyticsObject = "ttq";
+      ttq.load(id); ttq.page();
+      px.tiktok = true;
+    }
+    if (/^[0-9a-f-]{30,40}$/i.test(String(P.snap || "").trim())) {
+      const id = String(P.snap).trim();
+      const a = window.snaptr = function () { a.handleRequest ? a.handleRequest.apply(a, arguments) : a.queue.push(arguments); };
+      a.queue = [];
+      add("https://sc-static.net/scevent.min.js");
+      snaptr("init", id, {}); snaptr("track", "PAGE_VIEW");
+      px.snap = true;
+    }
+  }
+  // one call per business event; each platform gets its own standard event name
+  function track(ev, d = {}) {
+    try {
+      const cur = "EGP";
+      const ids = d.ids || [];
+      if (px.meta) {
+        const m = { ViewContent: "ViewContent", AddToCart: "AddToCart", InitiateCheckout: "InitiateCheckout", Purchase: "Purchase", Lead: "Lead" }[ev];
+        const params = { currency: cur, value: d.value || 0, content_ids: ids, content_type: "product", num_items: d.num || ids.length || undefined, content_name: d.name || undefined };
+        d.eventId ? fbq("track", m, params, { eventID: d.eventId }) : fbq("track", m, params);
+      }
+      if (px.tiktok) {
+        const m = { ViewContent: "ViewContent", AddToCart: "AddToCart", InitiateCheckout: "InitiateCheckout", Purchase: d.paid ? "CompletePayment" : "PlaceAnOrder", Lead: "SubmitForm" }[ev];
+        ttq.track(m, { currency: cur, value: d.value || 0, content_type: "product", contents: ids.map(id => ({ content_id: id, content_name: d.name })) }, d.eventId ? { event_id: d.eventId } : undefined);
+      }
+      if (px.snap) {
+        const m = { ViewContent: "VIEW_CONTENT", AddToCart: "ADD_CART", InitiateCheckout: "START_CHECKOUT", Purchase: "PURCHASE", Lead: "SIGN_UP" }[ev];
+        snaptr("track", m, { currency: cur, price: d.value || 0, item_ids: ids, number_items: d.num, transaction_id: d.eventId });
+      }
+    } catch (e) { /* tracking must never break the shop */ }
+  }
+ 
   /* ---------------- cart ops ---------------- */
   function saveCart() { store.set("swyr_cart", cart); renderBadge(); }
   function addToCart(id, ml, qty = 1) {
@@ -438,6 +500,7 @@
     if (ex) ex.qty = Math.min(50, ex.qty + qty); else cart.push({ id, ml, qty });
     saveCart();
     const p = product(id);
+    track("AddToCart", { ids: [id], name: p.name.en, value: sizeOf(p, ml).price * qty, num: qty });
     toast(t("toast.added", { n: L(p.name) }));
     const cb = $("#cartBtn"); cb.classList.remove("bump"); void cb.offsetWidth; cb.classList.add("bump");
   }
@@ -447,13 +510,13 @@
     if (it.qty <= 0) cart.splice(idx, 1);
     saveCart(); renderDrawer();
   }
-
+ 
   let toastTimer;
   function toast(msg) {
     const el = $("#toast"); el.textContent = msg; el.classList.add("is-on");
     clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("is-on"), 2200);
   }
-
+ 
   /* ---------------- drawer ---------------- */
   let lastFocus = null;
   function openDrawer(v = "cart") {
@@ -473,12 +536,12 @@
     if (["done", "paid", "failed", "request"].includes(view)) view = "cart";
     lastFocus && lastFocus.focus && lastFocus.focus();
   }
-
+ 
   function renderSteps() {
     const map = { cart: 0, checkout: 1, done: 2, paid: 2, failed: 1, request: 2 };
     $$("#steps span").forEach((s, i) => s.classList.toggle("is-on", i <= map[view]));
   }
-
+ 
   function totalsHTML(tt, showShip) {
     return `<div class="totals">
       <div><span>${t("t.sub")}</span><span>${money(tt.sub)}</span></div>
@@ -487,13 +550,13 @@
       <div class="t-total"><span>${t("t.total")}</span><span>${money(showShip ? tt.total : tt.sub - tt.dis)}</span></div>
     </div>`;
   }
-
+ 
   function renderDrawer() {
     renderSteps();
     const body = $("#drawerBody"), foot = $("#drawerFoot");
     const tt = totals(form.gov);
     $("#steps").style.display = (cart.length || view !== "cart") ? "" : "none";
-
+ 
     if (view === "cart") {
       $("#drawerTitle").textContent = t("cart.title") + (tt.count ? ` (${tt.count})` : "");
       if (!cart.length) {
@@ -528,7 +591,7 @@
         <button class="btn btn--dark btn--block" type="button" data-go="checkout">${t("cart.checkout")}</button>`;
       return;
     }
-
+ 
     if (view === "checkout" || view === "failed") {
       $("#drawerTitle").textContent = t("co.title");
       const govs = [...C.governorates].sort((a, b) => L(a).localeCompare(L(b), lang));
@@ -549,7 +612,7 @@
           </div>
           <div class="field"><label for="c_address">${t("f.address")}</label><textarea id="c_address" name="address" rows="2" autocomplete="street-address" placeholder="${esc(t("f.addressPh"))}" required>${esc(form.address)}</textarea></div>
           <div class="field"><label for="c_notes">${t("f.notes")}</label><textarea id="c_notes" name="notes" rows="2" placeholder="${esc(t("f.notesPh"))}">${esc(form.notes)}</textarea></div>
-
+ 
           <fieldset class="paym field"><legend style="margin-bottom:8px">${t("pay.title")}</legend>
             <label><input type="radio" name="pay" value="cod" ${pay === "cod" ? "checked" : ""}><span><b>${t("pay.cod")}</b><small>${t("pay.codNote")}</small></span></label>
             ${s.instapay || s.wallet ? `<label><input type="radio" name="pay" value="transfer" ${pay === "transfer" ? "checked" : ""}><span><b>${t("pay.transfer")}</b><small>${t("pay.transferNote")}</small>
@@ -570,7 +633,7 @@
       });
       return;
     }
-
+ 
     if (view === "done" || view === "paid" || view === "request") {
       const paid = view === "paid", rq = view === "request";
       const m = lastOrder || { text: "" };
@@ -587,7 +650,7 @@
       foot.innerHTML = `<button class="btn btn--line btn--block" type="button" data-closeall>${t("done.close")}</button>`;
     }
   }
-
+ 
   function channelButtons() {
     const s = C.settings, out = [];
     if (s.instagramDM) out.push(`<button class="btn btn--dark btn--block" type="button" data-send="ig">${t("send.ig")}</button>`);
@@ -595,7 +658,7 @@
     if (s.whatsapp) out.push(`<button class="btn ${out.length ? "btn--line" : "btn--dark"} btn--block" type="button" data-send="wa">${t("send.wa")}</button>`);
     return out.join("");
   }
-
+ 
   function copyText(text) {
     const fallback = () => {
       const ta = document.createElement("textarea");
@@ -609,14 +672,14 @@
     }
     return Promise.resolve(fallback());
   }
-
+ 
   function channelUrl(ch, text) {
     const s = C.settings;
     if (ch === "ig") return `https://ig.me/m/${encodeURIComponent(s.instagramDM)}`;
     if (ch === "ms") return `https://m.me/${encodeURIComponent(s.messenger)}?text=${encodeURIComponent(text)}`;
     return `https://wa.me/${s.whatsapp}?text=${encodeURIComponent(text)}`;
   }
-
+ 
   function readForm() {
     const f = $("#coForm"); if (!f) return;
     const fd = new FormData(f);
@@ -628,14 +691,14 @@
     };
     if (form.remember) store.set("swyr_customer", { ...form, notes: "" }); else store.del("swyr_customer");
   }
-
+ 
   function renderCheckoutFoot() {
     const tt = totals(form.gov);
     const card = form.pay === "card" && onlinePay;
     $("#drawerFoot").innerHTML = `${totalsHTML(tt, true)}
       <button class="btn btn--dark btn--block" type="button" data-submit>${card ? t("co.pay", { x: money(tt.total) }) : t("co.send")}</button>`;
   }
-
+ 
   function validate() {
     readForm();
     const f = $("#coForm");
@@ -652,7 +715,7 @@
     if (errs.length) errs[0].focus();
     return !errs.length;
   }
-
+ 
   /* ---------------- order message ---------------- */
   function newOrderId() {
     const d = new Date();
@@ -660,7 +723,7 @@
     return `SW-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${Math.floor(1000 + Math.random() * 9000)}`;
   }
   const payLabel = { cod: "الدفع عند الاستلام", transfer: "تحويل إنستاباي / محفظة", card: "فيزا أونلاين (Paymob)" };
-
+ 
   function orderMessage(id, tt, f, extra) {
     const line = "────────────";
     const rows = tt.lines.map(l => `• ${l.p.name.ar} (${l.p.name.en}) — ${sizeLabel(l.s, "ar")} × ${l.qty} = ${moneyAr(l.total)}`);
@@ -692,13 +755,13 @@
     const w = window.open(url, "_blank");
     if (w) { try { w.opener = null; } catch {} } else location.href = url;
   }
-
+ 
   async function submitOrder(btn) {
     if (!validate()) return;
     const tt = totals(form.gov);
     if (!tt.lines.length) { view = "cart"; renderDrawer(); return; }
     const id = newOrderId();
-
+ 
     if (form.pay === "card" && onlinePay) {
       btn.disabled = true; btn.textContent = t("co.paying");
       try {
@@ -720,14 +783,15 @@
       }
       return;
     }
-
+ 
     const text = orderMessage(id, tt, form);
     lastOrder = { id, text };
+    track("Purchase", { ids: tt.lines.map(l => l.p.id), value: tt.total, num: tt.count, eventId: id });
     copyText(text);
     cart = []; coupon = ""; store.set("swyr_coupon", ""); saveCart();
     view = "done"; renderDrawer();
   }
-
+ 
   /* returning from Paymob */
   function handlePaymentReturn() {
     const order = params.get("order");
@@ -742,6 +806,7 @@
       const tt = totals(form.gov);
       const text = orderMessage(order, tt, form, `حالة الدفع: مدفوع أونلاين${txn ? ` — رقم العملية ${txn}` : ""}`);
       lastOrder = { id: order, text };
+      track("Purchase", { ids: tt.lines.map(l => l.p.id), value: tt.total, num: tt.count, eventId: order, paid: true });
       cart = []; coupon = ""; store.set("swyr_coupon", ""); saveCart(); store.del("swyr_pending");
       openDrawer("paid");
     } else {
@@ -749,7 +814,7 @@
       openDrawer("failed");
     }
   }
-
+ 
   /* ---------------- events ---------------- */
   document.addEventListener("click", e => {
     const b = e.target.closest("[data-send],[data-recopy],[data-open],[data-add],[data-size],[data-note],[data-cat],[data-more],[data-copy],[data-rm],[data-cq],[data-go],[data-coupon],[data-submit],[data-browse],[data-closeall]");
@@ -785,7 +850,10 @@
     }
     if (d.rm) { cart.splice(+d.rm, 1); saveCart(); renderDrawer(); return; }
     if (d.cq) { setQty(+d.cq, +d.d); return; }
-    if (d.go) { view = d.go; renderDrawer(); $("#drawerBody").scrollTop = 0; return; }
+    if (d.go) {
+      if (d.go === "checkout" && view === "cart") { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.sub - tt.dis, num: tt.count }); }
+      view = d.go; renderDrawer(); $("#drawerBody").scrollTop = 0; return;
+    }
     if (d.coupon !== undefined) {
       const v = $("#couponIn").value.trim();
       const cd = couponDef(v);
@@ -811,12 +879,15 @@
   });
   $("#finderReset").addEventListener("click", () => { filt.notes.clear(); renderChips(); renderGrid(); });
   $("#cartBtn").addEventListener("click", () => openDrawer("cart"));
-  $("#stickyBtn").addEventListener("click", () => openDrawer(cart.length ? "checkout" : "cart"));
+  $("#stickyBtn").addEventListener("click", () => {
+    if (cart.length) { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.sub - tt.dis, num: tt.count }); }
+    openDrawer(cart.length ? "checkout" : "cart");
+  });
   $("#drawerClose").addEventListener("click", closeDrawer);
   $("#scrim").addEventListener("click", closeDrawer);
   $("#langBtn").addEventListener("click", () => { lang = lang === "ar" ? "en" : "ar"; store.set("swyr_lang", lang); applyLang(); });
   window.addEventListener("scroll", () => $("#header").classList.toggle("is-scrolled", scrollY > 8), { passive: true });
-
+ 
   $("#requestForm").addEventListener("submit", e => {
     e.preventDefault();
     const f = e.target, fd = new FormData(f);
@@ -836,10 +907,11 @@
       source() ? `المصدر: ${source()}` : null
     ].filter(Boolean).join("\n");
     lastOrder = { id: "", text };
+    track("Lead", { value: 0 });
     copyText(text);
     openDrawer("request");
   });
-
+ 
   /* ---------------- boot ---------------- */
   async function boot() {
     try {
@@ -855,6 +927,7 @@
     cart = cart.filter(i => { const p = product(i.id); return p && p.sizes.some(s => s.ml === i.ml); });
     if (!C.settings.instagramDM && !C.settings.messenger && !C.settings.whatsapp) console.warn("SWYR: add instagramDM / messenger in catalog.json → settings");
     applyLang();
+    loadPixels();
     handlePaymentReturn();
     try {
       const r = await fetch("/api/config", { cache: "no-store" });
