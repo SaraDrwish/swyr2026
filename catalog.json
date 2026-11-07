@@ -18,8 +18,8 @@
     "tiktok": "https://www.tiktok.com/@swyrperfumes",
     "facebook": "https://www.facebook.com/people/SWYR/61563925810810/",
     "announcement": {
-      "ar": "خصم ٣٤٪ على جميع العطور — وشحن مجاني لأي طلب يتجاوز ١٠٠٠ ج.م",
-      "en": "34% off every perfume — and free shipping on orders over 1,000 EGP"
+      "ar": "اشترِ 2 والثالث هدية — خصم 34% على جميع العطور — شحن مجاني لأي طلب يتجاوز 1000 ج.م",
+      "en": "Buy 2, get 1 free — 34% off every perfume — free shipping over 1,000 EGP"
     },
     "pixels": {
       "meta": "2584072048728868",
@@ -537,7 +537,7 @@
       "code": "SWYR-07",
       "category": "women",
       "name": {
-        "ar": "٢١٢ سكسي",
+        "ar": "212 سكسي",
         "en": "212 Sexy"
       },
       "inspiredBy": "Carolina Herrera",
@@ -1607,11 +1607,21 @@
   "offers": [
     {
       "title": {
-        "ar": "خصم ٣٤٪ على جميع العطور",
+        "ar": "اشترِ 2 والثالث هدية",
+        "en": "Buy 2, get 1 free"
+      },
+      "text": {
+        "ar": "أضف 3 عطور إلى السلة، والأرخص بينهم مجانًا تلقائيًا.",
+        "en": "Add 3 perfumes to your bag and the cheapest one is free."
+      }
+    },
+    {
+      "title": {
+        "ar": "خصم 34% على جميع العطور",
         "en": "34% off every perfume"
       },
       "text": {
-        "ar": "الـ ١٠ مل بـ ٧٠ ج.م، والـ ١٠٠ مل بـ ٥٥٠ ج.م فقط.",
+        "ar": "الـ 10 مل بـ 70 ج.م، والـ 100 مل بـ 550 ج.م فقط.",
         "en": "10 ml for 70 EGP, 100 ml for just 550 EGP."
       }
     },
@@ -1621,20 +1631,9 @@
         "en": "Free shipping"
       },
       "text": {
-        "ar": "على أي طلب يتجاوز ١٠٠٠ ج.م لجميع المحافظات.",
+        "ar": "على أي طلب يتجاوز 1000 ج.م لجميع المحافظات.",
         "en": "On every order over 1,000 EGP, nationwide."
       }
-    },
-    {
-      "title": {
-        "ar": "بوكس هدايا بلاك أوبيوم",
-        "en": "Black Opium gift set"
-      },
-      "text": {
-        "ar": "عطر + عطر شعر في بوكس جاهز للإهداء.",
-        "en": "Perfume + hair mist in a ready-to-gift box."
-      },
-      "product": "swyr-48"
     }
   ],
   "priceList": {
@@ -1678,5 +1677,22 @@
         }
       }
     ]
-  }
+  },
+  "bundle": {
+    "_todo": "عرض «اشتري 2 والتالت هدية»: في كل 3 قطع، الأرخص مجانًا. لإيقافه خلي enabled = false.",
+    "enabled": true,
+    "buy": 2,
+    "get": 1,
+    "excludeCategories": [
+      "gifts"
+    ],
+    "title": {
+      "ar": "اشترِ 2 والثالث هدية",
+      "en": "Buy 2, get 1 free"
+    }
+  },
+  "reviews": [],
+  "_todo_reviews": "التقييمات الحقيقية بس: لما عميل يبعت تقييم من الموقع هيوصلك على الشيت والإيميل، ولو موافقة تنشريه ضيفيه هنا بالشكل ده: {\"name\": \"أحمد\", \"rating\": 5, \"text\": \"ريحة جميلة وثابتة\", \"product\": \"swyr-02\", \"date\": \"2026-11-07\"} — product اختياري (رقم العطر swyr-XX). ممنوع تكتبي تقييمات من عندك.",
+  "videos": [],
+  "_todo_videos": "لينكات ريلز إنستجرام اللي هتظهر في قسم «تجربة سوير»، مثلًا: \"https://www.instagram.com/reel/ABC123xyz/\" — من 3 لـ 6 ريلز. لو فاضية القسم مش هيظهر."
 }

@@ -24,14 +24,33 @@ module.exports = async (req, res) => {
   b = b || {};
   const c = b.customer || {};
   const phone = String(c.phone || "").replace(/[^\d]/g, "");
-  if (!/^01[0125]\d{8}$/.test(phone)) return res.status(400).json({ ok: false, error: "phone" });
+  if (b.kind !== "review" && !/^01[0125]\d{8}$/.test(phone)) return res.status(400).json({ ok: false, error: "phone" });
   const name = clean(c.name, 80);
   if (name.length < 2) return res.status(400).json({ ok: false, error: "name" });
   const source = clean(b.source, 40);
   const line = "────────────";
   let payload;
  
-  if (b.kind === "request") {
+  if (b.kind === "review") {
+    const r = b.review || {};
+    const rating = Math.max(1, Math.min(5, Math.round(Number(r.rating) || 0)));
+    const prod = catalog.products.find(x => x.id === r.product);
+    const text = clean(r.text, 800);
+    if (text.length < 3) return res.status(400).json({ ok: false, error: "text" });
+    const body = [
+      "تقييم جديد من موقع SWYR (راجعه قبل النشر)",
+      `الاسم: ${name}`,
+      phone ? `الموبايل: ${phone}` : null,
+      `التقييم: ${"★".repeat(rating)}${"☆".repeat(5 - rating)} (${rating}/5)`,
+      prod ? `العطر: ${prod.name.ar} (${prod.id})` : null,
+      `التعليق: ${text}`,
+      "",
+      "للنشر انسخ السطر ده في reviews داخل catalog.json:",
+      JSON.stringify({ name, rating, text, product: prod ? prod.id : undefined, date: new Date().toISOString().slice(0, 10) })
+    ].filter(x => x !== null).join("\n");
+    payload = { kind: "review", name, phone, rating, product: prod ? `${prod.name.ar} (${prod.id})` : "", comment: text, source,
+      subject: `تقييم جديد ${rating}/5 — ${name}`, text: body };
+  } else if (b.kind === "request") {
     const r = b.request || {};
     const text = [
       "طلب خاص من موقع SWYR",
@@ -63,6 +82,7 @@ module.exports = async (req, res) => {
       `رقم الطلب: ${orderId}`,
       line, ...items.map(x => "• " + x), line,
       `المجموع: ${money(priced.sub)}`,
+      priced.bundle ? `عرض اشترِ 2 والثالث هدية (${priced.freeUnits} مجانًا): -${money(priced.bundle)}` : null,
       priced.dis ? `خصم: -${money(priced.dis)}` : null,
       `الشحن (${priced.gov.ar}): ${priced.ship === 0 ? "مجاني" : money(priced.ship)}`,
       `الإجمالي: ${money(priced.total)}`,
@@ -81,7 +101,7 @@ module.exports = async (req, res) => {
     payload = {
       kind: "order", orderId, status, name, phone, phone2, gov: priced.gov.ar, area: clean(c.area, 100),
       address: clean(c.address, 300), items: items.join("\n"), count: priced.lines.reduce((a, l) => a + l.qty, 0),
-      sub: priced.sub, discount: priced.dis, shipping: priced.ship, total: priced.total, pay: PAY[pay],
+      sub: priced.sub, discount: priced.dis + priced.bundle, shipping: priced.ship, total: priced.total, pay: PAY[pay],
       notes: clean(c.notes, 500), source, text,
       subject: `طلب جديد ${orderId} — ${money(priced.total)} — ${name}`
     };
@@ -109,4 +129,3 @@ module.exports = async (req, res) => {
     return res.status(502).json({ ok: false, error: "webhook" });
   }
 };
- 

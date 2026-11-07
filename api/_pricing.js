@@ -17,22 +17,39 @@ function priceOrder(catalog, items, couponCode, govId) {
     lines.push({ id: p.id, ar: p.name.ar, en: p.name.en, size: s.label ? s.label.ar : `${s.ml} مل`, qty, unit: s.price, total: s.price * qty });
     parts.push(`${p.name.en} ${s.ml ? s.ml + "ml" : ""} x${qty}`.replace(/\s+/g, " "));
   }
+  // «buy 2 get 1»: in every group of (buy+get) units, the cheapest ones are free
+  let bundle = 0, freeUnits = 0;
+  const B = catalog.bundle;
+  if (B && B.enabled && B.buy > 0 && B.get > 0) {
+    const ex = new Set(B.excludeCategories || []);
+    const units = [];
+    for (const it of items) {
+      const p = catalog.products.find(x => x.id === it.id);
+      if (!p || ex.has(p.category)) continue;
+      const sizes = typeof p.sizes === "string" ? ((catalog.priceList || {})[p.sizes] || []) : p.sizes;
+      const s = sizes.find(z => z.ml === Number(it.ml));
+      for (let i = 0; i < Math.floor(Number(it.qty)); i++) units.push(s.price);
+    }
+    units.sort((a, b) => a - b);
+    freeUnits = Math.floor(units.length / (B.buy + B.get)) * B.get;
+    bundle = units.slice(0, freeUnits).reduce((a, b) => a + b, 0);
+  }
   let dis = 0;
   const code = String(couponCode || "");
   if (code && !code.startsWith("_")) {
     const key = Object.keys(catalog.coupons || {}).find(k => !k.startsWith("_") && k.toUpperCase() === code.toUpperCase());
     if (key) {
       const cd = catalog.coupons[key];
-      dis = cd.type === "percent" ? Math.round(sub * cd.value / 100) : Math.min(sub, cd.value);
+      dis = cd.type === "percent" ? Math.round((sub - bundle) * cd.value / 100) : Math.min(sub - bundle, cd.value);
     }
   }
   const gov = catalog.governorates.find(g => g.id === govId);
   if (!gov) return { error: "governorate" };
   const freeOver = catalog.settings.freeShippingOver;
-  const ship = freeOver && (sub - dis) >= freeOver ? 0 : (catalog.shippingZones[gov.zone] || 0);
-  const total = Math.round(sub - dis + ship);
+  const ship = freeOver && (sub - bundle - dis) >= freeOver ? 0 : (catalog.shippingZones[gov.zone] || 0);
+  const total = Math.round(sub - bundle - dis + ship);
   if (total <= 0) return { error: "total" };
-  return { sub, dis, ship, total, gov, lines, summary: parts.join(", ") };
+  return { sub, bundle, freeUnits, dis, ship, total, gov, lines, summary: parts.join(", ") };
 }
 module.exports = { priceOrder };
  

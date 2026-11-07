@@ -53,7 +53,7 @@
         <div class="hero__text">
           <p class="eyebrow">A Breath of Pure Luxury</p>
           <h1 data-i18n-html="hero.title">نسمة من<br>الفخامة النقية</h1>
-          <p class="hero__lead" data-i18n="hero.lead">عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من ١٠ مل للتجربة حتى ١٠٠ مل لمن وجد عطره.</p>
+          <p class="hero__lead" data-i18n="hero.lead">عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.</p>
           <div class="hero__cta">
             <a href="#collection" class="btn btn--dark" data-i18n="hero.shop">تسوّق العطور</a>
             <a href="#finder" class="btn btn--line" data-i18n="hero.finder">اكتشف عطرك</a>
@@ -61,7 +61,7 @@
           <ul class="promises">
             <li data-i18n="promise.cod">الدفع عند الاستلام</li>
             <li data-i18n="promise.ship">شحن لجميع المحافظات</li>
-            <li data-i18n="promise.last">ثبات من ٨ إلى ١٢ ساعة</li>
+            <li data-i18n="promise.last">ثبات من 8 إلى 12 ساعة</li>
           </ul>
         </div>
         <div class="hero__visual">
@@ -131,6 +131,17 @@
       </div>
     </section>
 
+    <!-- REELS -->
+    <section class="videos" id="videos" hidden aria-labelledby="vdTitle">
+      <div class="wrap">
+        <div class="sechead">
+          <p class="eyebrow">The Experience</p>
+          <h2 id="vdTitle" data-i18n="vd.title">تجربة سوير</h2>
+        </div>
+        <div class="reels" id="videoGrid"></div>
+      </div>
+    </section>
+
     <!-- GIFTS / SPECIAL REQUESTS -->
     <section class="gifts" id="gifts" aria-labelledby="giftsTitle">
       <div class="wrap gifts__in">
@@ -166,7 +177,7 @@
           </div>
           <div class="field">
             <label for="rq_details" data-i18n="rq.details">التفاصيل</label>
-            <textarea id="rq_details" name="details" rows="3" data-i18n-ph="rq.detailsPh" placeholder="مثلًا: ٥٠ زجاجة ١٠ مل مع بطاقة تحمل اسم العروسين"></textarea>
+            <textarea id="rq_details" name="details" rows="3" data-i18n-ph="rq.detailsPh" placeholder="مثلًا: 50 زجاجة 10 مل مع بطاقة تحمل اسم العروسين"></textarea>
           </div>
           <p class="form__err" id="rqErr" role="alert"></p>
           <button class="btn btn--dark btn--block" type="submit" data-i18n="rq.send">أرسل الطلب</button>
@@ -179,6 +190,41 @@
           <figure class="gifts__img"><img src="/img/gift-display.webp" alt="" width="872" height="656" loading="lazy"></figure>
         </div>
 
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews" aria-labelledby="rvTitle">
+      <div class="wrap">
+        <div class="sechead">
+          <p class="eyebrow">Reviews</p>
+          <h2 id="rvTitle" data-i18n="rv.title">آراء عملائنا</h2>
+          <div class="rv-summary" id="rvSummary"></div>
+        </div>
+        <div class="rv-grid" id="rvGrid" hidden></div>
+        <details class="rv-write">
+          <summary class="btn btn--line" data-i18n="rv.write">اكتب تقييمك</summary>
+          <form class="card form" id="rvForm" novalidate>
+            <div class="row2">
+              <div class="field"><label for="rv_name" data-i18n="rv.name">الاسم</label><input id="rv_name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="rv_product" data-i18n="rv.product">العطر</label><select id="rv_product" name="product"></select></div>
+            </div>
+            <fieldset class="field rv-stars"><legend data-i18n="rv.rating">تقييمك</legend>
+              <div class="rv-stars__in">
+                <input type="radio" id="rs5" name="rating" value="5"><label for="rs5" title="5">★</label>
+                <input type="radio" id="rs4" name="rating" value="4"><label for="rs4" title="4">★</label>
+                <input type="radio" id="rs3" name="rating" value="3"><label for="rs3" title="3">★</label>
+                <input type="radio" id="rs2" name="rating" value="2"><label for="rs2" title="2">★</label>
+                <input type="radio" id="rs1" name="rating" value="1"><label for="rs1" title="1">★</label>
+              </div>
+            </fieldset>
+            <div class="field"><label for="rv_text" data-i18n="rv.text">رأيك</label><textarea id="rv_text" name="text" rows="3" data-i18n-ph="rv.textPh" required></textarea></div>
+            <div class="field"><label for="rv_phone" data-i18n="rv.phone">رقم الموبايل (اختياري، لن يُنشر)</label><input id="rv_phone" name="phone" type="tel" inputmode="tel" dir="ltr" placeholder="01xxxxxxxxx"></div>
+            <p class="form__err" id="rvErr" role="alert"></p>
+            <p class="rv-ok" id="rvOk" hidden data-i18n="rv.ok">شكرًا لك! سننشر تقييمك بعد مراجعته.</p>
+            <button class="btn btn--dark btn--block" type="submit" data-i18n="rv.send">أرسل التقييم</button>
+          </form>
+        </details>
       </div>
     </section>
 

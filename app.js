@@ -9,14 +9,20 @@
       skip: "انتقل إلى العطور",
       "nav.shop": "العطور", "nav.offers": "العروض", "nav.gifts": "الهدايا والطلبات الخاصة", "nav.faq": "الأسئلة الشائعة",
       "hero.title": "نسمة من<br>الفخامة النقية",
-      "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من ١٠ مل للتجربة حتى ١٠٠ مل لمن وجد عطره.",
+      "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.",
       "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك",
-      "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من ٨ إلى ١٢ ساعة",
+      "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من 8 إلى 12 ساعة",
       "offers.title": "العروض الحالية", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
       "col.title": "عطور سوير",
       "finder.title": "اكتشف عطرك", "finder.text": "اختر النوتات التي تفضّلها، وسنرتّب لك العطور حسب قربها من ذوقك.", "finder.reset": "مسح الاختيارات",
       "finder.match": "يناسب ذوقك بنسبة {n}٪",
       "tab.all": "الكل",
+      "bundle.badge": "2+1", "bundle.nudge": "أضف {n} منتجات أخرى، وسيكون الأرخص مجانًا.", "bundle.nudge1": "أضف منتجًا واحدًا آخر، وسيكون الأرخص مجانًا.", "bundle.ok": "تم تطبيق عرض «اشترِ 2 والثالث هدية» — وفّرت {x}.",
+      "t.freeUnits": "مجانًا",
+      "rv.title": "آراء عملائنا", "rv.write": "اكتب تقييمك", "rv.first": "كن أول من يقيّم عطور سوير.", "rv.anyProduct": "تقييم عام لسوير",
+      "rv.name": "الاسم", "rv.product": "العطر", "rv.rating": "تقييمك", "rv.text": "رأيك", "rv.textPh": "ما الذي أعجبك في العطر؟ الثبات، الرائحة، التغليف…",
+      "rv.phone": "رقم الموبايل (اختياري، لن يُنشر)", "rv.send": "أرسل التقييم", "rv.ok": "شكرًا لك! سننشر تقييمك بعد مراجعته.", "rv.err": "اكتب اسمك ورأيك واختر عدد النجوم.",
+      "vd.title": "تجربة سوير",
       "search": "ابحث عن عطر… مثلًا: بلاك أوبيوم، فانيلا، Dior", "more": "عرض المزيد ({n})", "results": "{n} عطر",
       "pyr.top": "الافتتاحية", "pyr.heart": "القلب", "pyr.base": "القاعدة",
       "disclaimer": "عطور سوير تركيبات خاصة مستوحاة من روائح عالمية. أسماء العلامات التجارية المذكورة مملوكة لأصحابها، وتُذكر للتعريف بطابع الرائحة فقط، ولا تتبع سوير أيًّا منها.",
@@ -27,15 +33,15 @@
       "gifts.title": "الهدايا والطلبات الخاصة",
       "gifts.text": "توزيعات الأفراح والخطوبة، وهدايا الشركات، وبوكسات باسم صاحب الهدية، والكميات بالجملة. أرسل تفاصيل طلبك وسنرد عليك بعرض سعر خلال يوم.",
       "rq.type": "نوع الطلب", "rq.qty": "الكمية التقريبية", "rq.date": "الموعد المطلوب", "rq.budget": "الميزانية للقطعة (اختياري)",
-      "rq.details": "التفاصيل", "rq.detailsPh": "مثلًا: ٥٠ زجاجة ١٠ مل مع بطاقة تحمل اسم العروسين", "rq.send": "أرسل الطلب",
+      "rq.details": "التفاصيل", "rq.detailsPh": "مثلًا: 50 زجاجة 10 مل مع بطاقة تحمل اسم العروسين", "rq.send": "أرسل الطلب",
       "rq.types": ["هدية لشخص مميز", "توزيعات فرح أو خطوبة", "هدايا شركات", "جملة / إعادة بيع", "طلب آخر"],
       "faq.title": "الأسئلة الشائعة",
       faq: [
-        ["متى يصل الطلب؟", "القاهرة والجيزة خلال يوم إلى ٣ أيام، وباقي المحافظات خلال ٣ إلى ٥ أيام عمل. سنتواصل معك فور خروج الطلب للشحن."],
+        ["متى يصل الطلب؟", "القاهرة والجيزة خلال يوم إلى 3 أيام، وباقي المحافظات خلال 3 إلى 5 أيام عمل. سنتواصل معك فور خروج الطلب للشحن."],
         ["كيف أدفع؟", "نقدًا عند الاستلام، أو بتحويل إنستاباي أو محفظة إلكترونية قبل الشحن، أو بالبطاقة أونلاين إذا كان الخيار متاحًا في صفحة الطلب."],
-        ["ما مدة ثبات العطر؟", "عطورنا مركّزة، ويدوم ثباتها من ٨ إلى ١٢ ساعة على البشرة وأكثر على الملابس، ويختلف ذلك قليلًا حسب طبيعة البشرة."],
-        ["لست متأكدًا مما أختار؟", "ابدأ بحجم ١٠ مل، أو استخدم «اكتشف عطرك» في الأعلى، أو راسلنا على إنستجرام وسنساعدك في الاختيار."],
-        ["هل يمكنني الاستبدال؟", "إذا وصل المنتج وبه أي مشكلة نستبدله فورًا. ولأن العطور منتج شخصي، يكون الاستبدال على الزجاجات المغلقة خلال ٣ أيام من الاستلام."]
+        ["ما مدة ثبات العطر؟", "عطورنا مركّزة، ويدوم ثباتها من 8 إلى 12 ساعة على البشرة وأكثر على الملابس، ويختلف ذلك قليلًا حسب طبيعة البشرة."],
+        ["لست متأكدًا مما أختار؟", "ابدأ بحجم 10 مل، أو استخدم «اكتشف عطرك» في الأعلى، أو راسلنا على إنستجرام وسنساعدك في الاختيار."],
+        ["هل يمكنني الاستبدال؟", "إذا وصل المنتج وبه أي مشكلة نستبدله فورًا. ولأن العطور منتج شخصي، يكون الاستبدال على الزجاجات المغلقة خلال 3 أيام من الاستلام."]
       ],
       "cart.title": "السلة", "cart.checkout": "إتمام الطلب", "cart.continue": "متابعة التسوّق",
       "cart.empty": "السلة فارغة.", "cart.browse": "تصفّح العطور", "cart.remove": "إزالة",
@@ -54,7 +60,7 @@
       "pay.transfer": "إنستاباي أو محفظة إلكترونية", "pay.transferNote": "حوّل الإجمالي، وسنتواصل معك لاستلام صورة التحويل.",
       "pay.card": "فيزا / ماستركارد أونلاين", "pay.cardNote": "دفع آمن عبر Paymob. ستنتقل إلى صفحة الدفع ثم تعود إلى هنا.",
       "co.send": "تأكيد الطلب", "co.sending": "جارٍ إرسال الطلب…", "co.pay": "ادفع {x} بأمان", "co.paying": "جارٍ تحويلك إلى صفحة الدفع…",
-      "err.name": "اكتب الاسم", "err.phone": "اكتب رقم موبايل مصريًا صحيحًا (١١ رقمًا يبدأ بـ 01)", "err.gov": "اختر المحافظة",
+      "err.name": "اكتب الاسم", "err.phone": "اكتب رقم موبايل مصريًا صحيحًا (11 رقمًا يبدأ بـ 01)", "err.gov": "اختر المحافظة",
       "err.address": "اكتب العنوان بالتفصيل", "err.area": "اكتب المنطقة", "err.email": "اكتب بريدًا إلكترونيًا صحيحًا",
       "err.coupon": "هذا الكود غير صحيح", "ok.coupon": "تم تطبيق الكود", "err.pay": "تعذّر فتح صفحة الدفع الآن. حاول مرة أخرى أو اختر الدفع عند الاستلام.",
       "err.form": "راجع البيانات المظلّلة باللون الأحمر.", "err.rq": "اكتب الاسم ورقم موبايل صحيحًا.",
@@ -84,6 +90,12 @@
       "finder.title": "Find your scent", "finder.text": "Pick the notes you love and we’ll rank the perfumes by how close they are to your taste.", "finder.reset": "Clear selection",
       "finder.match": "{n}% your taste",
       "tab.all": "All",
+      "bundle.badge": "2+1", "bundle.nudge": "Add {n} more items and the cheapest one is free.", "bundle.nudge1": "Add one more item and the cheapest one is free.", "bundle.ok": "Buy 2, get 1 free applied — you saved {x}.",
+      "t.freeUnits": "free",
+      "rv.title": "What customers say", "rv.write": "Write a review", "rv.first": "Be the first to review SWYR.", "rv.anyProduct": "General review of SWYR",
+      "rv.name": "Name", "rv.product": "Perfume", "rv.rating": "Your rating", "rv.text": "Your review", "rv.textPh": "What did you like? Longevity, scent, packaging…",
+      "rv.phone": "Mobile (optional, not published)", "rv.send": "Send review", "rv.ok": "Thank you! We’ll publish your review after checking it.", "rv.err": "Enter your name, your review and a star rating.",
+      "vd.title": "The SWYR experience",
       "search": "Search a scent… e.g. Black Opium, vanilla, Dior", "more": "Show more ({n})", "results": "{n} perfumes",
       "pyr.top": "Top", "pyr.heart": "Heart", "pyr.base": "Base",
       "disclaimer": "SWYR perfumes are our own blends inspired by well-known scents. Brand names belong to their owners and are mentioned only to describe the scent profile; SWYR is not affiliated with them.",
@@ -202,6 +214,20 @@
     const key = Object.keys(C.coupons || {}).find(k => !k.startsWith("_") && k.toUpperCase() === code.toUpperCase());
     return key ? { code: key, ...C.coupons[key] } : null;
   }
+  // «buy 2 get 1»: in every group of (buy+get) eligible units, the cheapest are free (mirrors api/_pricing.js)
+  const bundleOn = () => !!(C.bundle && C.bundle.enabled && C.bundle.buy > 0 && C.bundle.get > 0);
+  const inBundle = p => bundleOn() && !(C.bundle.excludeCategories || []).includes(p.category);
+  function bundleOf(lines) {
+    if (!bundleOn()) return { free: 0, amount: 0, need: 0 };
+    const units = [];
+    lines.forEach(l => { if (inBundle(l.p)) for (let i = 0; i < l.qty; i++) units.push(l.s.price); });
+    units.sort((a, b) => a - b);
+    const per = C.bundle.buy + C.bundle.get;
+    const free = Math.floor(units.length / per) * C.bundle.get;
+    const rem = units.length % per;
+    return { free, amount: units.slice(0, free).reduce((a, b) => a + b, 0), need: rem >= C.bundle.buy ? per - rem : 0 };
+  }
+ 
   function totals(govId) {
     const lines = cart.map(i => {
       const p = product(i.id); if (!p) return null;
@@ -209,16 +235,18 @@
       return { p, s, qty: i.qty, total: s.price * i.qty };
     }).filter(Boolean);
     const sub = lines.reduce((a, l) => a + l.total, 0);
+    const bd = bundleOf(lines);
     const cd = couponDef(coupon);
     let dis = 0;
-    if (cd) dis = cd.type === "percent" ? Math.round(sub * cd.value / 100) : Math.min(sub, cd.value);
+    if (cd) dis = cd.type === "percent" ? Math.round((sub - bd.amount) * cd.value / 100) : Math.min(sub - bd.amount, cd.value);
+    const net = sub - bd.amount - dis;
     const gov = C.governorates.find(g => g.id === govId);
-    const free = C.settings.freeShippingOver && (sub - dis) >= C.settings.freeShippingOver;
+    const free = C.settings.freeShippingOver && net >= C.settings.freeShippingOver;
     const ship = !gov ? null : (free ? 0 : (C.shippingZones[gov.zone] ?? 0));
-    const total = sub - dis + (ship || 0);
+    const total = net + (ship || 0);
     const count = lines.reduce((a, l) => a + l.qty, 0);
     const saved = lines.reduce((a, l) => a + (l.s.compare > l.s.price ? (l.s.compare - l.s.price) * l.qty : 0), 0);
-    return { lines, sub, dis, cd, ship, free, total, count, gov, saved };
+    return { lines, sub, bundle: bd.amount, freeUnits: bd.free, bundleNeed: bd.need, dis, cd, net, ship, free, total, count, gov, saved };
   }
  
   /* ---------------- language ---------------- */
@@ -309,13 +337,14 @@
     <article class="pcard" data-id="${p.id}">
       <button type="button" class="pcard__media" data-open="${p.id}" aria-label="${esc(L(p.name))} — ${t("card.details")}">
         ${artHTML(p)}
-        ${p.badge ? `<span class="badge">${esc(L(p.badge))}</span>` : ""}
+        ${p.badge ? `<span class="badge">${esc(L(p.badge))}</span>` : inBundle(p) ? `<span class="badge badge--bundle">${t("bundle.badge")}</span>` : ""}
         ${pctOff(s) ? `<span class="off">−${pctOff(s)}%</span>` : ""}
         ${score ? `<span class="match">${t("finder.match", { n: score })}</span>` : ""}
       </button>
       <div class="pcard__body">
         <div class="pcard__latin">${esc(p.name.en)}</div>
         ${lang === "ar" ? `<h3 class="pcard__name"><button type="button" data-open="${p.id}">${esc(p.name.ar)}</button></h3>` : ""}
+        ${ratingLine(p.id)}
         <p class="pcard__notes">${esc(noteLine(p) || (p.desc ? L(p.desc).split(/[.،,—]/)[0] : ""))}</p>
         ${multi ? `<div class="sizesel" role="group" aria-label="${t("pd.size")}">${p.sizes.map(z =>
           `<button type="button" data-size="${z.ml}" aria-pressed="${z.ml === ml}" aria-label="${esc(sizeLabel(z))}">${z.label ? esc(sizeLabel(z)) : `${z.ml}<span class="u"> ${t("ml")}</span>`}</button>`).join("")}</div>` : ""}
@@ -365,6 +394,46 @@
     if (keepFocus) { const btn = fresh.querySelector(`[data-size="${sel[id]}"]`); if (btn) btn.focus({ preventScroll: true }); }
   }
  
+  /* ---------------- reviews (real customer reviews from catalog.json) ---------------- */
+  const stars = r => `<span class="stars" aria-label="${r}/5">${"★".repeat(Math.round(r))}<span class="stars__off">${"★".repeat(5 - Math.round(r))}</span></span>`;
+  const reviewsOf = id => (C.reviews || []).filter(r => !id || r.product === id);
+  function ratingLine(id, big) {
+    const rs = reviewsOf(id); if (!rs.length) return "";
+    const avg = rs.reduce((a, r) => a + r.rating, 0) / rs.length;
+    return `<div class="rating${big ? " rating--big" : ""}">${stars(avg)} <b>${avg.toFixed(1)}</b> <span>(${rs.length})</span></div>`;
+  }
+  const reviewCard = r => {
+    const p = r.product ? product(r.product) : null;
+    return `<figure class="rv">
+      ${stars(r.rating)}
+      <blockquote>${esc(r.text)}</blockquote>
+      <figcaption><b>${esc(r.name)}</b>${p ? ` · ${esc(L(p.name))}` : ""}</figcaption>
+    </figure>`;
+  };
+  function productReviews(id) {
+    const rs = reviewsOf(id).slice(-3).reverse();
+    return rs.length ? `<p class="pd__label">${t("rv.title")}</p><div class="rv-list">${rs.map(reviewCard).join("")}</div>` : "";
+  }
+  function renderReviews() {
+    const rs = (C.reviews || []).slice().reverse();
+    $("#rvSummary").innerHTML = rs.length ? ratingLine(null, true) : `<span>${t("rv.first")}</span>`;
+    $("#rvGrid").innerHTML = rs.slice(0, 9).map(reviewCard).join("");
+    $("#rvGrid").hidden = !rs.length;
+    const sel_ = $("#rv_product"), v = sel_.value;
+    sel_.innerHTML = `<option value="">${t("rv.anyProduct")}</option>` + C.products.map(p => `<option value="${p.id}">${esc(L(p.name))}</option>`).join("");
+    sel_.value = v;
+  }
+  /* ---------------- reels ---------------- */
+  function renderVideos() {
+    const codes = (C.videos || []).map(u => (String(u).match(/instagram\.com\/(?:[\w.]+\/)?(?:reel|reels|p|tv)\/([A-Za-z0-9_-]+)/) || [])[1]).filter(Boolean);
+    $("#videos").hidden = !codes.length;
+    if (!codes.length) return;
+    const g = $("#videoGrid");
+    if (g.dataset.codes === codes.join()) return;      // don't reload iframes on language switch
+    g.dataset.codes = codes.join();
+    g.innerHTML = codes.map(c => `<div class="reel"><iframe src="https://www.instagram.com/reel/${c}/embed/" loading="lazy" title="SWYR reel" allowtransparency="true" allow="encrypted-media; picture-in-picture" scrolling="no"></iframe></div>`).join("");
+  }
+ 
   function renderFaq() {
     $("#faqList").innerHTML = t("faq").map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   }
@@ -397,13 +466,13 @@
     sb.hidden = tt.count === 0;
     document.body.classList.toggle("has-sticky", tt.count > 0);
     $("#stickyCount").textContent = countLabel(tt.count);
-    $("#stickyTotal").textContent = money(tt.sub - tt.dis);
+    $("#stickyTotal").textContent = money(tt.net);
   }
   const countLabel = n => n === 1 ? t("cart.item1") : n === 2 ? t("cart.item2") : t("cart.items", { n });
  
   function renderAll() {
     renderAnnounce(); renderOffers(); renderChips(); renderTabs(); renderGrid();
-    renderFaq(); renderFooter(); renderRequestTypes(); renderBadge();
+    renderFaq(); renderFooter(); renderRequestTypes(); renderBadge(); renderReviews(); renderVideos();
     if ($("#drawer").classList.contains("is-open")) renderDrawer();
   }
  
@@ -430,6 +499,7 @@
           </div>
           ${p.desc ? `<p class="pd__desc">${esc(L(p.desc))}</p>` : ""}
           ${p.inspiredBy ? `<p class="pd__insp">${esc(inspiredText(p))}</p>` : ""}
+          ${ratingLine(p.id, true)}
           ${p.pyramid && Object.keys(p.pyramid).length ? `<dl class="pyr">${["top", "heart", "base"].filter(k => p.pyramid[k]).map(k =>
             `<div><dt>${t("pyr." + k)}</dt><dd>${esc(p.pyramid[k])}</dd></div>`).join("")}</dl>` : ""}
           ${notes.length ? `<p class="pd__label">${t("pd.notes")}</p>
@@ -439,6 +509,7 @@
           }).join("")}</div>` : ""}
           ${p.sizes.length > 1 ? `<p class="pd__label">${t("pd.size")}</p>
           <div class="sizesel" role="group">${p.sizes.map(z => `<button type="button" data-psize="${z.ml}" aria-pressed="${z.ml === s.ml}">${esc(sizeLabel(z))}</button>`).join("")}</div>` : ""}
+          ${productReviews(p.id)}
           <p class="pd__price"><b>${money(s.price)}</b>${pctOff(s) ? ` <s class="was">${money(s.compare)}</s> <span class="off off--inline">−${pctOff(s)}%</span>` : ""}</p>
           <div class="pd__buy">
             <div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><span>${qty}</span><button type="button" data-q="1" aria-label="+">+</button></div>
@@ -582,9 +653,10 @@
     return `<div class="totals">
       ${tt.saved ? `<div class="t-dis"><span>${t("t.saved")}</span><span>${money(tt.saved)}</span></div>` : ""}
       <div><span>${t("t.sub")}</span><span>${money(tt.sub)}</span></div>
+      ${tt.bundle ? `<div class="t-dis"><span>${esc(L(C.bundle.title))} (${tt.freeUnits} ${t("t.freeUnits")})</span><span>−${money(tt.bundle)}</span></div>` : ""}
       ${tt.dis ? `<div class="t-dis"><span>${t("t.dis")} (${esc(tt.cd.code)})</span><span>−${money(tt.dis)}</span></div>` : ""}
       ${showShip ? `<div><span>${t("t.ship")}${tt.gov ? ` · ${esc(L(tt.gov))}` : ""}</span><span>${tt.ship == null ? t("t.shipPick") : tt.ship === 0 ? t("t.free") : money(tt.ship)}</span></div>` : ""}
-      <div class="t-total"><span>${t("t.total")}</span><span>${money(showShip ? tt.total : tt.sub - tt.dis)}</span></div>
+      <div class="t-total"><span>${t("t.total")}</span><span>${money(showShip ? tt.total : tt.net)}</span></div>
     </div>`;
   }
  
@@ -602,8 +674,10 @@
         foot.innerHTML = ""; return;
       }
       const thr = C.settings.freeShippingOver;
-      const after = tt.sub - tt.dis;
+      const after = tt.net;
       body.innerHTML = `
+        ${tt.bundleNeed ? `<div class="ship-meter bundle-nudge">${tt.bundleNeed === 1 ? t("bundle.nudge1") : t("bundle.nudge", { n: tt.bundleNeed })}</div>` : ""}
+        ${tt.bundle ? `<div class="ship-meter bundle-ok">${t("bundle.ok", { x: money(tt.bundle) })}</div>` : ""}
         ${thr ? `<div class="ship-meter">${after >= thr ? t("ship.free") : t("ship.left", { x: money(thr - after) })}
           <div class="ship-meter__track"><i style="width:${Math.min(100, after / thr * 100)}%"></i></div></div>` : ""}
         ${tt.lines.map((l, idx) => `
@@ -785,6 +859,7 @@
       ...rows,
       line,
       `المجموع: ${moneyAr(tt.sub)}`,
+      tt.bundle ? `عرض اشترِ 2 والثالث هدية (${tt.freeUnits} مجانًا): -${moneyAr(tt.bundle)}` : null,
       tt.dis ? `خصم (${tt.cd.code}): -${moneyAr(tt.dis)}` : null,
       `الشحن (${tt.gov ? tt.gov.ar : "-"}): ${tt.ship === 0 ? "مجاني" : moneyAr(tt.ship || 0)}`,
       `*الإجمالي: ${moneyAr(tt.total)}*`,
@@ -922,7 +997,7 @@
     if (d.rm) { cart.splice(+d.rm, 1); saveCart(); renderDrawer(); return; }
     if (d.cq) { setQty(+d.cq, +d.d); return; }
     if (d.go) {
-      if (d.go === "checkout" && view === "cart") { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.sub - tt.dis, num: tt.count }); }
+      if (d.go === "checkout" && view === "cart") { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.net, num: tt.count }); }
       view = d.go; renderDrawer(); $("#drawerBody").scrollTop = 0; return;
     }
     if (d.coupon !== undefined) {
@@ -951,7 +1026,7 @@
   $("#finderReset").addEventListener("click", () => { filt.notes.clear(); renderChips(); renderGrid(); });
   $("#cartBtn").addEventListener("click", () => openDrawer("cart"));
   $("#stickyBtn").addEventListener("click", () => {
-    if (cart.length) { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.sub - tt.dis, num: tt.count }); }
+    if (cart.length) { const tt = totals(form.gov); track("InitiateCheckout", { ids: tt.lines.map(l => l.p.id), value: tt.net, num: tt.count }); }
     openDrawer(cart.length ? "checkout" : "cart");
   });
   $("#drawerClose").addEventListener("click", closeDrawer);
@@ -989,6 +1064,22 @@
     else { copyText(text); openDrawer("request"); }
   });
  
+  $("#rvForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const f = e.target, fd = new FormData(f);
+    const name = String(fd.get("name") || "").trim(), text = String(fd.get("text") || "").trim();
+    const rating = +fd.get("rating") || 0, pid = fd.get("product") || "", phone = normPhone(fd.get("phone") || "");
+    if (name.length < 2 || text.length < 3 || !rating) { $("#rvErr").textContent = t("rv.err"); return; }
+    $("#rvErr").textContent = "";
+    const p = pid ? product(pid) : null;
+    const msg = [`*تقييم من موقع SWYR*`, `الاسم: ${name}`, `التقييم: ${rating}/5`, p ? `العطر: ${p.name.ar}` : null, `التعليق: ${text}`].filter(Boolean).join("\n");
+    const sb = f.querySelector("[type=submit]"); sb.disabled = true;
+    const saved = await postOrder({ kind: "review", source: source(), customer: { name, phone: validPhone(phone) ? phone : "" }, review: { rating, text, product: pid } });
+    sb.disabled = false;
+    if (saved) { f.reset(); $("#rvOk").hidden = false; setTimeout(() => { $("#rvOk").hidden = true; }, 6000); }
+    else { lastOrder = { id: "", text: msg }; copyText(msg); openDrawer("request"); }
+  });
+ 
   /* ---------------- boot ---------------- */
   async function boot() {
     try {
@@ -1014,3 +1105,4 @@
   }
   boot();
 })();
+ 

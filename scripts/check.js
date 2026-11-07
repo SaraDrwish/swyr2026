@@ -74,6 +74,19 @@ Object.entries(C.coupons || {}).filter(([k]) => !k.startsWith("_")).forEach(([k,
   if (typeof c.value !== "number" || c.value <= 0 || (c.type === "percent" && c.value > 90)) err(`كود ${k}: القيمة مش منطقية.`);
 });
  
+// 5b) bundle, reviews, reels
+const Bn = C.bundle;
+if (Bn && Bn.enabled && !(Number.isInteger(Bn.buy) && Bn.buy > 0 && Number.isInteger(Bn.get) && Bn.get > 0)) err("bundle: buy و get لازم يكونوا أرقام صحيحة أكبر من صفر.");
+(C.reviews || []).forEach((r, i) => {
+  const w = `التقييم رقم ${i + 1}`;
+  if (!r.name || !r.text) err(`${w}: لازم يكون فيه name و text.`);
+  if (!Number.isInteger(r.rating) || r.rating < 1 || r.rating > 5) err(`${w}: rating لازم يكون رقم من 1 لـ 5.`);
+  if (r.product && !ids.has(r.product)) err(`${w}: العطر "${r.product}" مش موجود.`);
+});
+(C.videos || []).forEach((v, i) => {
+  if (!/instagram\.com\/(?:[\w.]+\/)?(?:reel|reels|p|tv)\/[A-Za-z0-9_-]+/.test(String(v))) err(`الفيديو رقم ${i + 1}: "${v}" مش لينك ريل إنستجرام صحيح.`);
+});
+ 
 // 6) server pricing works for a sample order
 try {
   const { priceOrder } = require(path.join(root, "api/_pricing.js"));
