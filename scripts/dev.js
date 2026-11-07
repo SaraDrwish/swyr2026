@@ -59,6 +59,7 @@ http.createServer(async (req, res) => {
   console.log(`\n✓ الموقع شغال على: http://localhost:${port}`);
   console.log(`  الإيميل والشيت: ${process.env.ORDERS_WEBHOOK_URL ? "متوصّل" : "مش متوصّل"}`);
   console.log(`  واتساب: ${process.env.CALLMEBOT_APIKEY ? "متوصّل" : "مش متوصّل"}`);
+  console.log(`  إشعارات ntfy: ${process.env.NTFY_TOPIC ? "متوصّل" : "مش متوصّل"}`);
   console.log("  لإيقافه اضغطي Ctrl + C\n");
 });
  

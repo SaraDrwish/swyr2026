@@ -1,11 +1,4 @@
-// Receives every order / special request from the site and forwards it to the
-// Google Apps Script web app (Google Sheet + email to the shop owner).
-// Prices are recalculated here from catalog.json — the browser's totals are never trusted.
-//
-// Vercel environment variables:
-//   ORDERS_WEBHOOK_URL   the Apps Script "Web app URL" (ends with /exec)
-//   ORDERS_SECRET        the same secret word written at the top of the Apps Script code
- 
+
 const catalog = require("../catalog.json");
 const { priceOrder } = require("./_pricing");
  
@@ -18,8 +11,9 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).json({ ok: false, error: "method" });
   const URL_ = process.env.ORDERS_WEBHOOK_URL, SECRET = process.env.ORDERS_SECRET;
   const WA_PHONE = process.env.WHATSAPP_PHONE, WA_KEY = process.env.CALLMEBOT_APIKEY;
-  const sheetOn = Boolean(URL_ && SECRET), waOn = Boolean(WA_PHONE && WA_KEY);
-  if (!sheetOn && !waOn) return res.status(503).json({ ok: false, error: "not configured" });
+  const NTFY = (process.env.NTFY_TOPIC || "").trim();
+  const sheetOn = Boolean(URL_ && SECRET), waOn = Boolean(WA_PHONE && WA_KEY), ntfyOn = /^[A-Za-z0-9_-]{8,64}$/.test(NTFY);
+  if (!sheetOn && !waOn && !ntfyOn) return res.status(503).json({ ok: false, error: "not configured" });
  
   let b = req.body;
   if (typeof b === "string") { try { b = JSON.parse(b); } catch { b = {}; } }
@@ -142,7 +136,24 @@ module.exports = async (req, res) => {
     finally { tm.done(); }
   };
  
-  const [sheet, wa] = await Promise.all([toSheet(), toWhatsApp()]);
-  if (!sheet && !wa) return res.status(502).json({ ok: false, error: "delivery" });
-  return res.status(200).json({ ok: true, total: payload.total, sheet, whatsapp: wa });
+  // 3) phone push notification (ntfy.sh app — free, no account)
+  const toNtfy = async () => {
+    if (!ntfyOn) return false;
+    const tm = withTimeout(9000);
+    try {
+      const r = await fetch(`https://ntfy.sh/${NTFY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ topic: NTFY, title: payload.subject || "SWYR", message: payload.text.slice(0, 3800), priority: 4, tags: ["shopping_bags"] }),
+        signal: tm.signal
+      });
+      if (!r.ok) { console.error("ntfy failed", r.status); return false; }
+      return true;
+    } catch (e) { console.error("ntfy error", e && e.message); return false; }
+    finally { tm.done(); }
+  };
+ 
+  const [sheet, wa, push] = await Promise.all([toSheet(), toWhatsApp(), toNtfy()]);
+  if (!sheet && !wa && !push) return res.status(502).json({ ok: false, error: "delivery" });
+  return res.status(200).json({ ok: true, total: payload.total, sheet, whatsapp: wa, push });
 };
