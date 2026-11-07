@@ -17,7 +17,9 @@ module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
   if (req.method !== "POST") return res.status(405).json({ ok: false, error: "method" });
   const URL_ = process.env.ORDERS_WEBHOOK_URL, SECRET = process.env.ORDERS_SECRET;
-  if (!URL_ || !SECRET) return res.status(503).json({ ok: false, error: "not configured" });
+  const WA_PHONE = process.env.WHATSAPP_PHONE, WA_KEY = process.env.CALLMEBOT_APIKEY;
+  const sheetOn = Boolean(URL_ && SECRET), waOn = Boolean(WA_PHONE && WA_KEY);
+  if (!sheetOn && !waOn) return res.status(503).json({ ok: false, error: "not configured" });
  
   let b = req.body;
   if (typeof b === "string") { try { b = JSON.parse(b); } catch { b = {}; } }
@@ -107,25 +109,40 @@ module.exports = async (req, res) => {
     };
   }
  
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 9000);
-    const r = await fetch(URL_, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({ ...payload, secret: SECRET }),
-      redirect: "follow",
-      signal: ctrl.signal
-    });
-    clearTimeout(timer);
-    const out = await r.json().catch(() => ({}));
-    if (!r.ok || !out.ok) {
-      console.error("orders webhook failed", r.status, JSON.stringify(out).slice(0, 300));
-      return res.status(502).json({ ok: false, error: "webhook" });
-    }
-    return res.status(200).json({ ok: true, total: payload.total });
-  } catch (e) {
-    console.error("orders webhook error", e && e.message);
-    return res.status(502).json({ ok: false, error: "webhook" });
-  }
+  const withTimeout = (ms) => { const c = new AbortController(); const t = setTimeout(() => c.abort(), ms); return { signal: c.signal, done: () => clearTimeout(t) }; };
+ 
+  // 1) Google Sheet + email (Apps Script)
+  const toSheet = async () => {
+    if (!sheetOn) return false;
+    const tm = withTimeout(9000);
+    try {
+      const r = await fetch(URL_, {
+        method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ ...payload, secret: SECRET }), redirect: "follow", signal: tm.signal
+      });
+      const out = await r.json().catch(() => ({}));
+      if (!r.ok || !out.ok) { console.error("orders webhook failed", r.status, JSON.stringify(out).slice(0, 300)); return false; }
+      return true;
+    } catch (e) { console.error("orders webhook error", e && e.message); return false; }
+    finally { tm.done(); }
+  };
+ 
+  // 2) WhatsApp message to the shop owner (CallMeBot — free, personal use)
+  const toWhatsApp = async () => {
+    if (!waOn) return false;
+    const tm = withTimeout(9000);
+    try {
+      const msg = payload.text.length > 1500 ? payload.text.slice(0, 1500) + "…" : payload.text;
+      const u = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(WA_PHONE)}&text=${encodeURIComponent(msg)}&apikey=${encodeURIComponent(WA_KEY)}`;
+      const r = await fetch(u, { signal: tm.signal });
+      const body = await r.text().catch(() => "");
+      if (!r.ok || /error|invalid|not\s+allowed/i.test(body.slice(0, 400))) { console.error("whatsapp failed", r.status, body.slice(0, 200)); return false; }
+      return true;
+    } catch (e) { console.error("whatsapp error", e && e.message); return false; }
+    finally { tm.done(); }
+  };
+ 
+  const [sheet, wa] = await Promise.all([toSheet(), toWhatsApp()]);
+  if (!sheet && !wa) return res.status(502).json({ ok: false, error: "delivery" });
+  return res.status(200).json({ ok: true, total: payload.total, sheet, whatsapp: wa });
 };

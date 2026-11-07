@@ -1,10 +1,3 @@
-// Run the SWYR site on your computer, the same way Vercel runs it:
-//   node scripts/dev.js        → http://localhost:3000
-// Serves the website files and runs the /api functions (orders, Paymob).
-// Optional: put secret keys in a file named .env next to index.html, one per line, e.g.
-//   ORDERS_WEBHOOK_URL=https://script.google.com/macros/s/.../exec
-//   ORDERS_SECRET=...
-// (.env is never uploaded to GitHub — it is listed in .gitignore.)
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -64,6 +57,8 @@ http.createServer(async (req, res) => {
   fs.createReadStream(file).pipe(res);
 }).listen(port, () => {
   console.log(`\n✓ الموقع شغال على: http://localhost:${port}`);
-  console.log(`  شيت الطلبات: ${process.env.ORDERS_WEBHOOK_URL ? "متوصّل" : "مش متوصّل (الطلبات هتروح على إنستجرام/ماسنجر)"}`);
+  console.log(`  الإيميل والشيت: ${process.env.ORDERS_WEBHOOK_URL ? "متوصّل" : "مش متوصّل"}`);
+  console.log(`  واتساب: ${process.env.CALLMEBOT_APIKEY ? "متوصّل" : "مش متوصّل"}`);
   console.log("  لإيقافه اضغطي Ctrl + C\n");
 });
+ 
