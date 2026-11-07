@@ -1,7 +1,3 @@
-// Pre-deploy check for the SWYR site.
-// Vercel runs this before every deploy (see vercel.json → buildCommand).
-// If it fails, the deploy stops and the previous version stays live.
-// Run locally with:  node scripts/check.js
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
@@ -87,6 +83,14 @@ if (Bn && Bn.enabled && !(Number.isInteger(Bn.buy) && Bn.buy > 0 && Number.isInt
   if (!/instagram\.com\/(?:[\w.]+\/)?(?:reel|reels|p|tv)\/[A-Za-z0-9_-]+/.test(String(v))) err(`الفيديو رقم ${i + 1}: "${v}" مش لينك ريل إنستجرام صحيح.`);
 });
  
+(C.bestSellers || []).forEach((b, i) => {
+  const p = (C.products || []).find(x => x.id === b.id);
+  if (!p) return err(`الأكثر مبيعًا رقم ${i + 1}: العطر "${b.id}" مش موجود.`);
+  const sizes = typeof p.sizes === "string" ? PL[p.sizes] : p.sizes;
+  if (b.ml != null && !(sizes || []).some(s => s.ml === b.ml)) err(`الأكثر مبيعًا رقم ${i + 1} (${p.name.ar}): حجم ${b.ml} مل مش موجود.`);
+});
+if (C.marquee && !Array.isArray(C.marquee.ar)) err("marquee.ar لازم يكون قائمة نصوص بين [ ].");
+ 
 // 6) server pricing works for a sample order
 try {
   const { priceOrder } = require(path.join(root, "api/_pricing.js"));
@@ -110,4 +114,3 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`✓ كله تمام — ${ids.size} منتج، والموقع جاهز يتنشر.`);
- 

@@ -1,5 +1,4 @@
-/* SWYR storefront — vanilla JS, no build step.
-   All business data lives in /catalog.json. */
+
 (() => {
   "use strict";
  
@@ -12,7 +11,7 @@
       "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.",
       "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك",
       "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من 8 إلى 12 ساعة",
-      "offers.title": "العروض الحالية", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
+      "offers.title": "العروض الحالية", "best.title": "الأكثر مبيعًا", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
       "col.title": "عطور سوير",
       "finder.title": "اكتشف عطرك", "finder.text": "اختر النوتات التي تفضّلها، وسنرتّب لك العطور حسب قربها من ذوقك.", "finder.reset": "مسح الاختيارات",
       "finder.match": "يناسب ذوقك بنسبة {n}٪",
@@ -85,7 +84,7 @@
       "hero.lead": "Concentrated perfumes that last, hand-filled with care — from a 10 ml discovery size to the 100 ml bottle of the one you love.",
       "hero.shop": "Shop perfumes", "hero.finder": "Find your scent",
       "promise.cod": "Cash on delivery", "promise.ship": "Nationwide shipping", "promise.last": "8–12 hours of wear",
-      "offers.title": "Current offers", "offer.copy": "Copy code", "offer.copied": "Code copied", "offer.shop": "Order it",
+      "offers.title": "Current offers", "best.title": "Bestsellers", "offer.copy": "Copy code", "offer.copied": "Code copied", "offer.shop": "Order it",
       "col.title": "The SWYR collection",
       "finder.title": "Find your scent", "finder.text": "Pick the notes you love and we’ll rank the perfumes by how close they are to your taste.", "finder.reset": "Clear selection",
       "finder.match": "{n}% your taste",
@@ -268,6 +267,26 @@
     $("#announce").innerHTML = esc(a).replace(/\b([A-Z0-9]{4,})\b/g, "<b>$1</b>");
   }
  
+  // moving strip under the hero (text from catalog.json → marquee)
+  function renderMarquee() {
+    const items = (C.marquee && (C.marquee[lang] || C.marquee.ar)) || [];
+    $("#marquee").hidden = !items.length;
+    if (!items.length) return;
+    const one = items.map(x => `<span>${esc(x)}</span><i aria-hidden="true">✦</i>`).join("");
+    // repeated enough times to fill wide screens, then doubled so the loop is seamless
+    const reps = Math.max(2, Math.ceil(8 / items.length));
+    const half = `<div class="marquee__set">${one.repeat(reps)}</div>`;
+    $("#marqueeTrack").innerHTML = half + half;
+  }
+ 
+  // bestsellers row (catalog.json → bestSellers: [{ id, ml }])
+  function renderBest() {
+    const list = (C.bestSellers || []).map(b => ({ b, p: product(b.id) })).filter(x => x.p);
+    list.forEach(({ b, p }) => { if (sel[p.id] == null && b.ml && p.sizes.some(s => s.ml === b.ml)) sel[p.id] = b.ml; });
+    $("#bestRow").innerHTML = list.map(({ p }) => cardHTML(p, null)).join("");
+    $("#best").hidden = !list.length;
+  }
+ 
   function renderOffers() {
     const g = $("#offersGrid");
     g.innerHTML = (C.offers || []).map(o => `
@@ -382,16 +401,22 @@
  
   // re-render a single product card in place (used when the size changes) — keeps the page still
   function refreshCard(id, keepFocus) {
-    const el = document.querySelector(`.pcard[data-id="${CSS.escape(id)}"]`);
-    if (!el) return;
+    // the same perfume can appear twice (bestsellers + collection) — update every copy
+    const els = document.querySelectorAll(`.pcard[data-id="${CSS.escape(id)}"]`);
+    if (!els.length) return;
     const p = product(id);
-    const score = filt.notes.size ? matchScore(p) : null;
-    const tmp = document.createElement("div");
-    tmp.innerHTML = cardHTML(p, score).trim();
-    const fresh = tmp.firstElementChild;
-    fresh.classList.add("pcard--still");
-    el.replaceWith(fresh);
-    if (keepFocus) { const btn = fresh.querySelector(`[data-size="${sel[id]}"]`); if (btn) btn.focus({ preventScroll: true }); }
+    const active = document.activeElement;
+    els.forEach(el => {
+      const inBest = !!el.closest("#bestRow");
+      const score = !inBest && filt.notes.size ? matchScore(p) : null;
+      const tmp = document.createElement("div");
+      tmp.innerHTML = cardHTML(p, score).trim();
+      const fresh = tmp.firstElementChild;
+      fresh.classList.add("pcard--still");
+      const hadFocus = el.contains(active);
+      el.replaceWith(fresh);
+      if (keepFocus && hadFocus) { const btn = fresh.querySelector(`[data-size="${sel[id]}"]`); if (btn) btn.focus({ preventScroll: true }); }
+    });
   }
  
   /* ---------------- reviews (real customer reviews from catalog.json) ---------------- */
@@ -471,7 +496,7 @@
   const countLabel = n => n === 1 ? t("cart.item1") : n === 2 ? t("cart.item2") : t("cart.items", { n });
  
   function renderAll() {
-    renderAnnounce(); renderOffers(); renderChips(); renderTabs(); renderGrid();
+    renderAnnounce(); renderMarquee(); renderBest(); renderOffers(); renderChips(); renderTabs(); renderGrid();
     renderFaq(); renderFooter(); renderRequestTypes(); renderBadge(); renderReviews(); renderVideos();
     if ($("#drawer").classList.contains("is-open")) renderDrawer();
   }
@@ -1105,5 +1130,4 @@
   }
   boot();
 })();
- 
  
