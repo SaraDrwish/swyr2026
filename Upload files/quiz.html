@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>اختبار سوير — اكتشف عطرك في دقيقة</title>
+  <meta name="description" content="سبعة أسئلة قصيرة، ونمزج لك عطرك: شخصيتك العطرية والعطر الأقرب لك من عطور سوير.">
+  <meta name="theme-color" content="#FBD3C6">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:title" content="اختبار سوير — ما العطر الذي يشبهك؟">
+  <meta property="og:description" content="سبعة أسئلة قصيرة، ونمزج لك عطرك.">
+  <meta property="og:image" content="/img/og.jpg">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/quiz.css">
+</head>
+<body class="qz-body">
+  <header class="header" id="header">
+    <div class="wrap header__in">
+      <a href="/" class="brand" aria-label="SWYR">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__word" aria-hidden="true"></span>
+      </a>
+      <nav class="nav" aria-label="main">
+        <a href="/#collection" data-t="nav.shop">العطور</a>
+        <a href="/#offers" data-t="nav.offers">العروض</a>
+        <a href="/quiz" aria-current="page" data-t="nav.quiz">اختبار سوير</a>
+      </nav>
+      <div class="header__actions">
+        <button class="lang" id="langBtn" type="button">English</button>
+        <a class="cartbtn" id="cartBtn" href="/?cart=1">
+          <span data-t="cart">السلة</span>
+          <span class="cartbtn__count" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="qz" id="qz">
+    <div class="wrap qz__in">
+      <!-- the live scent orb: its colours blend the notes you choose -->
+      <aside class="qz__side" id="side" aria-hidden="true">
+        <div class="orb" id="orb">
+          <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i>
+          <span class="orb__glass"></span>
+          <span class="orb__word">SWYR</span>
+        </div>
+        <p class="blend" id="blend"></p>
+      </aside>
+
+      <section class="qz__main">
+        <div class="qz__top" id="top" hidden>
+          <button type="button" class="qz__back" id="back" data-t-aria="back" aria-label="السابق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="qz__prog"><i id="prog"></i></div>
+          <span class="qz__step" id="step"></span>
+        </div>
+        <div class="qz__stage" id="stage" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/quiz.js" defer></script>
+</body>
+</html>

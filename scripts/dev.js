@@ -47,7 +47,8 @@ http.createServer(async (req, res) => {
   // static files
   let p = decodeURIComponent(url.pathname);
   if (p.endsWith("/")) p += "index.html";
-  const file = path.join(root, p);
+  let file = path.join(root, p);
+  if (!path.extname(p) && fs.existsSync(file + ".html")) file += ".html"; // /quiz → quiz.html (like Vercel cleanUrls)
   const blocked = /^(\/api|\/scripts|\/\.)/.test(p) || /\.env$/.test(p);
   if (!file.startsWith(root) || blocked || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });

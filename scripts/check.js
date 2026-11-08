@@ -89,6 +89,7 @@ if (Bn && Bn.enabled && !(Number.isInteger(Bn.buy) && Bn.buy > 0 && Number.isInt
   const sizes = typeof p.sizes === "string" ? PL[p.sizes] : p.sizes;
   if (b.ml != null && !(sizes || []).some(s => s.ml === b.ml)) err(`الأكثر مبيعًا رقم ${i + 1} (${p.name.ar}): حجم ${b.ml} مل مش موجود.`);
 });
+(C.products || []).forEach(p => (p.seasons || []).forEach(s => { if (!["summer", "winter", "spring", "autumn", "all"].includes(s)) err(`العطر ${p.name && p.name.ar}: الفصل "${s}" مش صح — المسموح: summer / winter / spring / autumn / all.`); }));
 if (C.marquee && !Array.isArray(C.marquee.ar)) err("marquee.ar لازم يكون قائمة نصوص بين [ ].");
  
 // 6) server pricing works for a sample order
@@ -101,7 +102,7 @@ try {
 } catch (e) { err("حساب الأسعار على السيرفر وقع: " + e.message); }
  
 // 7) JavaScript files have no syntax errors
-["app.js", "api/pay.js", "api/config.js", "api/_pricing.js", "api/order.js"].filter(f => fs.existsSync(path.join(root, f))).forEach(f => {
+["app.js", "quiz.js", "api/pay.js", "api/config.js", "api/_pricing.js", "api/order.js"].filter(f => fs.existsSync(path.join(root, f))).forEach(f => {
   try { execFileSync(process.execPath, ["--check", path.join(root, f)], { stdio: "pipe" }); }
   catch (e) { err(`الملف ${f} فيه غلطة في الكود:\n${String(e.stderr || e.message).split("\n").slice(0, 5).join("\n")}`); }
 });
@@ -114,3 +115,4 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`✓ كله تمام — ${ids.size} منتج، والموقع جاهز يتنشر.`);
+ 

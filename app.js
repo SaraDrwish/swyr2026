@@ -9,9 +9,9 @@
       "nav.shop": "العطور", "nav.offers": "العروض", "nav.gifts": "الهدايا والطلبات الخاصة", "nav.faq": "الأسئلة الشائعة",
       "hero.title": "نسمة من<br>الفخامة النقية",
       "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.",
-      "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك",
+      "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك", "nav.quiz": "اختبار سوير", "finder.quiz": "لست متأكدًا؟ جرّب اختبار سوير في دقيقة",
       "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من 8 إلى 12 ساعة",
-      "offers.title": "العروض الحالية", "best.title": "الأكثر مبيعًا", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
+      "offers.title": "العروض الحالية", "best.title": "الأكثر مبيعًا", "ss.title": "عطر لكل فصل", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
       "col.title": "عطور سوير",
       "finder.title": "اكتشف عطرك", "finder.text": "اختر النوتات التي تفضّلها، وسنرتّب لك العطور حسب قربها من ذوقك.", "finder.reset": "مسح الاختيارات",
       "finder.match": "يناسب ذوقك بنسبة {n}٪",
@@ -82,9 +82,9 @@
       "nav.shop": "Perfumes", "nav.offers": "Offers", "nav.gifts": "Gifts & special orders", "nav.faq": "FAQ",
       "hero.title": "A breath of<br>pure luxury",
       "hero.lead": "Concentrated perfumes that last, hand-filled with care — from a 10 ml discovery size to the 100 ml bottle of the one you love.",
-      "hero.shop": "Shop perfumes", "hero.finder": "Find your scent",
+      "hero.shop": "Shop perfumes", "hero.finder": "Find your scent", "nav.quiz": "SWYR quiz", "finder.quiz": "Not sure? Take the one-minute SWYR quiz",
       "promise.cod": "Cash on delivery", "promise.ship": "Nationwide shipping", "promise.last": "8–12 hours of wear",
-      "offers.title": "Current offers", "best.title": "Bestsellers", "offer.copy": "Copy code", "offer.copied": "Code copied", "offer.shop": "Order it",
+      "offers.title": "Current offers", "best.title": "Bestsellers", "ss.title": "A scent for every season", "offer.copy": "Copy code", "offer.copied": "Code copied", "offer.shop": "Order it",
       "col.title": "The SWYR collection",
       "finder.title": "Find your scent", "finder.text": "Pick the notes you love and we’ll rank the perfumes by how close they are to your taste.", "finder.reset": "Clear selection",
       "finder.match": "{n}% your taste",
@@ -269,6 +269,7 @@
  
   // moving strip under the hero (text from catalog.json → marquee)
   function renderMarquee() {
+    if (!$("#marquee")) return;
     const items = (C.marquee && (C.marquee[lang] || C.marquee.ar)) || [];
     $("#marquee").hidden = !items.length;
     if (!items.length) return;
@@ -281,10 +282,29 @@
  
   // bestsellers row (catalog.json → bestSellers: [{ id, ml }])
   function renderBest() {
+    if (!$("#bestRow")) return;
     const list = (C.bestSellers || []).map(b => ({ b, p: product(b.id) })).filter(x => x.p);
     list.forEach(({ b, p }) => { if (sel[p.id] == null && b.ml && p.sizes.some(s => s.ml === b.ml)) sel[p.id] = b.ml; });
     $("#bestRow").innerHTML = list.map(({ p }) => cardHTML(p, null)).join("");
     $("#best").hidden = !list.length;
+  }
+ 
+  // perfumes by season (catalog.json → seasons + each product's "seasons")
+  const SEASONS = ["summer", "winter", "spring", "autumn", "all"];
+  const SS_ICON = { summer: "☀️", winter: "❄️", spring: "🌷", autumn: "🍂", all: "🔁" };
+  // Egypt: Dec–Feb winter, Mar–May spring, Jun–Aug summer, Sep–Nov autumn
+  let ssTab = ["winter", "winter", "spring", "spring", "spring", "summer", "summer", "summer", "autumn", "autumn", "autumn", "winter"][new Date().getMonth()];
+  function renderSeasons() {
+    if (!$("#ssRow") || !C.seasons) return;
+    const tabs = SEASONS.filter(s => C.seasons[s] && C.products.some(p => (p.seasons || []).includes(s)));
+    $("#seasons").hidden = !tabs.length;
+    if (!tabs.length) return;
+    if (!tabs.includes(ssTab)) ssTab = tabs[0];
+    $("#ssTabs").innerHTML = tabs.map(s => `<button type="button" class="tab" role="tab" data-season="${s}" aria-selected="${s === ssTab}"><span aria-hidden="true">${SS_ICON[s]}</span> ${esc(L(C.seasons[s]))}</button>`).join("");
+    $("#ssText").textContent = L(C.seasons[ssTab].text || {});
+    const list = C.products.filter(p => (p.seasons || []).includes(ssTab) && p.category !== "gifts");
+    $("#ssRow").innerHTML = list.map(p => cardHTML(p, null)).join("");
+    $("#ssRow").scrollLeft = 0;
   }
  
   function renderOffers() {
@@ -381,7 +401,7 @@
     if (filt.q) {
       const words = norm(filt.q).split(" ").filter(Boolean);
       list = list.filter(p => {
-        const hay = norm([p.name.ar, p.name.en, p.inspiredBy, p.code, p.family, Object.values(p.pyramid || {}).join(" ")].join(" "));
+        const hay = norm([p.name.ar, p.name.en, p.inspiredBy, p.code, p.family, Object.values(p.pyramid || {}).join(" "), (p.seasons || []).map(s => C.seasons && C.seasons[s] ? C.seasons[s].ar + " " + C.seasons[s].en + (s !== "all" ? (lang === "ar" ? " صيفي شتوي ربيعي خريفي".split(" ")[SEASONS.indexOf(s) + 1] || "" : "") : "") : "").join(" ")].join(" "));
         return words.every(w => hay.includes(w));
       });
     }
@@ -407,7 +427,7 @@
     const p = product(id);
     const active = document.activeElement;
     els.forEach(el => {
-      const inBest = !!el.closest("#bestRow");
+      const inBest = !!el.closest("#bestRow,#ssRow");
       const score = !inBest && filt.notes.size ? matchScore(p) : null;
       const tmp = document.createElement("div");
       tmp.innerHTML = cardHTML(p, score).trim();
@@ -496,7 +516,7 @@
   const countLabel = n => n === 1 ? t("cart.item1") : n === 2 ? t("cart.item2") : t("cart.items", { n });
  
   function renderAll() {
-    renderAnnounce(); renderMarquee(); renderBest(); renderOffers(); renderChips(); renderTabs(); renderGrid();
+    renderAnnounce(); renderMarquee(); renderBest(); renderSeasons(); renderOffers(); renderChips(); renderTabs(); renderGrid();
     renderFaq(); renderFooter(); renderRequestTypes(); renderBadge(); renderReviews(); renderVideos();
     if ($("#drawer").classList.contains("is-open")) renderDrawer();
   }
@@ -988,6 +1008,8 @@
  
   /* ---------------- events ---------------- */
   document.addEventListener("click", e => {
+    const ss = e.target.closest("[data-season]");
+    if (ss) { ssTab = ss.dataset.season; renderSeasons(); return; }
     const b = e.target.closest("[data-send],[data-recopy],[data-open],[data-add],[data-size],[data-note],[data-cat],[data-more],[data-copy],[data-rm],[data-cq],[data-go],[data-coupon],[data-submit],[data-browse],[data-closeall]");
     if (!b) return;
     const d = b.dataset;
@@ -1127,6 +1149,13 @@
       .catch(() => {});
     await configReady;
     handlePaymentReturn();
+    // direct link to one perfume, e.g. /?p=swyr-01&ml=50 (used by the SWYR quiz)
+    const pid = params.get("p"), want = Number(params.get("ml"));
+    if (params.get("cart") === "1") openDrawer("cart");
+    if (pid && product(pid)) {
+      if (want && product(pid).sizes.some(s => s.ml === want)) sel[pid] = want;
+      openProduct(pid);
+    }
   }
   boot();
 })();

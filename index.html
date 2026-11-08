@@ -34,6 +34,7 @@
         <a href="#collection" data-i18n="nav.shop">العطور</a>
         <a href="#offers" data-i18n="nav.offers">العروض</a>
         <a href="#gifts" data-i18n="nav.gifts">الهدايا والطلبات الخاصة</a>
+        <a href="/quiz" data-i18n="nav.quiz">اختبار سوير</a>
         <a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a>
       </nav>
       <div class="header__actions">
@@ -56,7 +57,7 @@
           <p class="hero__lead" data-i18n="hero.lead">عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.</p>
           <div class="hero__cta">
             <a href="#collection" class="btn btn--dark" data-i18n="hero.shop">تسوّق العطور</a>
-            <a href="#finder" class="btn btn--line" data-i18n="hero.finder">اكتشف عطرك</a>
+            <a href="/quiz" class="btn btn--line" data-i18n="hero.finder">اكتشف عطرك</a>
           </div>
           <ul class="promises">
             <li data-i18n="promise.cod">الدفع عند الاستلام</li>
@@ -90,6 +91,19 @@
       </div>
     </section>
 
+    <!-- SEASONS -->
+    <section class="seasons" id="seasons" hidden aria-labelledby="ssTitle">
+      <div class="wrap">
+        <div class="sechead">
+          <p class="eyebrow">Scents for every season</p>
+          <h2 id="ssTitle" data-i18n="ss.title">عطر لكل فصل</h2>
+        </div>
+        <div class="ss-tabs" id="ssTabs" role="tablist"></div>
+        <p class="ss-text" id="ssText"></p>
+        <div class="best__row" id="ssRow"></div>
+      </div>
+    </section>
+
     <!-- OFFERS -->
     <section class="offers" id="offers" aria-labelledby="offersTitle">
       <div class="wrap">
@@ -113,6 +127,7 @@
           <div class="finder__head">
             <h3 data-i18n="finder.title">اكتشف عطرك</h3>
             <p data-i18n="finder.text">اختر النوتات التي تفضّلها، وسنرتّب لك العطور حسب قربها من ذوقك.</p>
+            <a href="/quiz" class="quizlink" data-i18n="finder.quiz">لست متأكدًا؟ جرّب اختبار سوير في دقيقة</a>
           </div>
           <div class="chips" id="finderChips" role="group"></div>
           <button type="button" class="linkbtn" id="finderReset" hidden data-i18n="finder.reset">مسح الاختيارات</button>

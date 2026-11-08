@@ -399,6 +399,10 @@
         "amber": 44,
         "vanilla": 38
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -427,6 +431,10 @@
         "patchouli": 50,
         "woody": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -453,6 +461,10 @@
         "musk": 56,
         "woody": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -479,6 +491,10 @@
         "vanilla": 50,
         "woody": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -504,6 +520,10 @@
         "musk": 36,
         "woody": 36
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -530,6 +550,10 @@
         "jasmine": 56,
         "patchouli": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -556,6 +580,10 @@
         "vanilla": 56,
         "musk": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -583,6 +611,10 @@
         "vanilla": 50,
         "patchouli": 44
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -606,6 +638,9 @@
         "fruity": 80,
         "vanilla": 68
       },
+      "seasons": [
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -630,6 +665,10 @@
         "patchouli": 68,
         "vanilla": 56
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -657,6 +696,10 @@
         "vanilla": 44,
         "woody": 38
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -681,6 +724,10 @@
         "woody": 50,
         "musk": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -707,6 +754,10 @@
         "vanilla": 50,
         "patchouli": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -730,6 +781,10 @@
         "rose": 62,
         "musk": 56
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -756,6 +811,10 @@
         "patchouli": 56,
         "vanilla": 44
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume"
     },
     {
@@ -782,6 +841,10 @@
         "musk": 50,
         "vanilla": 44
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume"
     },
     {
@@ -809,6 +872,10 @@
         "leather": 50,
         "musk": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -834,6 +901,10 @@
         "patchouli": 56,
         "woody": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -858,6 +929,10 @@
         "rose": 68,
         "vanilla": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -883,6 +958,10 @@
         "woody": 56,
         "musk": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -909,6 +988,10 @@
         "vanilla": 62,
         "woody": 56
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -935,6 +1018,10 @@
         "floral": 50,
         "vanilla": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -958,6 +1045,10 @@
         "citrus": 80,
         "patchouli": 56
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -986,6 +1077,10 @@
         "vanilla": 44,
         "woody": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1011,6 +1106,10 @@
         "patchouli": 56,
         "woody": 50
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1037,6 +1136,10 @@
         "floral": 62,
         "leather": 38
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1064,6 +1167,10 @@
         "leather": 56,
         "woody": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1092,6 +1199,10 @@
         "vanilla": 38,
         "woody": 36
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1119,6 +1230,9 @@
         "amber": 56,
         "woody": 50
       },
+      "seasons": [
+        "all"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1145,6 +1259,10 @@
         "musk": 50,
         "patchouli": 44
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1171,6 +1289,10 @@
         "vanilla": 62,
         "sweet": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1195,6 +1317,10 @@
         "jasmine": 68,
         "vanilla": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1219,6 +1345,10 @@
         "musk": 50,
         "woody": 44
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1243,6 +1373,9 @@
         "musk": 56,
         "woody": 50
       },
+      "seasons": [
+        "spring"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1267,6 +1400,10 @@
         "warm_spicy": 68,
         "musk": 56
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1292,6 +1429,10 @@
         "leather": 44,
         "musk": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1317,6 +1458,10 @@
         "vanilla": 38,
         "patchouli": 36
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1341,6 +1486,10 @@
         "vanilla": 50,
         "amber": 44
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1368,6 +1517,10 @@
         "musk": 50,
         "woody": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1392,6 +1545,10 @@
         "sweet": 68,
         "vanilla": 62
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1420,6 +1577,10 @@
         "musk": 38,
         "oriental": 36
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1448,6 +1609,10 @@
         "woody": 44,
         "amber": 38
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1474,6 +1639,10 @@
         "musk": 44,
         "woody": 38
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1502,6 +1671,10 @@
         "vanilla": 38,
         "amber": 36
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1528,6 +1701,10 @@
         "warm_spicy": 62,
         "sweet": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume"
     },
     {
@@ -1555,6 +1732,10 @@
         "vanilla": 56,
         "musk": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "hairMist"
     },
     {
@@ -1579,6 +1760,10 @@
         "musk": 56,
         "vanilla": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "hairMist"
     },
     {
@@ -1630,6 +1815,10 @@
         "patchouli": 56,
         "rose": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1659,6 +1848,10 @@
         "rose": 36,
         "woody": 36
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1683,6 +1876,9 @@
         "jasmine": 80,
         "warm_spicy": 74
       },
+      "seasons": [
+        "all"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1709,6 +1905,9 @@
         "fruity": 44,
         "woody": 38
       },
+      "seasons": [
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1734,6 +1933,10 @@
         "jasmine": 56,
         "woody": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1759,6 +1962,10 @@
         "woody": 62,
         "vanilla": 50
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1786,6 +1993,10 @@
         "vanilla": 38,
         "amber": 36
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1813,6 +2024,9 @@
         "jasmine": 44,
         "oriental": 36
       },
+      "seasons": [
+        "all"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1841,6 +2055,10 @@
         "amber": 36,
         "vanilla": 36
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1870,6 +2088,10 @@
         "sweet": 38,
         "oriental": 36
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1896,6 +2118,9 @@
         "vanilla": 68,
         "warm_spicy": 44
       },
+      "seasons": [
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1925,6 +2150,10 @@
         "vanilla": 44,
         "warm_spicy": 38
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1950,6 +2179,10 @@
         "vanilla": 74,
         "warm_spicy": 68
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -1976,6 +2209,10 @@
         "musk": 50,
         "patchouli": 44
       },
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -2004,6 +2241,10 @@
         "musk": 36,
         "sweet": 36
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -2029,6 +2270,10 @@
         "vanilla": 62,
         "woody": 56
       },
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
       "sizes": "perfume",
       "new": true
     },
@@ -2054,6 +2299,10 @@
         "vanilla": 56,
         "woody": 50
       },
+      "seasons": [
+        "spring",
+        "summer"
+      ],
       "sizes": "perfume",
       "new": true
     }
@@ -2201,6 +2450,49 @@
       "ml": 50
     }
   ],
+  "seasons": {
+    "_note": "كل عطر له seasons داخل المنتج: summer / winter / spring / autumn أو all لكل الفصول",
+    "summer": {
+      "ar": "الصيف",
+      "en": "Summer",
+      "text": {
+        "ar": "الحرارة تضاعف فوحان العطر، لذلك يناسبك في الصيف الحمضيات والنوتات المائية والزهور الخفيفة والمسك النظيف.",
+        "en": "Heat amplifies a scent, so summer calls for citrus, aquatic notes, light florals and clean musk."
+      }
+    },
+    "winter": {
+      "ar": "الشتاء",
+      "en": "Winter",
+      "text": {
+        "ar": "البرد يبطئ تبخّر العطر، فتظهر العنبر والفانيليا والعود والتوابل الدافئة بأجمل صورها وتثبت أطول.",
+        "en": "Cold slows evaporation, so amber, vanilla, oud and warm spices shine and last longer."
+      }
+    },
+    "spring": {
+      "ar": "الربيع",
+      "en": "Spring",
+      "text": {
+        "ar": "اعتدال الجو يناسب الورد والزهور البيضاء والفواكه، بحضور واضح من غير ثقل.",
+        "en": "Mild weather suits roses, white flowers and fruits — noticeable without weight."
+      }
+    },
+    "autumn": {
+      "ar": "الخريف",
+      "en": "Autumn",
+      "text": {
+        "ar": "مع أول نسمة باردة تليق الأخشاب والعنبر والحلاوة المعتدلة والزهور الدافئة.",
+        "en": "With the first cool breeze, woods, amber, soft sweetness and warm florals feel right."
+      }
+    },
+    "all": {
+      "ar": "كل الفصول",
+      "en": "All year",
+      "text": {
+        "ar": "عطور متوازنة تنجح في الحر والبرد، مناسبة لمن يريد عطرًا واحدًا طوال العام.",
+        "en": "Balanced scents that work in heat and cold — one perfume for the whole year."
+      }
+    }
+  },
   "reviews": [],
   "_todo_reviews": "التقييمات الحقيقية بس: لما عميل يبعت تقييم من الموقع هيوصلك على الشيت والإيميل، ولو موافقة تنشريه ضيفيه هنا بالشكل ده: {\"name\": \"أحمد\", \"rating\": 5, \"text\": \"ريحة جميلة وثابتة\", \"product\": \"swyr-02\", \"date\": \"2026-11-07\"} — product اختياري (رقم العطر swyr-XX). ممنوع تكتبي تقييمات من عندك.",
   "videos": [],
