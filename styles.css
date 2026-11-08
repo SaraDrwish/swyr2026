@@ -601,5 +601,53 @@ scrollbar-width: thin !important;
 
 
 
+.qpromo{padding:64px 0}
+.qpromo__in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;background:var(--grad-soft);border:1px solid var(--line);border-radius:32px;padding:48px 56px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.qpromo h2{font-weight:300;font-size:clamp(1.9rem,4vw,3rem);line-height:1.2;color:var(--ink);margin:8px 0 12px}
+.qpromo h2 em{font-style:normal;color:var(--rose-deep);font-weight:500}
+.qpromo__lead{color:var(--taupe);font-size:1.05rem;max-width:44ch}
+.qpromo__box{display:flex;align-items:center;gap:16px;margin:24px 0;padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.7);max-width:480px}
+.qpromo__box p{color:var(--taupe);font-size:.95rem}
+.qpromo__num{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--butter);font-family:var(--ff);font-weight:700;font-size:1.5rem;line-height:1}
+.qpromo__cta{min-height:54px;padding:0 34px;font-size:1.05rem}
+.qpromo__arrow{display:inline-block;transition:transform .2s}
+[dir=ltr] .qpromo__arrow{transform:scaleX(-1)}
+.qpromo__cta:hover .qpromo__arrow{transform:translateX(-4px)}
+[dir=ltr] .qpromo__cta:hover .qpromo__arrow{transform:scaleX(-1) translateX(-4px)}
+.qpromo__time{margin-top:12px;font-size:.88rem;color:var(--muted)}
+.qpromo__visual{position:relative;display:grid;place-items:center;aspect-ratio:1;text-decoration:none}
+.qorb{--s:min(30vw,340px);position:relative;width:var(--s);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--grad);isolation:isolate;box-shadow:0 40px 80px -40px rgba(106,80,78,.55),inset 0 0 0 1px rgba(255,255,255,.6);transition:transform .5s ease}
+.qpromo__visual:hover .qorb{transform:scale(1.03)}
+.qorb i{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;filter:blur(calc(var(--s) * .07));mix-blend-mode:multiply}
+.qb1{background:#F28BB4;top:-8%;left:-6%;animation:qo1 12s ease-in-out infinite}
+.qb2{background:#FCD3C4;top:4%;right:-12%;animation:qo2 15s ease-in-out infinite}
+.qb3{background:#FDE7A3;bottom:-14%;left:10%;animation:qo3 17s ease-in-out infinite}
+.qb4{background:#C9A27E;bottom:-4%;right:-6%;width:48%!important;animation:qo1 19s ease-in-out infinite reverse}
+@keyframes qo1{50%{transform:translate(18%,14%) scale(1.08)}}
+@keyframes qo2{50%{transform:translate(-16%,18%) scale(.92)}}
+@keyframes qo3{50%{transform:translate(12%,-20%) scale(1.1)}}
+.qorb__glass{position:absolute;inset:0;border-radius:50%;z-index:2;background:radial-gradient(60% 50% at 32% 24%,rgba(255,255,255,.75),rgba(255,255,255,0) 60%)}
+.qorb__logo{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--s) * .035);color:rgba(62,47,47,.78)}
+.qorb__mark{width:calc(var(--s) * .085);height:calc(var(--s) * .14);background:currentColor;-webkit-mask:url(/img/mark.svg) center/contain no-repeat;mask:url(/img/mark.svg) center/contain no-repeat}
+.qorb__brand{width:calc(var(--s) * .4);height:calc(var(--s) * .1);background:currentColor;-webkit-mask:url(/img/wordmark.svg) center/contain no-repeat;mask:url(/img/wordmark.svg) center/contain no-repeat}
+.qchip{position:absolute;z-index:4;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;color:var(--ink);box-shadow:var(--shadow);animation:qfloat 5s ease-in-out infinite}
+.qchip--1{top:10%;inset-inline-start:2%}
+.qchip--2{top:46%;inset-inline-end:-2%;animation-delay:-1.6s}
+.qchip--3{bottom:10%;inset-inline-start:10%;animation-delay:-3.2s}
+@keyframes qfloat{50%{transform:translateY(-8px)}}
+@media (max-width:900px){
+  .qpromo{padding:40px 0}
+  .qpromo__in{grid-template-columns:1fr;gap:8px;padding:28px 20px 32px;text-align:center}
+  .qpromo__visual{order:-1;width:100%;max-width:300px;margin:0 auto}
+  .qorb{--s:min(58vw,230px)}
+  .qpromo__lead{margin-inline:auto}
+  .qpromo__box{margin-inline:auto;text-align:start}
+  .qpromo__cta{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.qorb i,.qchip{animation:none}}
+ 
+
+
+
 
 

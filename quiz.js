@@ -1,4 +1,4 @@
- 
+
 (() => {
   "use strict";
   const $ = (s, r = document) => r.querySelector(s);
@@ -231,7 +231,7 @@
     if (el.id === "orb") $("#blend").innerHTML = keys.length ? t("blend", { x: keys.slice(0, 3).map(k => `<b>${esc(L(C.notes[k]))}</b>`).join(" · ") }) : esc(t("blendEmpty"));
     return { keys, cols };
   }
-  const orbHTML = (id = "") => `<div class="orb"${id ? ` id="${id}"` : ""}><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i><span class="orb__glass"></span><span class="orb__word">SWYR</span></div>`;
+  const orbHTML = (id = "") => `<div class="orb"${id ? ` id="${id}"` : ""}><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i><span class="orb__glass"></span><span class="orb__logo"><span class="orb__mark"></span><span class="orb__brand">SWYR</span></span></div>`;
  
   /* ---------------- screens ---------------- */
   const stage = $("#stage");
@@ -469,7 +469,22 @@
     x.restore();
     x.strokeStyle = "rgba(255,255,255,.8)"; x.lineWidth = 3; x.beginPath(); x.arc(cx, cy, R - 18, 0, Math.PI * 2); x.stroke();
     x.textAlign = "center"; x.direction = lang === "ar" ? "rtl" : "ltr";
-    x.fillStyle = "rgba(62,47,47,.75)"; x.font = "400 110px Italiana"; x.letterSpacing = "20px"; x.fillText("SWYR", cx + 10, cy + 38); x.letterSpacing = "0px";
+    // SWYR icon above the wordmark, centred in the circle (same logo files as the site)
+    const svgImg = async (url, color) => {
+      const txt = (await (await fetch(url)).text()).replace(/currentColor/g, color);
+      const im = new Image(); im.src = URL.createObjectURL(new Blob([txt], { type: "image/svg+xml" }));
+      await im.decode(); return im;
+    };
+    try {
+      const [mk, wm] = await Promise.all([svgImg("/img/mark.svg", "#5a4544"), svgImg("/img/wordmark.svg", "#5a4544")]);
+      const mh = R * .3, mw = mh * (mk.naturalWidth / mk.naturalHeight || .6);
+      const ww = R * .86, wh = ww * (wm.naturalHeight / wm.naturalWidth || .25);
+      const gap = R * .07, top = cy - (mh + gap + wh) / 2;
+      x.drawImage(mk, cx - mw / 2, top, mw, mh);
+      x.drawImage(wm, cx - ww / 2, top + mh + gap, ww, wh);
+    } catch {
+      x.fillStyle = "rgba(62,47,47,.75)"; x.font = "400 110px Italiana"; x.textAlign = "center"; x.fillText("SWYR", cx, cy + 38);
+    }
     x.fillStyle = "#8E7A76"; x.font = "400 40px Italiana"; x.fillText("A BREATH OF PURE LUXURY", cx, 170);
     x.fillStyle = "#C25A84"; x.font = "500 44px Tajawal"; x.fillText(t("storyMy"), cx, 1100);
     x.fillStyle = "#3E2F2F"; x.font = "300 104px Tajawal"; x.fillText(L(r.persona.n), cx, 1225);

@@ -21,7 +21,9 @@
 @keyframes orbit2{50%{transform:translate(-16%,18%) scale(.92)}}
 @keyframes orbit3{50%{transform:translate(12%,-20%) scale(1.1)}}
 .orb__glass{position:absolute;inset:0;border-radius:50%;background:radial-gradient(60% 50% at 32% 24%,rgba(255,255,255,.75),rgba(255,255,255,0) 60%),radial-gradient(80% 80% at 50% 50%,rgba(255,255,255,0) 60%,rgba(255,255,255,.35));z-index:2}
-.orb__word{position:absolute;inset:0;display:grid;place-items:center;z-index:3;font-family:var(--ff-display);letter-spacing:.2em;color:rgba(62,47,47,.72);font-size:calc(var(--s) * .14);text-indent:.2em}
+.orb__logo{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--s) * .035);color:rgba(62,47,47,.78)}
+.orb__mark{width:calc(var(--s) * .085);height:calc(var(--s) * .14);background:currentColor;-webkit-mask:url(/img/mark.svg) center/contain no-repeat;mask:url(/img/mark.svg) center/contain no-repeat}
+.orb__brand{width:calc(var(--s) * .4);height:calc(var(--s) * .1);background:currentColor;-webkit-mask:url(/img/wordmark.svg) center/contain no-repeat;mask:url(/img/wordmark.svg) center/contain no-repeat;font-size:0}
 .orb.pulse{animation:pulse .7s ease}
 @keyframes pulse{40%{transform:scale(1.04)}}
 .orb.mixing .blob{animation-duration:2.4s,2.4s}
@@ -142,11 +144,13 @@
   .qz__in{grid-template-columns:1fr;gap:0;padding-top:18px;align-items:start;align-content:start}
   .qz__side{position:static;flex-direction:row;gap:14px;padding-top:0;margin-bottom:18px;justify-content:flex-start}
   .qz__side .orb{--s:64px;box-shadow:0 12px 24px -12px rgba(106,80,78,.55)}
-  .qz__side .orb__word{font-size:.62rem}
+  .qz__side .orb__mark{display:none}
+  .qz__side .orb__brand{width:calc(var(--s) * .62);height:calc(var(--s) * .16)}
   .qz__side .blend{text-align:start;font-size:.88rem}
   .qz.is-intro .qz__side{flex-direction:column;margin:8px 0 22px}
   .qz.is-intro .qz__side .orb{--s:min(64vw,260px)}
-  .qz.is-intro .qz__side .orb__word{font-size:calc(var(--s) * .14)}
+  .qz.is-intro .qz__side .orb__mark{display:block}
+  .qz.is-intro .qz__side .orb__brand{width:calc(var(--s) * .4);height:calc(var(--s) * .1)}
   .qz.is-intro .qz__main{text-align:center}
   .qz.is-intro .eyebrow{text-align:center}
   .qz.is-intro .lead{margin-inline:auto}
@@ -176,4 +180,3 @@
 .qz-body .cartbtn{text-decoration:none}
 .qbar span{color:var(--taupe)}
 .qz__main,.alts{padding-block:0}
- 

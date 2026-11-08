@@ -9,7 +9,7 @@
       "nav.shop": "العطور", "nav.offers": "العروض", "nav.gifts": "الهدايا والطلبات الخاصة", "nav.faq": "الأسئلة الشائعة",
       "hero.title": "نسمة من<br>الفخامة النقية",
       "hero.lead": "عطور مركّزة بثبات يدوم، نعبّئها يدويًا بعناية — من 10 مل للتجربة حتى 100 مل لمن وجد عطره.",
-      "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك", "nav.quiz": "اختبار سوير", "finder.quiz": "لست متأكدًا؟ جرّب اختبار سوير في دقيقة",
+      "hero.shop": "تسوّق العطور", "hero.finder": "اكتشف عطرك", "nav.quiz": "اختبار سوير", "qp.title": "اعثر على عطرك المثالي", "qp.em": "في دقيقة", "qp.lead": "لا تخمين: نطابق ذوقك مع مكونات كل عطر في سوير، ونرشّح لك الأقرب إليك.", "qp.box": "أجب عن 7 أسئلة قصيرة، وسنمزج لك عطرك أمام عينيك ونرشّح أقرب العطور إلى ذوقك.", "qp.cta": "ابدأ الاختبار", "qp.time": "⏱ الاختبار يستغرق أقل من دقيقة", "qp.c1": "🌸 ورد", "qp.c2": "🍦 فانيلا", "qp.c3": "🪵 عود", "finder.quiz": "لست متأكدًا؟ جرّب اختبار سوير في دقيقة",
       "promise.cod": "الدفع عند الاستلام", "promise.ship": "شحن لجميع المحافظات", "promise.last": "ثبات من 8 إلى 12 ساعة",
       "offers.title": "العروض الحالية", "best.title": "الأكثر مبيعًا", "ss.title": "عطر لكل فصل", "offer.copy": "انسخ الكود", "offer.copied": "تم نسخ الكود", "offer.shop": "اطلبه الآن",
       "col.title": "عطور سوير",
@@ -82,7 +82,7 @@
       "nav.shop": "Perfumes", "nav.offers": "Offers", "nav.gifts": "Gifts & special orders", "nav.faq": "FAQ",
       "hero.title": "A breath of<br>pure luxury",
       "hero.lead": "Concentrated perfumes that last, hand-filled with care — from a 10 ml discovery size to the 100 ml bottle of the one you love.",
-      "hero.shop": "Shop perfumes", "hero.finder": "Find your scent", "nav.quiz": "SWYR quiz", "finder.quiz": "Not sure? Take the one-minute SWYR quiz",
+      "hero.shop": "Shop perfumes", "hero.finder": "Find your scent", "nav.quiz": "SWYR quiz", "qp.title": "Find your perfect scent", "qp.em": "in a minute", "qp.lead": "No guessing: we match your taste with the notes of every SWYR perfume and suggest the closest ones.", "qp.box": "Answer 7 quick questions — we blend your scent before your eyes and suggest the perfumes closest to your taste.", "qp.cta": "Start the quiz", "qp.time": "⏱ Takes less than a minute", "qp.c1": "🌸 Rose", "qp.c2": "🍦 Vanilla", "qp.c3": "🪵 Oud", "finder.quiz": "Not sure? Take the one-minute SWYR quiz",
       "promise.cod": "Cash on delivery", "promise.ship": "Nationwide shipping", "promise.last": "8–12 hours of wear",
       "offers.title": "Current offers", "best.title": "Bestsellers", "ss.title": "A scent for every season", "offer.copy": "Copy code", "offer.copied": "Code copied", "offer.shop": "Order it",
       "col.title": "The SWYR collection",
@@ -1159,4 +1159,3 @@
   }
   boot();
 })();
- 
