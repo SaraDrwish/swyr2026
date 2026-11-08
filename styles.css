@@ -648,6 +648,17 @@ scrollbar-width: thin !important;
  
 
 
+.qpromo__bwrap{display:block}
+.qpromo__bwrap + .qpromo__in{display:none}
+.qbanner{display:block;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s ease,box-shadow .35s ease}
+.qbanner img{display:block;width:100%;height:auto}
+.qbanner:hover{transform:translateY(-3px);box-shadow:0 24px 48px -24px rgba(106,80,78,.45)}
+/* على الموبايل وفي النسخة الإنجليزية يظهر الإعلان المكتوب بدل الصورة */
+@media (max-width:700px){.qpromo__bwrap{display:none}.qpromo__bwrap + .qpromo__in{display:grid}}
+html[lang=en] .qpromo__bwrap{display:none}
+html[lang=en] .qpromo__bwrap + .qpromo__in{display:grid}
+
+
 
 
 
